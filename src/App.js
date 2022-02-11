@@ -5,7 +5,7 @@ import LandingPage from './components/screens/LandingPage';
 
 function App() {
     return (
-        <Header />
+        <LandingPage />
     );
 }
 
