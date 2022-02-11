@@ -148,6 +148,11 @@ const Join = styled.button`
     padding: 20px 30px;
     border-radius: 10px;
     background-image: linear-gradient(to right,#68ba50,#469aad);
+    &:hover{
+        transition: all 0.5s ease 0s;
+        background-image: linear-gradient(to right, #469aad,#68ba50);
+
+    }
 `
 const Register = styled.button`
     cursor: pointer;
@@ -161,6 +166,13 @@ const Register = styled.button`
     background-image: linear-gradient(white, white),linear-gradient(to right, #68ba50, #469aad);
     background-origin: border-box;
     background-clip: content-box, border-box;
+    &:hover{
+        transition: all 0.5s ease 0s;
+        background-image: linear-gradient(white, white),linear-gradient(to right, #469aad, #68ba50);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+
+    }
 `
 const RegDiv = styled.div`
     padding: 10px 30px;
@@ -214,6 +226,11 @@ const PlayDiv = styled.div`
     border-radius: 50%;
     overflow: hidden;
     padding: 3% 4% 3% 5%;
+    &:hover{
+        transition: all 0.5s ease 0s;
+        background-image: linear-gradient(to right, #469aad,#68ba50);
+        cursor: pointer;
+    }
 `
 const PlayButton = styled.img`
     filter: invert(1);

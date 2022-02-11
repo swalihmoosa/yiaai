@@ -47,6 +47,11 @@ const JoinButton = styled.button`
     border-radius: 10px;
     background-image: linear-gradient(to right, #68ba50,#469aad);
     margin-right: 3%;
+    &:hover{
+        transition: all 0.5s ease 0s;
+        background-image: linear-gradient(to right, #469aad,#68ba50);
+
+    }
 `
 const HamBurger = styled.div`
     width: 2%;
