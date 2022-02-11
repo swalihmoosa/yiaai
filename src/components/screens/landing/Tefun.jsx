@@ -133,7 +133,7 @@ const P = styled.p`
     margin-bottom: 3%;
 `
 const Ul = styled.ul`
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
