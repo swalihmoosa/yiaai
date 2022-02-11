@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logoImage from '../assets/images/logo.svg'
+import hamburgerImage from '../assets/images/hamburg.7b560c07.svg'
 
 
 export default function Header() {
@@ -8,11 +9,16 @@ export default function Header() {
       <HeaderNav>
           <Wrapper>
             <LogoContainer>
+                <a href='#'>
                 <img src={logoImage} alt="Logo" />
+                </a>
             </LogoContainer>
             <JoinButton>
                 Join Now
             </JoinButton>
+            <HamBurger>
+                <img src={hamburgerImage} alt="Hamburger Image" />
+            </HamBurger>
           </Wrapper>
       </HeaderNav>
   )
@@ -26,11 +32,11 @@ const Wrapper = styled.section`
     width:90%;
     margin : 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 `
 const LogoContainer = styled.div`
     width: 7%;
+    margin-right: 73%;
 `
 const JoinButton = styled.button`
     cursor: pointer;
@@ -41,5 +47,9 @@ const JoinButton = styled.button`
     color: rgb(255, 255, 255);
     padding: 20px 30px;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgb(99, 187, 76) 0%, rgb(24, 152, 175) 51%, rgb(99, 187, 76) 100%);
+    background-image: linear-gradient(to right, #68ba50,#469aad);
+    margin-right: 3%;
+`
+const HamBurger = styled.div`
+    width: 2%;
 `
