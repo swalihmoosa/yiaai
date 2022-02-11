@@ -8,6 +8,7 @@ import playImage from '../../assets/images/landing/grey-and-play.svg'
 import appImage from '../../assets/images/landing/grey-and-play.svg'
 import tefunImage from '../../assets/images/landing/Tefun-logo.svg'
 import background from '../../assets/images/landing/elipse.svg'
+import playButtonImage from '../../assets/images/play-solid.svg'
 
 
 export default function Spotlight() {
@@ -62,6 +63,9 @@ export default function Spotlight() {
                     <ArrowContainer>
                         <img src={arrowImage} alt='Playstore' />
                     </ArrowContainer>
+                    <PlayDiv>
+                        <PlayButton src={playButtonImage} alt='Play' />
+                    </PlayDiv>
                 </Video>
             </SpotlightSection>
         </Wrapper>
@@ -200,4 +204,17 @@ const ArrowContainer = styled.div`
     left: -20%;
     transform: rotate(6deg);
     width: 35%;
+`
+const PlayDiv = styled.div`
+    left: 43%;
+    top: 30%;
+    position: absolute;
+    background: linear-gradient(to right,#68ba50,#469aad);
+    width: 15%;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 3% 4% 3% 5%;
+`
+const PlayButton = styled.img`
+    filter: invert(1);
 `
