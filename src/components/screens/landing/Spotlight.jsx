@@ -7,6 +7,7 @@ import childImage from '../../assets/images/landing/spot-min.jpeg'
 import playImage from '../../assets/images/landing/grey-and-play.svg'
 import appImage from '../../assets/images/landing/grey-and-play.svg'
 import tefunImage from '../../assets/images/landing/Tefun-logo.svg'
+import background from '../../assets/images/landing/elipse.svg'
 
 
 export default function Spotlight() {
@@ -77,6 +78,17 @@ const SpotlightSection = styled.section`
     background: #e1e5db;
     padding: 5%;
     border-radius: 30px;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: -5%;
+        bottom: -8%;
+        z-index: -1;
+        background: url(${background}) no-repeat;
+    }
 `
 const Tefun = styled.div`
     width: 48%;
