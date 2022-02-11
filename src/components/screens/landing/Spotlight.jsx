@@ -182,4 +182,10 @@ const App = styled.button`
     margin-left: 0;
     width: 25%;
 `
-const ArrowContainer = styled.div``
+const ArrowContainer = styled.div`
+    position: absolute;
+    top: 59%;
+    left: -20%;
+    transform: rotate(6deg);
+    width: 35%;
+`

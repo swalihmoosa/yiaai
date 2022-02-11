@@ -50,4 +50,5 @@ const JoinButton = styled.button`
 `
 const HamBurger = styled.div`
     width: 2%;
+    cursor: pointer;
 `
