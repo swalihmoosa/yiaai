@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import talropImage from '../../assets/images/landing/640.svg'
 import arrowImage from '../../assets/images/landing/arrow.svg'
 import childImage from '../../assets/images/landing/spot-min.jpeg'
@@ -23,8 +24,8 @@ export default function Spotlight() {
                     കേരളത്തിലെ <Green>20 ലക്ഷം</Green> സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് സൗജന്യമായി ടെക്ക്നോളജി പഠിക്കാം!
                     </Head>
                     <Subhead>
-                    ഇത് Industry 4.0 കാലഘട്ടം, ടെക്ക്‌നോളജിയുടെ പുത്തൻ സാധ്യതകൾ ഇനി നമ്മുടെ കുട്ടികൾ അറിയണം. സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് ടെക്ക്നോളജിയെ തൊട്ടറിയുവാനും, 
-                    ടെക്ക്-സാക്ഷരത ഉറപ്പുവരുത്തുന്നതിനുമുള്ള സൗജന്യാവസരം ഒരുക്കുകയാണ് Talrop.
+                    ഇത് <B>Industry 4.0</B> കാലഘട്ടം, ടെക്ക്‌നോളജിയുടെ പുത്തൻ സാധ്യതകൾ ഇനി നമ്മുടെ കുട്ടികൾ അറിയണം. സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് ടെക്ക്നോളജിയെ തൊട്ടറിയുവാനും, 
+                    ടെക്ക്-സാക്ഷരത ഉറപ്പുവരുത്തുന്നതിനുമുള്ള സൗജന്യാവസരം ഒരുക്കുകയാണ് <B>Talrop.</B>
                     </Subhead>
                     <Talrop>
                         <img src={talropImage} alt="Talrop" />
@@ -34,12 +35,14 @@ export default function Spotlight() {
                             Join Now
                         </Join>
                         <Register>
-                            <Campus>
-                                Are you a campus?
-                            </Campus>
-                            <Reg>
-                                Register Now
-                            </Reg>
+                            <RegDiv>
+                                <Campus>
+                                    Are you a campus?
+                                </Campus>
+                                <Reg>
+                                    Register Now
+                                </Reg>
+                            </RegDiv>
                         </Register>
                     </ButtonDiv>
                 </Tefun>
@@ -98,18 +101,85 @@ const Green = styled.b`
     font-size: 45px;
     font-weight: 800;
 `
-const Subhead = styled.h3``
-const Talrop = styled.div``
-const ButtonDiv = styled.div``
-const Join = styled.button``
-const Register = styled.button``
-const Campus = styled.p``
-const Reg = styled.p``
+const Subhead = styled.h3`
+    font-size: 18px;
+    color: #636560;
+    width: 90%;
+    margin-bottom: 5%;
+`
+const B = styled.b`
+    color: #636560;
+    font-weight: 900;
+`
+const Talrop = styled.div`
+    width: 75%;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 3%;
+`
+const ButtonDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+`
+const Join = styled.button`
+    cursor: pointer;
+    width: 47%;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right,#68ba50,#469aad);
+`
+const Register = styled.button`
+    cursor: pointer;
+    width: 47%;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: #fff;
+    border-radius: 10px;
+    padding: 2px;
+    background-image: linear-gradient(white, white),linear-gradient(to right, #68ba50, #469aad);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+`
+const RegDiv = styled.div`
+    padding: 10px 30px;
+`
+const Campus = styled.p`
+    color: rgb(32, 156, 165);
+    font-size: 14px;
+`
+const Reg = styled.p`
+    color: rgb(32, 156, 165);
+    font-size: 19px;
+`
 const Video = styled.div`
     width: 48%;
+    position: relative;
 `
-const Child = styled.div``
-const Store = styled.div``
-const Play = styled.button``
-const App = styled.button``
+const Child = styled.div`
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    transform: rotate(5deg);
+    margin-bottom: 7%;
+`
+const Store = styled.div`
+    width:100%;
+    display: flex;
+`
+const Play = styled.button`
+    margin-left: auto;
+    margin-right: 20px;
+    width: 25%;
+`
+const App = styled.button`
+    margin-right: 0; 
+    margin-left: 0;
+    width: 25%;
+`
 const ArrowContainer = styled.div``
