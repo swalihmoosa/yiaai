@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import playImage from '../../assets/images/play-solid.svg'
+import person from '../../assets/images/landing/person.jpg'
 
 
 export default function Tefun() {
@@ -18,20 +19,91 @@ export default function Tefun() {
                 </P>
                 <Ul>
                     <Li>
-                        <Name>
-                            Swathi Menon
-                        </Name>
-                        <School>
-                            8<Sup>Th</Sup>,Jamia Edavanna
-                        </School>
-                        <Story className='story' >
-                            <Play>
-                                <img src={playImage} alt='Play' />
-                            </Play>
-                            <Watch>
-                                WATCH STORY
-                            </Watch>
-                        </Story>
+                        <Details>
+                            <Name>
+                                Swathi Menon
+                            </Name>
+                            <School>
+                                8<Sup>Th</Sup>,Jamia Edavanna
+                            </School>
+                            <Story className='story' >
+                                <Play>
+                                    <img src={playImage} alt='Play' />
+                                </Play>
+                                <Watch>
+                                    WATCH STORY
+                                </Watch>
+                            </Story>
+                        </Details>
+                    </Li>
+                    <Li>
+                        <Details>
+                            <Name>
+                                Swathi Menon
+                            </Name>
+                            <School>
+                                8<Sup>Th</Sup>,Jamia Edavanna
+                            </School>
+                            <Story className='story' >
+                                <Play>
+                                    <img src={playImage} alt='Play' />
+                                </Play>
+                                <Watch>
+                                    WATCH STORY
+                                </Watch>
+                            </Story>
+                        </Details>
+                    </Li>                    <Li>
+                        <Details>
+                            <Name>
+                                Swathi Menon
+                            </Name>
+                            <School>
+                                8<Sup>Th</Sup>,Jamia Edavanna
+                            </School>
+                            <Story className='story' >
+                                <Play>
+                                    <img src={playImage} alt='Play' />
+                                </Play>
+                                <Watch>
+                                    WATCH STORY
+                                </Watch>
+                            </Story>
+                        </Details>
+                    </Li>                    <Li>
+                        <Details>
+                            <Name>
+                                Swathi Menon
+                            </Name>
+                            <School>
+                                8<Sup>Th</Sup>,Jamia Edavanna
+                            </School>
+                            <Story className='story' >
+                                <Play>
+                                    <img src={playImage} alt='Play' />
+                                </Play>
+                                <Watch>
+                                    WATCH STORY
+                                </Watch>
+                            </Story>
+                        </Details>
+                    </Li>                    <Li>
+                        <Details>
+                            <Name>
+                                Swathi Menon
+                            </Name>
+                            <School>
+                                8<Sup>Th</Sup>,Jamia Edavanna
+                            </School>
+                            <Story className='story' >
+                                <Play>
+                                    <img src={playImage} alt='Play' />
+                                </Play>
+                                <Watch>
+                                    WATCH STORY
+                                </Watch>
+                            </Story>
+                        </Details>
                     </Li>
                 </Ul>
             </Wrapper>
@@ -60,14 +132,65 @@ const P = styled.p`
     text-align: center;
     margin-bottom: 3%;
 `
-const Ul = styled.ul``
-const Li = styled.li``
-const Name = styled.h3``
-const School = styled.h4``
+const Ul = styled.ul`
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+`
+const Li = styled.li`
+    background: url(${person});
+    width: 23%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    &:hover .story{
+        opacity: 1;
+    }
+`
+const Details = styled.div`
+    position: absolute;
+    bottom: 3%;
+    padding: 0 5%;
+    width: 100%;
+`
+const Name = styled.h3`
+    font-size: 27px;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+`
+const School = styled.h4`
+    font-size: 20px;
+    color: #dbd8d8;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+`
 const Sup = styled.b`
     vertical-align: super;
     font-size: small;
 `
-const Story = styled.button``
-const Play = styled.div``
-const Watch = styled.div``
+const Story = styled.button`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    padding: 13px 19%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+    opacity: 0;
+`
+const Play = styled.div`
+    width: 10%;
+`
+const Watch = styled.p``
