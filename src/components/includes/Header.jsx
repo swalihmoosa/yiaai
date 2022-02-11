@@ -9,15 +9,13 @@ export default function Header() {
       <HeaderNav>
           <Wrapper>
             <LogoContainer>
-                <a href='#'>
                 <img src={logoImage} alt="Logo" />
-                </a>
             </LogoContainer>
             <JoinButton>
                 Join Now
             </JoinButton>
             <HamBurger>
-                <img src={hamburgerImage} alt="Hamburger Image" />
+                <img src={hamburgerImage} alt="Hamburger" />
             </HamBurger>
           </Wrapper>
       </HeaderNav>
@@ -34,7 +32,7 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
 `
-const LogoContainer = styled.div`
+const LogoContainer = styled.h1`
     width: 7%;
     margin-right: 73%;
 `
