@@ -29,7 +29,7 @@ export default function Students() {
                             Talrop-ന്റെ Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ (yia.ai) ഓൺലൈനായി Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാം.
                             </P>
                             <Round>
-                                01
+                                02
                             </Round>
                         </Li>
                         <Li>
@@ -37,7 +37,7 @@ export default function Students() {
                             വിദ്യാർത്ഥികളുടെ മൊബൈൽ നമ്പർ നൽകിയതിനുശേഷം പ്രൊഫൈൽ തിരഞ്ഞെടുത്ത് Tefun പ്രോഗ്രാം സ്റ്റാർട്ട് ചെയ്യാം.
                             </P>
                             <Round>
-                                01
+                                03
                             </Round>
                         </Li>
                         <Li>
@@ -45,7 +45,7 @@ export default function Students() {
                             പ്രൊഫൈൽ ലഭ്യമല്ലെങ്കിൽ വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ കോഡും ക്ലാസും ഡിവിഷനും നൽകി Tefun പ്രോഗ്രാമിൽ പങ്കെടുക്കുവാൻ സാധിക്കും.
                             </P>
                             <Round>
-                                01
+                                04
                             </Round>
                         </Li>
                         <Li>
@@ -53,7 +53,7 @@ export default function Students() {
                             വിദ്യാർത്ഥികൾക്ക് Virtual Schooling-ലൂടെ ഇഷ്ടമുള്ള സമയത്ത് പഠിക്കാൻ സാധിക്കും.
                             </P>
                             <Round>
-                                01
+                                05
                             </Round>
                         </Li>
                         <Li>
@@ -61,7 +61,7 @@ export default function Students() {
                             Tefun പ്രോഗ്രാമിന്റെ അവസാനഘട്ടമായി സ്കൂൾ നിശ്ചയിക്കുന്ന ദിവസങ്ങളിൽ ഓൺലൈൻ എക്സാം ഉണ്ടായിരിക്കുന്നതാണ്.
                             </P>
                             <Round>
-                                01
+                                06
                             </Round>
                         </Li>
                         <Li>
@@ -69,7 +69,7 @@ export default function Students() {
                             Tefun പ്രോഗ്രാം വിജയകരമായി പൂർത്തീകരിക്കുന്ന വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ മുഖേന ടാൽറോപ് സർട്ടിഫിക്കറ്റ് നൽകുന്നു.
                             </P>
                             <Round>
-                                01
+                                07
                             </Round>
                         </Li>
                     </Left>
@@ -105,6 +105,19 @@ const Join = styled.div`
 `
 const Left = styled.ul`
     width: 47%;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 1px;
+        height: 90%;
+        border-left: 2px dotted #5aa870;
+        left: -2%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
 `
 const Li = styled.li`
     background: #ebf2fa;
@@ -124,7 +137,18 @@ const P = styled.p`
     font-size: 18px;
 `
 const Brand = styled.b``
-const Round = styled.p``
+const Round = styled.p`
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #519b6f;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    padding: 1%;
+    background: #fff;
+    font-weight: 900;
+`
 const Right = styled.div`
     width: 47%;
 `
