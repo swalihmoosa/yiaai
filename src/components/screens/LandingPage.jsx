@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../includes/Header';
 import Campuses from './landing/Campuses';
 import Certification from './landing/Certification';
+import Platform from './landing/Platform';
 import School from './landing/School';
 import Spotlight from './landing/Spotlight'
 import Students from './landing/Students';
@@ -21,6 +22,7 @@ export default function LandingPage() {
 			<Certification />
 			<School />
 			<Students />
+			<Platform />
 		</>
 	)
 }

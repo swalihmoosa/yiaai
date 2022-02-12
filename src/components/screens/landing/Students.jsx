@@ -26,7 +26,7 @@ export default function Students() {
                         </Li>
                         <Li>
                             <P>
-                            Talrop-ന്റെ Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ (yia.ai) ഓൺലൈനായി Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാം.
+                            <Brand>Talrop</Brand>-ന്റെ Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ (yia.ai) ഓൺലൈനായി <Brand>Tefun</Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാകാം.
                             </P>
                             <Round>
                                 02
@@ -34,7 +34,7 @@ export default function Students() {
                         </Li>
                         <Li>
                             <P>
-                            വിദ്യാർത്ഥികളുടെ മൊബൈൽ നമ്പർ നൽകിയതിനുശേഷം പ്രൊഫൈൽ തിരഞ്ഞെടുത്ത് Tefun പ്രോഗ്രാം സ്റ്റാർട്ട് ചെയ്യാം.
+                            വിദ്യാർത്ഥികളുടെ മൊബൈൽ നമ്പർ നൽകിയതിനുശേഷം പ്രൊഫൈൽ തിരഞ്ഞെടുത്ത് <Brand>Tefun</Brand> പ്രോഗ്രാം സ്റ്റാർട്ട് ചെയ്യാം.
                             </P>
                             <Round>
                                 03
@@ -42,7 +42,7 @@ export default function Students() {
                         </Li>
                         <Li>
                             <P>
-                            പ്രൊഫൈൽ ലഭ്യമല്ലെങ്കിൽ വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ കോഡും ക്ലാസും ഡിവിഷനും നൽകി Tefun പ്രോഗ്രാമിൽ പങ്കെടുക്കുവാൻ സാധിക്കും.
+                            പ്രൊഫൈൽ ലഭ്യമല്ലെങ്കിൽ വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ കോഡും ക്ലാസും ഡിവിഷനും നൽകി <Brand>Tefun</Brand> പ്രോഗ്രാമിൽ പങ്കെടുക്കുവാൻ സാധിക്കും.
                             </P>
                             <Round>
                                 04
@@ -58,7 +58,7 @@ export default function Students() {
                         </Li>
                         <Li>
                             <P>
-                            Tefun പ്രോഗ്രാമിന്റെ അവസാനഘട്ടമായി സ്കൂൾ നിശ്ചയിക്കുന്ന ദിവസങ്ങളിൽ ഓൺലൈൻ എക്സാം ഉണ്ടായിരിക്കുന്നതാണ്.
+                            <Brand>Tefun</Brand> പ്രോഗ്രാമിന്റെ അവസാനഘട്ടമായി സ്കൂൾ നിശ്ചയിക്കുന്ന ദിവസങ്ങളിൽ ഓൺലൈൻ എക്സാം ഉണ്ടായിരിക്കുന്നതാണ്.
                             </P>
                             <Round>
                                 06
@@ -66,7 +66,7 @@ export default function Students() {
                         </Li>
                         <Li>
                             <P>
-                            Tefun പ്രോഗ്രാം വിജയകരമായി പൂർത്തീകരിക്കുന്ന വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ മുഖേന ടാൽറോപ് സർട്ടിഫിക്കറ്റ് നൽകുന്നു.
+                            <Brand>Tefun</Brand> പ്രോഗ്രാം വിജയകരമായി പൂർത്തീകരിക്കുന്ന വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ മുഖേന ടാൽറോപ് സർട്ടിഫിക്കറ്റ് നൽകുന്നു.
                             </P>
                             <Round>
                                 07
@@ -136,7 +136,10 @@ const Li = styled.li`
 const P = styled.p`
     font-size: 18px;
 `
-const Brand = styled.b``
+const Brand = styled.b`
+    color: #5aa870;
+    font-weight: 900;
+`
 const Round = styled.p`
     position: absolute;
     border-radius: 50%;
