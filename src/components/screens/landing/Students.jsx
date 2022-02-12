@@ -24,6 +24,54 @@ export default function Students() {
                                 01
                             </Round>
                         </Li>
+                        <Li>
+                            <P>
+                            Talrop-ന്റെ Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ (yia.ai) ഓൺലൈനായി Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാം.
+                            </P>
+                            <Round>
+                                01
+                            </Round>
+                        </Li>
+                        <Li>
+                            <P>
+                            വിദ്യാർത്ഥികളുടെ മൊബൈൽ നമ്പർ നൽകിയതിനുശേഷം പ്രൊഫൈൽ തിരഞ്ഞെടുത്ത് Tefun പ്രോഗ്രാം സ്റ്റാർട്ട് ചെയ്യാം.
+                            </P>
+                            <Round>
+                                01
+                            </Round>
+                        </Li>
+                        <Li>
+                            <P>
+                            പ്രൊഫൈൽ ലഭ്യമല്ലെങ്കിൽ വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ കോഡും ക്ലാസും ഡിവിഷനും നൽകി Tefun പ്രോഗ്രാമിൽ പങ്കെടുക്കുവാൻ സാധിക്കും.
+                            </P>
+                            <Round>
+                                01
+                            </Round>
+                        </Li>
+                        <Li>
+                            <P>
+                            വിദ്യാർത്ഥികൾക്ക് Virtual Schooling-ലൂടെ ഇഷ്ടമുള്ള സമയത്ത് പഠിക്കാൻ സാധിക്കും.
+                            </P>
+                            <Round>
+                                01
+                            </Round>
+                        </Li>
+                        <Li>
+                            <P>
+                            Tefun പ്രോഗ്രാമിന്റെ അവസാനഘട്ടമായി സ്കൂൾ നിശ്ചയിക്കുന്ന ദിവസങ്ങളിൽ ഓൺലൈൻ എക്സാം ഉണ്ടായിരിക്കുന്നതാണ്.
+                            </P>
+                            <Round>
+                                01
+                            </Round>
+                        </Li>
+                        <Li>
+                            <P>
+                            Tefun പ്രോഗ്രാം വിജയകരമായി പൂർത്തീകരിക്കുന്ന വിദ്യാർത്ഥികൾക്ക് സ്കൂൾ മുഖേന ടാൽറോപ് സർട്ടിഫിക്കറ്റ് നൽകുന്നു.
+                            </P>
+                            <Round>
+                                01
+                            </Round>
+                        </Li>
                     </Left>
                     <Right>
                         <img src={rightImage} alt='Student' />
@@ -62,11 +110,19 @@ const Li = styled.li`
     background: #ebf2fa;
     padding: 5%;
     border-radius: 25px;
-    &:first-child{
+    width: 100%;
+    position: relative;
+    margin-bottom: 4%;
+    &:first-child, :nth-child(5n){
         background: #fef6ec;
     }
+    &:last-child{
+        margin-bottom: 0;
+    }
 `
-const P = styled.p``
+const P = styled.p`
+    font-size: 18px;
+`
 const Brand = styled.b``
 const Round = styled.p``
 const Right = styled.div`
