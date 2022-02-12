@@ -5,6 +5,7 @@ import Campuses from './landing/Campuses';
 import Certification from './landing/Certification';
 import School from './landing/School';
 import Spotlight from './landing/Spotlight'
+import Students from './landing/Students';
 import Tech from './landing/Tech';
 import Tefun from './landing/Tefun';
 
@@ -19,6 +20,7 @@ export default function LandingPage() {
 			<Tech />
 			<Certification />
 			<School />
+			<Students />
 		</>
 	)
 }

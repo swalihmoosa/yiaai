@@ -23,7 +23,7 @@ export default function School() {
                         <ColorDiv className='colour'>
                         </ColorDiv>
                         <P>
-                        Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാൻ ആഗ്രഹിക്കുന്ന സ്കൂളുകൾക്ക് Talrop-ന്റെ ടീമുമായി <Mob>858 999 8744</Mob> എന്ന നമ്പറിൽ കോൺടാക്ട് ചെയ്യാവുന്നതാണ്.
+                        Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാൻ ആഗ്രഹിക്കുന്ന സ്കൂളുകൾക്ക് <Mob>Talrop</Mob>-ന്റെ ടീമുമായി <Mob>858 999 8744</Mob> എന്ന നമ്പറിൽ കോൺടാക്ട് ചെയ്യാവുന്നതാണ്.
                         </P>
                         <Round className='round'>
                             <img src={mobile} alt='Mobile' />
@@ -49,7 +49,7 @@ export default function School() {
                         <ColorDiv className='colour'>
                         </ColorDiv>
                         <P>
-                        സ്കൂൾ നിശ്ചയിക്കുന്ന ഉദ്ഘാടന ദിനത്തിൽ ആവശ്യമായ Inauguration Video ഡിജിറ്റലായി Talrop നൽകുന്നതാണ്. 
+                        സ്കൂൾ നിശ്ചയിക്കുന്ന ഉദ്ഘാടന ദിനത്തിൽ ആവശ്യമായ Inauguration Video ഡിജിറ്റലായി <Mob>Talrop</Mob> നൽകുന്നതാണ്. 
                         </P>
                         <Round className='round'>
                             <img src={certificate} alt='Mobile' />
@@ -62,7 +62,7 @@ export default function School() {
                         <ColorDiv className='colour'>
                         </ColorDiv>
                         <P>
-                        Mobile, Tab, Laptop, Desktop Computer എന്നിവയിൽ ഏതെങ്കിലും ഡിവൈസുകൾ ഉപയോഗിച്ച് Talrop ലഭ്യമാക്കുന്ന Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ കുട്ടികൾക്ക് പഠിക്കുവാൻ സാധിക്കും.                       
+                        Mobile, Tab, Laptop, Desktop Computer എന്നിവയിൽ ഏതെങ്കിലും ഡിവൈസുകൾ ഉപയോഗിച്ച് <Mob>Talrop</Mob> ലഭ്യമാക്കുന്ന Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ കുട്ടികൾക്ക് പഠിക്കുവാൻ സാധിക്കും.                       
                         </P>
                         <Round className='round'>
                             <img src={device} alt='Mobile' />
