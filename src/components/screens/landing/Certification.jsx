@@ -62,12 +62,15 @@ const P = styled.p`
 `
 const Certificate = styled.div`
     position: absolute;
-    top: 0;
-    width: 50%;
-    right: 10%;
-
+    top: -27%;
+    width: 45%;
+    right: 3%;
+    z-index: 1;
 `
 const Arrow = styled.div`
     position: absolute;
-    width: 20%;
+    width: 15%;
+    right: 39%;
+    bottom: -38%;
+    z-index: 2;
 `
