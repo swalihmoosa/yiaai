@@ -1,26 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import storeImage from '../../assets/images/landing/green-and-play.svg'
+import yiaImage from '../../assets/images/landing/mobile-app.png'
+
+
 export default function Platform() {
     return (
         <PlatformSection>
             <Wrapper>
                 <H4>
-
+                    Download Our Mobile App to Make it Easier
                 </H4>
                 <P>
-
+                Tefun-ലൂടെ ടെക്ക്‌നോളജിയുടെ വിസ്മയലോകം ഇനിയിതാ നിങ്ങളിലേക്ക്. ടെക്ക്-പഠനം ഇനി കൂടുതൽ എളുപ്പമാക്കാൻ yia.ai മൊബൈൽ ആപ്പ് ഡൗൺലോഡ് ചെയ്യൂ.
                 </P>
                 <Store>
                     <Play>
-                        <img src='' alt='Play Store' />
+                        <img src={storeImage} alt='Play Store' />
                     </Play>
                     <Play>
-                        <img src='' alt='Play Store' />
+                        <img src={storeImage} alt='Play Store' />
                     </Play>
                 </Store>
                 <Yia>
-                    <img src='' alt='Yia' />
+                    <img src={yiaImage} alt='Yia' />
                 </Yia>
             </Wrapper>
         </PlatformSection>
