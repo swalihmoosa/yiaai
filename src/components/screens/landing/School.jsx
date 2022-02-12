@@ -42,7 +42,7 @@ export default function School() {
                             <img src={scissor} alt='Mobile' />
                         </Round>
                         <Num>
-                            01
+                            02
                         </Num>
                     </Li>
                     <Li>
@@ -55,7 +55,7 @@ export default function School() {
                             <img src={certificate} alt='Mobile' />
                         </Round>
                         <Num>
-                            01
+                            03
                         </Num>
                     </Li>
                     <Li>
@@ -68,7 +68,7 @@ export default function School() {
                             <img src={device} alt='Mobile' />
                         </Round>
                         <Num>
-                            01
+                            04
                         </Num>
                     </Li>
                     <Li>
@@ -81,10 +81,13 @@ export default function School() {
                             <img src={certidicateBlue} alt='Mobile' />
                         </Round>
                         <Num>
-                            01
+                            05
                         </Num>
                     </Li>
                 </Ul>
+                <Register>
+                    Register Now
+                </Register>
             </Wrapper>
         </SchoolSection>
     )
@@ -113,11 +116,12 @@ const Ul = styled.ul`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 5%;
 `
 const Li = styled.li`
     width: 32%;
     position: relative;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
     &:nth-child(4n){
         margin-left: auto;
         margin-right: 4%;
@@ -181,4 +185,26 @@ const Round = styled.div`
     border-radius: 50%;
     padding: 5%;
 `
-const Num = styled.p``
+const Num = styled.p`
+    position: absolute;
+    top: -25%;
+    left: 30%;
+    color: #eaeaea;
+    font-weight: 900;
+    font-size: 80px;
+`
+const Register = styled.button`
+    cursor: pointer;
+    width: 17%;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right,#68ba50,#469aad);
+    margin: 0 auto;
+    &:hover{
+        background-image: linear-gradient(to right,#469aad,#68ba50);
+    }
+`
