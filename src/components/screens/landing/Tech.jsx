@@ -24,6 +24,62 @@ export default function Tech() {
                             Artifical Intelligence
                         </Name>
                     </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
+                    <Li>
+                        <Silubus>
+                            <img src={silubusImage} alt='Silubus' />
+                        </Silubus>
+                        <Name>
+                            Artifical Intelligence
+                        </Name>
+                    </Li>
                 </Ul>
                 <Topic>
                     <img src={topicImage} alt='Topics' />
@@ -35,7 +91,11 @@ export default function Tech() {
 const TechSection =  styled.section`
     padding: 5% 0;
 `
-const Wrapper =  styled.section``
+const Wrapper =  styled.section`
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+`
 const H3 =  styled.h3`
     font-size: 45px;
     font-weight: 700;
@@ -61,7 +121,31 @@ const Ul =  styled.ul`
     margin: 0 auto;
     margin-bottom: 4%;
 `
-const Li =  styled.li``
-const Silubus =  styled.div``
-const Name =  styled.h4``
-const Topic =  styled.div``
+const Li =  styled.li`
+    width: 23%;
+    background: #f9eefb;
+    padding: 2% 2% 4% 2%;
+    border-radius: 25px;
+    margin-bottom: 3%;
+    &:nth-child(2n){
+        background: #e3f4e6;
+    }
+    &:nth-last-child(-n+4){
+        margin-bottom: 0;
+	}
+`
+const Silubus =  styled.div`
+    width: 100%;
+    margin-bottom: 12%;
+`
+const Name =  styled.h4`
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+`
+const Topic =  styled.div`
+    position: absolute;
+    bottom: -12%;
+    right: -4%;
+    width: 19%;
+`
