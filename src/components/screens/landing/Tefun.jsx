@@ -148,6 +148,7 @@ const Li = styled.li`
     position: relative;
     border-radius: 20px;
     margin-bottom: 3%;
+    cursor: pointer;
     &:hover .story{
         opacity: 1;
     }
