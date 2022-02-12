@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import storeImage from '../../assets/images/landing/green-and-play.svg'
 import yiaImage from '../../assets/images/landing/mobile-app.png'
+import lines from '../../assets/images/landing/lines-bg.svg'
 
 
 export default function Platform() {
@@ -30,8 +31,14 @@ export default function Platform() {
         </PlatformSection>
     )
 }
-const PlatformSection = styled.section``
-const Wrapper = styled.section``
+const PlatformSection = styled.section`
+    padding: 5% 0;
+`
+const Wrapper = styled.section`
+    width: 90%;
+    margin: 0 auto;
+    background: url(${lines});
+`
 const H4 = styled.h4``
 const P = styled.p``
 const Store = styled.div``
