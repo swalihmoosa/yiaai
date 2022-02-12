@@ -104,7 +104,7 @@ const Join = styled.div`
     margin: 0 auto;
 `
 const Left = styled.ul`
-    width: 47%;
+    width: 41%;
     position: relative;
     &::before{
         content: "";
@@ -148,7 +148,9 @@ const Round = styled.p`
     padding: 1%;
     background: #fff;
     font-weight: 900;
+    left: -5%;
+    top: 40%;
 `
 const Right = styled.div`
-    width: 47%;
+    width: 50%;
 `
