@@ -6,7 +6,6 @@ import dropImage from '../../assets/images/landing/down-arrow.svg'
 
 export default function Faq() {
     const[selectedId,setSelectedId] = useState("")
-    const[isClicked,setIsClicked] = useState(true)
     const [faqLists,setFaqLists]= useState([
         {
             id:1,
@@ -46,7 +45,7 @@ export default function Faq() {
                     setSelectedId(faqlist.id)
                 }
             }}
-            className={faqlist.id === selectedId && isClicked ? 'active' : '' } >
+            className={faqlist.id === selectedId && 'active'} >
                 <Question key={faqlist.id} >
                     <P>
                         {faqlist.question}
@@ -128,10 +127,6 @@ const Question = styled.div`
 `
 const P = styled.p`
     font-size: 20px;
-`
-const Brand = styled.b`
-    color: #5aa870;
-    font-weight: 900;
 `
 const Drop = styled.div`
     color: #5aa870;
