@@ -5,8 +5,40 @@ import dropImage from '../../assets/images/landing/down-arrow.svg'
 
 
 export default function Faq() {
-    const[click,setClick] = useState(false)
+    const[selectedId,setSelectedId] = useState("")
     const[isClicked,setIsClicked] = useState(false)
+    const [faqLists,setFaqLists]= useState([
+        {
+            id:1,
+            question : "Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?",
+            answer : "LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.",
+        },
+        {
+            id:2,
+            question : "Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?",
+            answer : "LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.",
+        },
+    ])
+
+
+    const faqs = () => {
+        return faqLists.map((faqlist) => (
+            <Li onClick={ ()=> setSelectedId(faqlist.id) } className={faqlist.id === selectedId && 'active' } >
+                <Question key={faqlist.id} >
+                    <P>
+                        {faqlist.question}
+                    </P>
+                    <Drop className='drop' >
+                        <img src={dropImage} alt='Drop-Down' />
+                    </Drop>
+                </Question>
+                <Answer className='answer' >
+                    {faqlist.answer}
+                </Answer>
+            </Li>
+        ));
+    };
+
 
     return (
         <FaqSection>
@@ -18,36 +50,7 @@ export default function Faq() {
                     Asked Questions
                 </Head>
                 <Ul>
-                    <Li onClick={ ()=> { setClick(click=> !click); setIsClicked(clicked => !clicked) } } className={isClicked} >
-                        <Question>
-                            <P>
-                                <Brand>
-                                Tefun
-                                </Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?
-                            </P>
-                            <Drop className={click ? 'dropActive' : ''}  >
-                                <img src={dropImage} alt='Drop-Down' />
-                            </Drop>
-                        </Question>
-                        <Answer className={click ? 'active' : ''} >
-                        LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.
-                        </Answer>
-                    </Li>
-                    <Li onClick={ ()=> { setClick(click=> !click); setIsClicked(clicked => !clicked) } } className={isClicked} >
-                        <Question>
-                            <P>
-                                <Brand>
-                                Tefun
-                                </Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?
-                            </P>
-                            <Drop className={click ? 'dropActive' : ''}  >
-                                <img src={dropImage} alt='Drop-Down' />
-                            </Drop>
-                        </Question>
-                        <Answer className={click ? 'active' : ''} >
-                        LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.
-                        </Answer>
-                    </Li>
+                    {faqs()}
                 </Ul>
             </Wrapper>
         </FaqSection>
@@ -87,10 +90,10 @@ const Li = styled.li`
     &:hover{
         cursor: pointer;
     }
-    &.true .active{
+    &.active .answer{
         display: block;
     }
-    &.true .dropActive{
+    &.active .drop{
         transform: rotate(180deg);
     }
 `
