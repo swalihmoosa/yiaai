@@ -12,6 +12,7 @@ import callImage from '../assets/images/menu/phone.svg'
 
 export default function Header() {
     const[hamBurgerClick,setHarmBurgerClick] = useState(false)
+    
 
   return (
       <HeaderNav>
