@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+
 import logoImage from '../assets/images/logo.svg'
 import hamburgerImage from '../assets/images/hamburg.7b560c07.svg'
+import flagImage from '../assets/images/menu/india-flag.jpeg'
+import arrowImage from '../assets/images/menu/arrow.svg'
+import closeImage from '../assets/images/menu/close.svg'
+import decorator from '../assets/images/menu/decorator.svg'
+import callImage from '../assets/images/menu/phone.svg'
 
 
 export default function Header() {
+    const[hamBurgerClick,setHarmBurgerClick] = useState(false)
+
   return (
       <HeaderNav>
           <Wrapper>
@@ -14,10 +22,50 @@ export default function Header() {
             <JoinButton>
                 Join Now
             </JoinButton>
-            <HamBurger>
+            <HamBurger onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
                 <img src={hamburgerImage} alt="Hamburger" />
             </HamBurger>
           </Wrapper>
+          <MenuBar className={hamBurgerClick ? 'active' : ''} >
+              <White>
+                <H4>
+                Login to your account
+                </H4>
+                <P>
+                Enter your registered phone number
+                </P>
+                <Mob>
+                    <Flag>
+                        <img src={flagImage} alt='Flag' />
+                    </Flag>
+                    <Arrow>
+                        <img src={arrowImage} alt='Arrow' />
+                    </Arrow>
+                    <Form>
+                        <Call>
+                            <img src={callImage} alt='Call' />
+                        </Call>
+                        <Input type="number" placeholder="Enter MObile NUmber" />
+                    </Form>
+                </Mob>
+                <Next>
+                    Next
+                </Next>
+                <New>
+                        New to Yiaai?
+                    <B>
+                            Create an account
+                    </B>
+                </New>
+                <Hr />
+                <Terms>
+                Terms of service
+                </Terms>
+            </White>
+            <Close>
+                <img src={closeImage} alt="Close" />
+            </Close>
+          </MenuBar>
       </HeaderNav>
   )
 }
@@ -57,3 +105,77 @@ const HamBurger = styled.div`
     width: 2%;
     cursor: pointer;
 `
+const MenuBar = styled.div`
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 600px;
+    opacity: 1;
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.4s ease 0s;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &.active{
+        right: 0px;
+        top: 0px;
+    }
+`
+const White = styled.div`
+    background: #fff;
+    background: url(${decorator});
+    background-size: 100%;
+    padding: 33% 15% 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+`
+const H4 = styled.h4`
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 3%;
+`
+const P = styled.p`
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 15%;
+`
+const Mob = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 11%;
+`
+const Flag = styled.div`
+    width: 12%;
+    border-radius: 50%;
+    overflow: hidden;
+`
+const Arrow = styled.div`
+    width: 2%;
+    transform: rotate(90deg);
+`
+const Form = styled.form`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    border: 2px solid #5aa970;
+    border-radius: 13px;
+    padding: 10px 25px;
+`
+const Call = styled.div`
+    width: 7%;
+`
+const Input = styled.input`
+    width: 90%;
+`
+const Next = styled.button``
+const New = styled.p``
+const B = styled.b``
+const Hr = styled.hr``
+const Terms = styled.p``
+const Close = styled.div``
