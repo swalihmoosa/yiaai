@@ -6,6 +6,7 @@ import dropImage from '../../assets/images/landing/down-arrow.svg'
 
 export default function Faq() {
     const[click,setClick] = useState(false)
+    const[isClicked,setIsClicked] = useState(false)
 
     return (
         <FaqSection>
@@ -17,14 +18,14 @@ export default function Faq() {
                     Asked Questions
                 </Head>
                 <Ul>
-                    <Li onClick={ ()=> { setClick(click=> !click) } } className={click ? 'active' : '' } >
+                    <Li onClick={ ()=> { setClick(click=> !click); setIsClicked(clicked => !clicked) } } className={isClicked} >
                         <Question>
                             <P>
                                 <Brand>
                                 Tefun
                                 </Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?
                             </P>
-                            <Drop className={click ? 'active' : ''}  >
+                            <Drop className={click ? 'dropActive' : ''}  >
                                 <img src={dropImage} alt='Drop-Down' />
                             </Drop>
                         </Question>
@@ -32,48 +33,18 @@ export default function Faq() {
                         LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.
                         </Answer>
                     </Li>
-                    <Li>
+                    <Li onClick={ ()=> { setClick(click=> !click); setIsClicked(clicked => !clicked) } } className={isClicked} >
                         <Question>
                             <P>
                                 <Brand>
                                 Tefun
                                 </Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?
                             </P>
-                            <Drop>
+                            <Drop className={click ? 'dropActive' : ''}  >
                                 <img src={dropImage} alt='Drop-Down' />
                             </Drop>
                         </Question>
-                        <Answer>
-                        LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.
-                        </Answer>
-                    </Li>
-                    <Li>
-                        <Question>
-                            <P>
-                                <Brand>
-                                Tefun
-                                </Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?
-                            </P>
-                            <Drop>
-                                <img src={dropImage} alt='Drop-Down' />
-                            </Drop>
-                        </Question>
-                        <Answer>
-                        LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.
-                        </Answer>
-                    </Li>
-                    <Li>
-                        <Question>
-                            <P>
-                                <Brand>
-                                Tefun
-                                </Brand> പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?
-                            </P>
-                            <Drop>
-                                <img src={dropImage} alt='Drop-Down' />
-                            </Drop>
-                        </Question>
-                        <Answer>
+                        <Answer className={click ? 'active' : ''} >
                         LP, UP, HS, HSE, VHSE  സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാവുന്നതാണ്.
                         </Answer>
                     </Li>
@@ -116,6 +87,12 @@ const Li = styled.li`
     &:hover{
         cursor: pointer;
     }
+    &.true .active{
+        display: block;
+    }
+    &.true .dropActive{
+        transform: rotate(180deg);
+    }
 `
 const Question = styled.div`
     display: flex;
@@ -133,15 +110,9 @@ const Brand = styled.b`
 const Drop = styled.div`
     color: #5aa870;
     transition: all 0.3s ease 0s;
-    &.active{
-        transform: rotate(180deg);
-    }
 `
 const Answer = styled.p`
     font-size: 20px;
     display: none;
     transition: all 0.3s ease 0s;
-    &.active{
-        display: block;
-    }
 `
