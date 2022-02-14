@@ -11,7 +11,7 @@ export default function Platform() {
         <PlatformSection>
             <Wrapper>
                 <H4>
-                    Download Our Mobile App to Make it Easier
+                    Download Our Mobile<br /> App to Make it Easier
                 </H4>
                 <P>
                 Tefun-ലൂടെ ടെക്ക്‌നോളജിയുടെ വിസ്മയലോകം ഇനിയിതാ നിങ്ങളിലേക്ക്. ടെക്ക്-പഠനം ഇനി കൂടുതൽ എളുപ്പമാക്കാൻ yia.ai മൊബൈൽ ആപ്പ് ഡൗൺലോഡ് ചെയ്യൂ.
@@ -38,8 +38,17 @@ const Wrapper = styled.section`
     width: 90%;
     margin: 0 auto;
     background: url(${lines});
+    background-color: #f3f9eb;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 5%;
 `
-const H4 = styled.h4``
+const H4 = styled.h4`
+    font-size: 45px;
+    width: 90%;
+    margin-bottom: 35px;
+    font-weight: 900;
+`
 const P = styled.p``
 const Store = styled.div``
 const Play = styled.button``
