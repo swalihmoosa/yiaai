@@ -14,7 +14,7 @@ export default function Platform() {
                     Download Our Mobile<br /> App to Make it Easier
                 </H4>
                 <P>
-                Tefun-ലൂടെ ടെക്ക്‌നോളജിയുടെ വിസ്മയലോകം ഇനിയിതാ നിങ്ങളിലേക്ക്. ടെക്ക്-പഠനം ഇനി കൂടുതൽ എളുപ്പമാക്കാൻ yia.ai മൊബൈൽ ആപ്പ് ഡൗൺലോഡ് ചെയ്യൂ.
+                <Brand>Tefun</Brand>-ലൂടെ ടെക്ക്‌നോളജിയുടെ വിസ്മയലോകം ഇനിയിതാ നിങ്ങളിലേക്ക്. ടെക്ക്-പഠനം ഇനി കൂടുതൽ എളുപ്പമാക്കാൻ <Brand>yia.ai</Brand> മൊബൈൽ ആപ്പ് ഡൗൺലോഡ് ചെയ്യൂ.
                 </P>
                 <Store>
                     <Play>
@@ -42,14 +42,36 @@ const Wrapper = styled.section`
     background-repeat: no-repeat;
     border-radius: 20px;
     padding: 5%;
+    position: relative;
 `
 const H4 = styled.h4`
     font-size: 45px;
-    width: 90%;
-    margin-bottom: 35px;
+    margin-bottom: 3%;
     font-weight: 900;
 `
-const P = styled.p``
-const Store = styled.div``
-const Play = styled.button``
-const Yia = styled.div``
+const P = styled.p`
+    font-size: 25px;
+    margin-bottom: 6%;
+    font-weight: 400;
+    width: 48%;
+    color: #666962;
+`
+const Brand = styled.b`
+    font-weight: 900;
+    color: #5aa870;
+`
+const Store = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+`
+const Play = styled.button`
+    width: 45%;
+`
+const Yia = styled.div`
+    width: 55%;
+    position: absolute;
+    top: -6%;
+    right: 0%;
+
+`

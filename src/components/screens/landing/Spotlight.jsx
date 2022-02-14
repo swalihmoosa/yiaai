@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import lines from '../../assets/images/landing/lines-bg.svg'
 import talropImage from '../../assets/images/landing/640.svg'
 import arrowImage from '../../assets/images/landing/arrow.svg'
 import childImage from '../../assets/images/landing/spot-min.jpeg'
@@ -79,7 +80,9 @@ const SpotlightSection = styled.section`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: #e1e5db;
+    background: url(${lines});
+    background-color: #f3f9eb;
+    background-repeat: no-repeat;
     padding: 5%;
     border-radius: 30px;
     position: relative;

@@ -157,7 +157,7 @@ export default function Campuses() {
 	)
 }
 const CampusSection = styled.section`
-	background: #e1e5db;
+    background-color: #f3f9eb;
 	padding: 5% 0;
 `
 const Wrapper = styled.section`
