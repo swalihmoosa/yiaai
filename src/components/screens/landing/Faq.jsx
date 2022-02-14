@@ -6,7 +6,7 @@ import dropImage from '../../assets/images/landing/down-arrow.svg'
 
 export default function Faq() {
     const[selectedId,setSelectedId] = useState("")
-    const [faqLists,setFaqLists]= useState([
+    const [faqLists]= useState([
         {
             id:1,
             question : "Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാവാൻ സാധിക്കുന്നത് ആർക്കെല്ലാം?",
