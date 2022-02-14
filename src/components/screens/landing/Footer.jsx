@@ -19,7 +19,7 @@ export default function Footer() {
         <FooterSection>
             <Wrapper>
                 <Logo>
-                    <img src={logoImage} alt='Yiaai' />
+                    <img src={logoImage} alt='Yiaai' className='logoImage' />
                 </Logo>
                 <Social>
                     <Media>
@@ -102,10 +102,61 @@ const SocialMedia = styled.img`
 const SocialMediaColor = styled.img`
     display: none;
 `
-const Contact = styled.div``
-const Mob = styled.p``
-const Mail = styled.p``
-const FooterDiv = styled.div``
-const Copy = styled.p``
-const Terms = styled.p``
-const Privacy = styled.p``
+const Contact = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+    align-items: center;
+    margin: 0 auto 3%;
+`
+const Mob = styled.p`
+    font-size: 16px;
+    color: #949494;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+        color: #5aa870
+    }
+`
+const Mail = styled.p`
+    font-size: 16px;
+    color: #949494;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+        color: #5aa870;
+    }
+`
+const FooterDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+`
+const Copy = styled.p`
+    font-size: 16px;
+    color: #949494;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+        color: #5aa870;
+    }
+`
+const Terms = styled.p`
+    font-size: 16px;
+    color: #949494;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+        color: #5aa870;
+    }
+`
+const Privacy = styled.p`
+    font-size: 16px;
+    color: #949494;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+        color: #5aa870;
+    }
+`
