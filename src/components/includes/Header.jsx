@@ -19,7 +19,7 @@ export default function Header() {
             <LogoContainer>
                 <img src={logoImage} alt="Logo" />
             </LogoContainer>
-            <JoinButton>
+            <JoinButton onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
                 Join Now
             </JoinButton>
             <HamBurger onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
@@ -53,8 +53,7 @@ export default function Header() {
                 </Next>
                 <New>
                         New to Yiaai?
-                    <B>
-                            Create an account
+                    <B> Create an account
                     </B>
                 </New>
                 <Hr />
@@ -62,7 +61,7 @@ export default function Header() {
                 Terms of service
                 </Terms>
             </White>
-            <Close>
+            <Close onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
                 <img src={closeImage} alt="Close" />
             </Close>
           </MenuBar>
@@ -107,7 +106,7 @@ const HamBurger = styled.div`
 `
 const MenuBar = styled.div`
     position: fixed;
-    right: 0px;
+    right: -100%;
     top: 0px;
     width: 600px;
     opacity: 1;
@@ -127,7 +126,7 @@ const White = styled.div`
     background: #fff;
     background: url(${decorator});
     background-size: 100%;
-    padding: 33% 15% 0;
+    padding: 50% 15% 0;
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
@@ -173,9 +172,58 @@ const Call = styled.div`
 const Input = styled.input`
     width: 90%;
 `
-const Next = styled.button``
-const New = styled.p``
-const B = styled.b``
-const Hr = styled.hr``
-const Terms = styled.p``
-const Close = styled.div``
+const Next = styled.button`
+    width: 100%;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right,#68ba50,#469aad);
+    margin-bottom: 6%;
+    &:hover{
+        background-image: linear-gradient(to right,#469aad,#68ba50);
+        cursor: pointer;
+    }
+`
+const New = styled.p`
+    margin-bottom: 55%;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+`
+const B = styled.b`
+    font-size: 15px;
+    font-weight: 600;
+    color: #5aa970;
+    &:hover{
+        cursor: pointer;
+    }
+`
+const Hr = styled.hr`
+    width: 100%;
+    border-top: 1px dotted #000;
+    margin-bottom: 8%;
+`
+const Terms = styled.p`
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+    }
+`
+const Close = styled.div`
+    position: absolute;
+    width: 7%;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 2%;
+    left: -9%;
+    top: 2%;
+    &:hover{
+        cursor: pointer;
+    }
+`
