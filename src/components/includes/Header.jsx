@@ -73,6 +73,11 @@ const HeaderNav = styled.header`
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2% 0;
     width: 100%;
+    position: fixed;
+    z-index: 10;
+    box-shadow: rgb(0 0 0 / 3%) 0px 16px 24px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
 `
 const Wrapper = styled.section`
     width:90%;

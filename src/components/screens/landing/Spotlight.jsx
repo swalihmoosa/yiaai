@@ -74,7 +74,8 @@ export default function Spotlight() {
 }
 const Wrapper = styled.section`
     width:90%;
-    margin : 0 auto
+    margin : 0 auto;
+    padding-top: 10%;
 `
 const SpotlightSection = styled.section`
     display: flex;

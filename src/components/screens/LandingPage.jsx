@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Header from '../includes/Header';
 import Campuses from './landing/Campuses';
 import Certification from './landing/Certification';
 import Faq from './landing/Faq';
@@ -16,7 +15,6 @@ import Tefun from './landing/Tefun';
 export default function LandingPage() {
 	return (
 		<>
-			<Header />
 			<Spotlight />
 			<Tefun />
 			<Campuses />
