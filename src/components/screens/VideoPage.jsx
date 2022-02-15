@@ -1,25 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import thumbnailImage from '../assets/images/videoPage/video.png'
+import steypImage from '../assets/images/videoPage/small.svg'
+import tefunImage from '../assets/images/videoPage/1080.svg'
+import arrowImage from '../assets/images/videoPage/down-arrow.svg'
+import playImage from '../assets/images/videoPage/video.png'
+
+
 export default function VideoPage() {
     return (
         <VideoPageSection>
             <Wrapper>
                 <Video>
                     <Thumbnail>
-                        <img src='' alt='Thumbnail' />
+                        <img src={thumbnailImage} alt='Thumbnail' />
                     </Thumbnail>
                     <P>
-
+                        Technology Fundamentals
                     </P>
                     <H4>
-
+                        What is technology?
                     </H4>
                     <Steyp>
-                        <img src='' alt='Steyp' />
+                        <img src={steypImage} alt='Steyp' />
                     </Steyp>
                     <Tefun>
-                        <img src='' alt='Tefun' />
+                        <img src={tefunImage} alt='Tefun' />
                     </Tefun>
                 </Video>
                 <Ul>
@@ -29,12 +36,12 @@ export default function VideoPage() {
 
                             </Intro>
                             <Arrow>
-                                <img src='' alt='Arrow' />
+                                <img src={arrowImage} alt='Arrow' />
                             </Arrow>
                         </Head>
                         <SubHead>
                             <Play>
-                                <img src='' alt='Play' />
+                                <img src={playImage} alt='Play' />
                             </Play>
                             <Question>
 
