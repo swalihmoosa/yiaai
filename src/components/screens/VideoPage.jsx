@@ -101,6 +101,22 @@ export default function VideoPage() {
 
     return (
         <VideoPageSection>
+            
+            <Notify>
+                <Warning>
+                    <img src={warningImage} alt='Warning' />
+                </Warning>
+                <Date>
+                    <H3>
+                        We will notify Your Examination date Soon
+                    </H3>
+                    <Paragraph>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit consequuntur officiis temporibus explicabo iure eaque minus in. 
+                        Odit, deleniti laborum quidem omnis possimus neque placeat recusandae inventore accusantium magnam tempore.
+                    </Paragraph>
+                </Date>
+            </Notify>
+
             <Exam>
                 <Warning>
                     <img src={warningImage} alt='Warning' />
@@ -118,6 +134,7 @@ export default function VideoPage() {
                     Start Now
                 </Start>
             </Exam>
+
             <Wrapper>
                 <Video>
                     <Thumbnail>
@@ -313,11 +330,25 @@ const Exam = styled.div`
     border-radius: 25px;
     margin-bottom: 4%;
 `
+const Notify = styled.div`
+    background : #fdf3eb;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding: 3% 2%;
+    align-items: center;
+    border-radius: 25px;
+    margin-bottom: 4%;
+`
 const Warning = styled.div`
     width: 2%;
 `
 const Description = styled.div`
     width: 80%;
+`
+const Date = styled.div`
+    width: 80%;
+    margin-left: 3%;
 `
 const H3 = styled.h3`
     color: #e4794b;
