@@ -6,6 +6,7 @@ import steypImage from '../assets/images/videoPage/small.svg'
 import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
 import playImage from '../assets/images/videoPage/play-black.svg'
+import tickImage from '../assets/images/videoPage/green-tick.svg'
 
 
 export default function VideoPage() {
@@ -102,12 +103,24 @@ export default function VideoPage() {
                     <Thumbnail>
                         <img src={thumbnailImage} alt='Thumbnail' />
                     </Thumbnail>
-                    <P>
-                        Technology Fundamentals
-                    </P>
-                    <H4>
-                        What is technology?
-                    </H4>
+                    <Tech>
+                        <Fundamentals>
+                            <P>
+                                Technology Fundamentals
+                            </P>
+                            <H4>
+                                What is technology?
+                            </H4>
+                        </Fundamentals>
+                        <Mark>
+                            <Tick>
+                                <img src={tickImage} alt='Tick' />
+                            </Tick>
+                            <Complete>
+                                Mark as Completed
+                            </Complete>
+                        </Mark>
+                    </Tech>
                     <Steyp>
                         <img src={steypImage} alt='Steyp' />
                     </Steyp>
@@ -153,15 +166,20 @@ const H4 = styled.h4`
     font-size: 25px;
     color: #000;
     font-weight: 900;
-    margin-bottom: 2%;
 `
 const Steyp = styled.div`
     width: 100%;
     margin-bottom: 3%;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const Tefun = styled.div`
     width: 100%;
     margin-bottom: 3%;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const Ul = styled.ul`
     width: 26%;
@@ -216,4 +234,36 @@ const Duration = styled.p`
     font-size: 14px;
     font-weight: 700;
     color: #536b70;
+`
+const Tech = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2%;
+`
+const Fundamentals = styled.div`
+    width: 70%;
+`
+const Mark = styled.button`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right,#68ba50,#469aad);
+    &:hover{
+        background-image: linear-gradient(to right,#469aad,#68ba50);
+        cursor: pointer;
+    }
+`
+const Tick = styled.div`
+    width: 12%;
+`
+const Complete = styled.p`
+    width: 88%;
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
 `
