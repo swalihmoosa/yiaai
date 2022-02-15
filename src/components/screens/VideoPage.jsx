@@ -155,6 +155,9 @@ const Thumbnail = styled.div`
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 3%;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const P = styled.p`
     font-size: 15px;
