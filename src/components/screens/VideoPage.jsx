@@ -9,6 +9,7 @@ import playImage from '../assets/images/videoPage/play-black.svg'
 
 
 export default function VideoPage() {
+    const [selectedId,setSelectedId] = useState("")
     const [topicLists]= useState([
         {
             id:1,
@@ -36,11 +37,27 @@ export default function VideoPage() {
                 },
             ],
         },
+        {
+            id:2,
+            heading : "Introduction to Technology",
+            subheads : [
+                {
+                    id : 1,
+                    title : "What is technology?",
+                    durattion : "2:34",
+                },
+                {
+                    id : 2,
+                    title : "What is information technology?",
+                    durattion : "2:34",
+                },
+            ],
+        },
     ])
 
     const renderTopics = () => {
         return topicLists.map((topicList) => (
-            <Li key={topicList.id} >
+            <Li key={topicList.id} onClick = { ()=> { setSelectedId(topicList.id) } } >
                 <Head>
                     <Intro>
                         {topicList.heading}
