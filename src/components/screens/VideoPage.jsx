@@ -14,10 +14,26 @@ export default function VideoPage() {
             id:1,
             heading : "Introduction to Technology",
             subheads : [
-                "What is technology?",
-                "What is information technology?",
-                "Why should we learn technology?",
-                "In which age who can learn technology?"
+                {
+                    id : 1,
+                    title : "What is technology?",
+                    durattion : "2:34",
+                },
+                {
+                    id : 2,
+                    title : "What is information technology?",
+                    durattion : "2:34",
+                },
+                {
+                    id : 3,
+                    title : "Why should we learn technology?",
+                    durattion : "2:34",
+                },
+                {
+                    id : 4,
+                    title : "In which age who can learn technology?",
+                    durattion : "2:34",
+                },
             ],
         },
     ])
@@ -36,15 +52,15 @@ export default function VideoPage() {
 
                 {
                     topicList.subheads.map((subhead) => (
-                        <SubHead key={subhead} >
+                        <SubHead key={subhead.id} >
                             <Play>
                                 <img src={playImage} alt='Play' />
                             </Play>
                             <Question>
-                                sjhghgd
+                                {subhead.title}
                             </Question>
                             <Duration>
-                                
+                                {subhead.durattion}
                             </Duration>
                         </SubHead>
                     ))
@@ -123,14 +139,36 @@ const Tefun = styled.div`
     width: 100%;
     margin-bottom: 3%;
 `
-const Ul = styled.ul``
-const Li = styled.li``
-const Head = styled.div``
-const Intro = styled.p``
-const Arrow = styled.div``
-const SubHead = styled.div``
+const Ul = styled.ul`
+    width: 26%;
+`
+const Li = styled.li`
+    width: 100%;
+`
+const Head = styled.div`
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 4% 6%;
+    width: 100%;
+    margin-bottom: 5%;
+`
+const Intro = styled.p`
+    width: 90%;
+    font-size: 17px;
+    font-weight: 700;
+`
+const Arrow = styled.div`
+    width: 5%;
+`
+const SubHead = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+`
 const Play = styled.div`
-    background: #000;
 `
 const Question = styled.p``
 const Duration = styled.p``
