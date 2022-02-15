@@ -5,7 +5,7 @@ import thumbnailImage from '../assets/images/videoPage/video.png'
 import steypImage from '../assets/images/videoPage/small.svg'
 import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
-import playImage from '../assets/images/videoPage/video.png'
+import playImage from '../assets/images/videoPage/play-circle-white.svg'
 
 
 export default function VideoPage() {
@@ -57,15 +57,46 @@ export default function VideoPage() {
     )
 }
 const VideoPageSection = styled.section`
-    padding-top: 10%;
+    padding: 10% 0 2% 0;
 `
-const Wrapper = styled.section``
-const Video = styled.div``
-const Thumbnail = styled.div``
-const P = styled.p``
-const H4 = styled.h4``
-const Steyp = styled.div``
-const Tefun = styled.div``
+const Wrapper = styled.section`
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+`
+const Video = styled.div`
+    width: 70%;
+    background: #f5f5f5;
+    padding: 2%;
+    border-radius: 20px;
+`
+const Thumbnail = styled.div`
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 3%;
+`
+const P = styled.p`
+    font-size: 15px;
+    color: #15232e7d;
+    font-weight: 900;
+    margin-bottom: 1%;
+`
+const H4 = styled.h4`
+    font-size: 25px;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 2%;
+`
+const Steyp = styled.div`
+    width: 100%;
+    margin-bottom: 3%;
+`
+const Tefun = styled.div`
+    width: 100%;
+    margin-bottom: 3%;
+`
 const Ul = styled.ul``
 const Li = styled.li``
 const Head = styled.div``
