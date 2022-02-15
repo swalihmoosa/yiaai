@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import thumbnailImage from '../assets/images/videoPage/video.png'
@@ -9,6 +9,52 @@ import playImage from '../assets/images/videoPage/play-circle-white.svg'
 
 
 export default function VideoPage() {
+    const [topicLists]= useState([
+        {
+            id:1,
+            heading : "Introduction to Technology",
+            subheads : [
+                "What is technology?",
+                "What is information technology?",
+                "Why should we learn technology?",
+                "In which age who can learn technology?"
+            ],
+        },
+    ])
+
+    const renderTopics = () => {
+        return topicLists.map((topicList) => (
+            <Li key={topicList.id} >
+                <Head>
+                    <Intro>
+                        {topicList.heading}
+                    </Intro>
+                    <Arrow>
+                        <img src={arrowImage} alt='Arrow' />
+                    </Arrow>
+                </Head>
+
+                {
+                    topicList.subheads.map((subhead) => (
+                        <SubHead key={subhead} >
+                            <Play>
+                                <img src={playImage} alt='Play' />
+                            </Play>
+                            <Question>
+                                sjhghgd
+                            </Question>
+                            <Duration>
+                                
+                            </Duration>
+                        </SubHead>
+                    ))
+                }
+
+            </Li>
+        ));
+    };
+
+
     return (
         <VideoPageSection>
             <Wrapper>
@@ -30,27 +76,7 @@ export default function VideoPage() {
                     </Tefun>
                 </Video>
                 <Ul>
-                    <Li>
-                        <Head>
-                            <Intro>
-
-                            </Intro>
-                            <Arrow>
-                                <img src={arrowImage} alt='Arrow' />
-                            </Arrow>
-                        </Head>
-                        <SubHead>
-                            <Play>
-                                <img src={playImage} alt='Play' />
-                            </Play>
-                            <Question>
-
-                            </Question>
-                            <Duration>
-                                
-                            </Duration>
-                        </SubHead>
-                    </Li>
+                    {renderTopics()}
                 </Ul>
             </Wrapper>
         </VideoPageSection>
@@ -103,6 +129,8 @@ const Head = styled.div``
 const Intro = styled.p``
 const Arrow = styled.div``
 const SubHead = styled.div``
-const Play = styled.div``
+const Play = styled.div`
+    background: #000;
+`
 const Question = styled.p``
 const Duration = styled.p``
