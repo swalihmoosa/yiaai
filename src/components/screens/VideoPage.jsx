@@ -57,19 +57,26 @@ export default function VideoPage() {
 
     const renderTopics = () => {
         return topicLists.map((topicList) => (
-            <Li key={topicList.id} onClick = { ()=> { setSelectedId(topicList.id) } } >
+            <Li key={topicList.id} onClick = { ()=> {
+                if(selectedId === topicList.id){
+                    setSelectedId("")
+                }else{
+                    setSelectedId(topicList.id)
+                }
+            }
+            } >
                 <Head>
                     <Intro>
                         {topicList.heading}
                     </Intro>
-                    <Arrow>
+                    <Arrow className={ topicList.id === selectedId && 'arrowActive' } >
                         <img src={arrowImage} alt='Arrow' />
                     </Arrow>
                 </Head>
 
                 {
                     topicList.subheads.map((subhead) => (
-                        <SubHead key={subhead.id} >
+                        <SubHead key={subhead.id} className={ topicList.id === selectedId && 'active' }  >
                             <Play>
                                 <img src={playImage} alt='Play' />
                             </Play>
@@ -161,6 +168,13 @@ const Ul = styled.ul`
 `
 const Li = styled.li`
     width: 100%;
+    cursor: pointer;
+    & .active{
+        display: flex;
+    }
+    & .arrowActive{
+        transform: rotate(180deg);
+    }
 `
 const Head = styled.div`
     background: #f5f5f5;
@@ -178,12 +192,15 @@ const Intro = styled.p`
 `
 const Arrow = styled.div`
     width: 5%;
+    transition: all 0.3s ease 0s;
 `
 const SubHead = styled.div`
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto 3%;
+    display: none;
+    transition: all 0.3s ease 0s;
 `
 const Play = styled.div`
     width: 6%;
