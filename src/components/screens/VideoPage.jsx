@@ -7,6 +7,7 @@ import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
 import playImage from '../assets/images/videoPage/play-black.svg'
 import tickImage from '../assets/images/videoPage/green-tick.svg'
+import warningImage from '../assets/images/videoPage/triangle-exclamation-solid.svg'
 
 
 export default function VideoPage() {
@@ -98,6 +99,23 @@ export default function VideoPage() {
 
     return (
         <VideoPageSection>
+            <Exam>
+                <Warning>
+                    <img src={warningImage} alt='Warning' />
+                </Warning>
+                <Description>
+                    <H3>
+                        Your Examination date Announced
+                    </H3>
+                    <Paragraph>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit consequuntur officiis temporibus explicabo iure eaque minus in. 
+                        Odit, deleniti laborum quidem omnis possimus neque placeat recusandae inventore accusantium magnam tempore.
+                    </Paragraph>
+                </Description>
+                <Start>
+                    Start Now
+                </Start>
+            </Exam>
             <Wrapper>
                 <Video>
                     <Thumbnail>
@@ -143,6 +161,7 @@ const Wrapper = styled.section`
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
 `
 const Video = styled.div`
     width: 70%;
@@ -269,4 +288,49 @@ const Complete = styled.p`
     font-size: 18px;
     font-weight: 900;
     color: #fff;
+`
+const Exam = styled.div`
+    background : #fdf3eb;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 3% 2%;
+    align-items: center;
+    border-radius: 25px;
+    margin-bottom: 4%;
+`
+const Warning = styled.div`
+    width: 2%;
+`
+const Description = styled.div`
+    width: 80%;
+`
+const H3 = styled.h3`
+    color: #e4794b;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 1%;
+`
+const Paragraph = styled.p`
+    color: #aba9a9;
+    font-size: 18px;
+    font-weight: 700;
+`
+const Start = styled.button`
+    cursor: pointer;
+    width: 10%;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 2px solid #e4794b;
+    background: #e4794b;
+    &:hover{
+        background: #fff;
+        color: #e4794b;
+        border: 2px solid #e4794b;
+    }
 `
