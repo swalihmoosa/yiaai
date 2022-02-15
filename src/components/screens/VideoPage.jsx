@@ -12,6 +12,7 @@ import warningImage from '../assets/images/videoPage/triangle-exclamation-solid.
 
 export default function VideoPage() {
     const [selectedId,setSelectedId] = useState("")
+    const [subheadSelectedId,setSubheadSelectedId] = useState(1)
     const [topicLists]= useState([
         {
             id:1,
@@ -59,15 +60,15 @@ export default function VideoPage() {
 
     const renderTopics = () => {
         return topicLists.map((topicList) => (
-            <Li key={topicList.id} onClick = { ()=> {
-                if(selectedId === topicList.id){
-                    setSelectedId("")
-                }else{
-                    setSelectedId(topicList.id)
-                }
-            }
-            } >
-                <Head>
+            <Li key={topicList.id} className={ topicList.id === selectedId && 'active' } >
+                <Head  onClick = { ()=> {
+                    if(selectedId === topicList.id){
+                        setSelectedId("")
+                    }else{
+                        setSelectedId(topicList.id)
+                    }
+                }} 
+                >
                     <Intro>
                         {topicList.heading}
                     </Intro>
@@ -78,7 +79,8 @@ export default function VideoPage() {
 
                 {
                     topicList.subheads.map((subhead) => (
-                        <SubHead key={subhead.id} className={ topicList.id === selectedId && 'active' }  >
+                        <SubHead key={subhead.id} className={ subhead.id === subheadSelectedId && 'subheadActive' } 
+                        onClick={ ()=> { setSubheadSelectedId(subhead.id) } }  >
                             <Play>
                                 <img src={playImage} alt='Play' />
                             </Play>
@@ -209,7 +211,7 @@ const Ul = styled.ul`
 const Li = styled.li`
     width: 100%;
     cursor: pointer;
-    & .active{
+    &.active div {
         display: flex;
     }
     & .arrowActive{
@@ -241,6 +243,17 @@ const SubHead = styled.div`
     margin: 0 auto 3%;
     display: none;
     transition: all 0.3s ease 0s;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 31px;
+    cursor: pointer;
+    border-radius: 9px;
+    &.subheadActive{
+        background-image: linear-gradient(to right,#68ba50,#469aad);
+    }
+    &.subheadActive p{
+        color: #fff;
+    }
 `
 const Play = styled.div`
     width: 6%;
