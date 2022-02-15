@@ -5,7 +5,7 @@ import thumbnailImage from '../assets/images/videoPage/video.png'
 import steypImage from '../assets/images/videoPage/small.svg'
 import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
-import playImage from '../assets/images/videoPage/play-circle-white.svg'
+import playImage from '../assets/images/videoPage/play-black.svg'
 
 
 export default function VideoPage() {
@@ -165,10 +165,21 @@ const Arrow = styled.div`
 const SubHead = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 0 auto 3%;
 `
 const Play = styled.div`
+    width: 6%;
 `
-const Question = styled.p``
-const Duration = styled.p``
+const Question = styled.p`
+    width: 80%;
+    font-size: 15px;
+    font-weight: 700;
+    color: #536b70;
+`
+const Duration = styled.p`
+    width: 5%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #536b70;
+`
