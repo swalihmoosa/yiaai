@@ -18,7 +18,7 @@ import logOutImage from '../assets/images/logout.svg'
 export default function Header() {
     const[hamBurgerClick,setHarmBurgerClick] = useState(false)
     const[useBarClick,setUseBarClick] = useState(false)
-    const[isLOggin,setIsLOggin] = useState(true)
+    const[isLOggin] = useState(true)
     
 
   return (
