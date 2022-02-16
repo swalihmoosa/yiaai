@@ -17,6 +17,7 @@ import logOutImage from '../assets/images/logout.svg'
 
 export default function Header() {
     const[hamBurgerClick,setHarmBurgerClick] = useState(false)
+    const[useBarClick,setUseBarClick] = useState(false)
     const[isLOggin,setIsLOggin] = useState(true)
     
 
@@ -38,7 +39,7 @@ export default function Header() {
             </HamBurger>
             {
                 isLOggin ? 
-                <User>
+                <User onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
                     <Name>
                         Swalih Moosa
                     </Name>
@@ -89,9 +90,10 @@ export default function Header() {
                 <img src={closeImage} alt="Close" />
             </Close>
           </MenuBar>
-          <UserBar>
+
+          <UserBar className={useBarClick ? 'active' : ''}  >
               <Profile>
-                  <LeftArrow>
+                  <LeftArrow onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
                       <img src={leftArrowImage} alt='Arrow' />
                   </LeftArrow>
                   <ProfileDes>
@@ -348,9 +350,12 @@ const UserBar = styled.div`
     height: 100vh;
     position: absolute;
     top: 0px;
-    right: 0px;
-    bottom: 0px;
+    right: -100%;
     transition: all 0.6s ease 0s;
+    &.active{
+        right: 0px;
+        top: 0px;
+    }
 `
 const Profile = styled.div`
     display: flex;
@@ -364,6 +369,7 @@ const Profile = styled.div`
 `
 const LeftArrow = styled.div`
     width: 12%;
+    cursor: pointer;
 `
 const ProfileDes = styled.p`
     width: 80%;
@@ -425,9 +431,13 @@ const LogOut = styled.div`
     align-items: center;
     width: 40%;
     padding: 0 15px;
+    margin-top: 100%;
 `
 const Log = styled.div`
     width: 25%;
 `
 const Out = styled.p`
+    color: #e72b2b;
+    font-size: 16px;
+    font-weight: 700;
 `
