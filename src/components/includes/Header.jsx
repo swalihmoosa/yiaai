@@ -12,6 +12,7 @@ import leftArrowImage from '../assets/images/back.svg'
 import campusImage from '../assets/images/school.svg'
 import classImage from '../assets/images/book.svg'
 import divImage from '../assets/images/cap.svg'
+import logOutImage from '../assets/images/logout.svg'
 
 
 export default function Header() {
@@ -124,10 +125,10 @@ export default function Header() {
                   </School>
                   <SchoolDetail>
                       <Head>
-                          Campus
+                          Class
                       </Head>
                       <Subhead>
-                          Lekshmi Vilasom High School
+                          10
                       </Subhead>
                   </SchoolDetail>
               </Study>
@@ -137,16 +138,16 @@ export default function Header() {
                   </School>
                   <SchoolDetail>
                       <Head>
-                          Campus
+                          Division
                       </Head>
                       <Subhead>
-                          Lekshmi Vilasom High School
+                          A
                       </Subhead>
                   </SchoolDetail>
               </Study>
               <LogOut>
                   <Log>
-                      <img src='' alt='LogOut' />
+                      <img src={logOutImage} alt='LogOut' />
                   </Log>
                   <Out>
                       Log Out
@@ -345,37 +346,88 @@ const UserBar = styled.div`
     border-radius: 8px;
     width: 375px;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     transition: all 0.6s ease 0s;
 `
 const Profile = styled.div`
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 17px 13px 22%;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f7ffe9;
+    margin-bottom: 30%;
 `
 const LeftArrow = styled.div`
+    width: 12%;
 `
 const ProfileDes = styled.p`
+    width: 80%;
+    text-align: center;
+    font-size: 18px;
+    color: #9b9999;
+    font-weight: 700;
 `
 const Details = styled.div`
+    position: absolute;
+    bottom: -50%;
+    right: 25%;
 `
 const FullName = styled.p`
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 3%;
+    text-align: center;
+
 `
 const Mobile = styled.p`
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 3%;
+    text-align: center;
+    color: #5aa970;
 `
 const Study = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 17px 13px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f7ffe9;
+    margin-bottom: 7%;
 `
 const School = styled.div`
+    width: 10%;
 `
 const SchoolDetail = styled.div`
+    width: 80%;
 `
 const Head = styled.p`
+    font-size: 14px;
+    font-weight: 700;
+    color: #808080;
+    margin-bottom: 2%;
+
 `
 const Subhead = styled.p`
+    font-size: 17px;
+    font-weight: 700;
 `
 const LogOut = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    padding: 0 15px;
 `
 const Log = styled.div`
+    width: 25%;
 `
 const Out = styled.p`
 `
