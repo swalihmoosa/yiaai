@@ -49,17 +49,23 @@ export default function FillDetails() {
         </FillDetailsSection>
     )
 }
-const FillDetailsSection = styled.section``
-const Wrapper = styled.section``
-const Details = styled.section``
-const H3 = styled.section``
-const Form = styled.section``
-const Label = styled.section``
-const Campus = styled.section``
-const Classes = styled.section``
-const Class = styled.section``
-const Divisions = styled.section``
-const Div = styled.section``
-const Buttons = styled.section``
-const Back = styled.section``
-const Submit = styled.section``
+const FillDetailsSection = styled.section`
+    padding: 10% 0 0;
+`
+const Wrapper = styled.section`
+    margin: 0 auto;
+    width: 90%;
+    background-color: #e4fdf7;
+`
+const Details = styled.div``
+const H3 = styled.h3``
+const Form = styled.form``
+const Label = styled.label``
+const Campus = styled.input``
+const Classes = styled.select``
+const Class = styled.option``
+const Divisions = styled.select``
+const Div = styled.option``
+const Buttons = styled.div``
+const Back = styled.button``
+const Submit = styled.button``
