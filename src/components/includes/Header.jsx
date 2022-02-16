@@ -12,6 +12,7 @@ import callImage from '../assets/images/menu/phone.svg'
 
 export default function Header() {
     const[hamBurgerClick,setHarmBurgerClick] = useState(false)
+    const[isLOggin,setIsLOggin] = useState(true)
     
 
   return (
@@ -20,13 +21,30 @@ export default function Header() {
             <LogoContainer>
                 <img src={logoImage} alt="Logo" />
             </LogoContainer>
-            <JoinButton onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
-                Join Now
-            </JoinButton>
+            {
+                isLOggin ? '' 
+                :
+                <JoinButton onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
+                    Join Now
+                </JoinButton>
+            }
             <HamBurger onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
                 <img src={hamburgerImage} alt="Hamburger" />
             </HamBurger>
+            {
+                isLOggin ? 
+                <User>
+                    <Name>
+                        Swalih Moosa
+                    </Name>
+                    <DownArrow>
+                        <img src={arrowImage} alt='Arrow' />
+                    </DownArrow>
+                </User>
+                : ''
+            }
           </Wrapper>
+
           <MenuBar className={hamBurgerClick ? 'active' : ''} >
               <White>
                 <H4>
@@ -66,6 +84,9 @@ export default function Header() {
                 <img src={closeImage} alt="Close" />
             </Close>
           </MenuBar>
+          <UserBar>
+              
+          </UserBar>
       </HeaderNav>
   )
 }
@@ -87,7 +108,7 @@ const Wrapper = styled.section`
 `
 const LogoContainer = styled.h1`
     width: 7%;
-    margin-right: 73%;
+    margin-right: 76%;
 `
 const JoinButton = styled.button`
     cursor: pointer;
@@ -232,4 +253,22 @@ const Close = styled.div`
     &:hover{
         cursor: pointer;
     }
+`
+const User = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    width: 9%;
+    align-items: center;
+    cursor: pointer;
+`
+const Name = styled.p`
+    font-size: 17px;
+    font-weight: 700;
+    width: 90%;
+    color: #bfbfbf;
+`
+const DownArrow = styled.div`
+    transform: rotate(90deg);
+    width: 6%;
 `

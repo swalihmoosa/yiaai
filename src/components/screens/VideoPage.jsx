@@ -373,7 +373,7 @@ const Start = styled.button`
     border: 2px solid #e4794b;
     background: #e4794b;
     &:hover{
-        background: #fff;
+        background: transparent;
         color: #e4794b;
         border: 2px solid #e4794b;
     }
