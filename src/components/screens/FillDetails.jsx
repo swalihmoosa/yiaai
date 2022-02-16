@@ -9,6 +9,7 @@ export default function FillDetails() {
                     <H3>
                         Fill Your Details
                     </H3>
+                    <Hr />
                     <Form>
                         <Label>
                             Campus Name / Code *
@@ -56,12 +57,39 @@ const Wrapper = styled.section`
     margin: 0 auto;
     width: 90%;
     background-color: #e4fdf7;
+    padding: 12%;
+    border-radius: 50px;
 `
-const Details = styled.div``
-const H3 = styled.h3``
-const Form = styled.form``
-const Label = styled.label``
-const Campus = styled.input``
+const Details = styled.div`
+    width: 50%;
+    margin: 0 auto;
+    border: 1px dotted #bfbfbf;
+`
+const H3 = styled.h3`
+    padding: 5%;
+    font-size: 20px;
+    font-weight: 700;
+`
+const Hr = styled.hr`
+    border-top: 1px dotted #bfbfbf;
+    margin-bottom: 30px;
+    width: 100%;
+`
+const Form = styled.form`
+    padding: 5%;
+`
+const Label = styled.label`
+    font-size: 16px;
+    font-weight: 700;
+    color: #bfbfbf;
+`
+const Campus = styled.input`
+    width: 100%;
+    border: 2px solid #e3e3e3;
+    padding: 4%;
+    margin: 3% 0;
+    border-radius: 15px;
+`
 const Classes = styled.select``
 const Class = styled.option``
 const Divisions = styled.select``
