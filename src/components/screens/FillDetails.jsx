@@ -1,10 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default function FillDetails() {
     return (
         <FillDetailsSection>
             <Wrapper>
-                <Deails>
+                <Details>
                     <H3>
                         Fill Your Details
                     </H3>
@@ -38,9 +39,27 @@ export default function FillDetails() {
                                 9
                             </Div>
                         </Divisions>
+                        <Buttons>
+                            <Back>Back</Back>
+                            <Submit>Submit</Submit>
+                        </Buttons>
                     </Form>
-                </Deails>
+                </Details>
             </Wrapper>
         </FillDetailsSection>
     )
 }
+const FillDetailsSection = styled.section``
+const Wrapper = styled.section``
+const Details = styled.section``
+const H3 = styled.section``
+const Form = styled.section``
+const Label = styled.section``
+const Campus = styled.section``
+const Classes = styled.section``
+const Class = styled.section``
+const Divisions = styled.section``
+const Div = styled.section``
+const Buttons = styled.section``
+const Back = styled.section``
+const Submit = styled.section``
