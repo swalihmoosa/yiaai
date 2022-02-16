@@ -8,6 +8,10 @@ import arrowImage from '../assets/images/menu/arrow.svg'
 import closeImage from '../assets/images/menu/close.svg'
 import decorator from '../assets/images/menu/decorator.svg'
 import callImage from '../assets/images/menu/phone.svg'
+import leftArrowImage from '../assets/images/back.svg'
+import campusImage from '../assets/images/school.svg'
+import classImage from '../assets/images/book.svg'
+import divImage from '../assets/images/cap.svg'
 
 
 export default function Header() {
@@ -87,7 +91,7 @@ export default function Header() {
           <UserBar>
               <Profile>
                   <LeftArrow>
-                      <img src='' alt='Arrow' />
+                      <img src={leftArrowImage} alt='Arrow' />
                   </LeftArrow>
                   <ProfileDes>
                       Profile
@@ -103,7 +107,7 @@ export default function Header() {
               </Profile>
               <Study>
                   <School>
-                      <img src='' alt='Campus' />
+                      <img src={campusImage} alt='Campus' />
                   </School>
                   <SchoolDetail>
                       <Head>
@@ -116,7 +120,7 @@ export default function Header() {
               </Study>
               <Study>
                   <School>
-                      <img src='' alt='Campus' />
+                      <img src={classImage} alt='Campus' />
                   </School>
                   <SchoolDetail>
                       <Head>
@@ -129,7 +133,7 @@ export default function Header() {
               </Study>
               <Study>
                   <School>
-                      <img src='' alt='Campus' />
+                      <img src={divImage} alt='Campus' />
                   </School>
                   <SchoolDetail>
                       <Head>
