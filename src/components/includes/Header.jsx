@@ -85,7 +85,69 @@ export default function Header() {
             </Close>
           </MenuBar>
           <UserBar>
-              
+              <Profile>
+                  <LeftArrow>
+                      <img src='' alt='Arrow' />
+                  </LeftArrow>
+                  <ProfileDes>
+                      Profile
+                  </ProfileDes>
+                  <Details>
+                      <FullName>
+                          Swalih Moosa
+                      </FullName>
+                      <Mobile>
+                          +91 8129133008
+                      </Mobile>
+                  </Details>
+              </Profile>
+              <Study>
+                  <School>
+                      <img src='' alt='Campus' />
+                  </School>
+                  <SchoolDetail>
+                      <Head>
+                          Campus
+                      </Head>
+                      <Subhead>
+                          Lekshmi Vilasom High School
+                      </Subhead>
+                  </SchoolDetail>
+              </Study>
+              <Study>
+                  <School>
+                      <img src='' alt='Campus' />
+                  </School>
+                  <SchoolDetail>
+                      <Head>
+                          Campus
+                      </Head>
+                      <Subhead>
+                          Lekshmi Vilasom High School
+                      </Subhead>
+                  </SchoolDetail>
+              </Study>
+              <Study>
+                  <School>
+                      <img src='' alt='Campus' />
+                  </School>
+                  <SchoolDetail>
+                      <Head>
+                          Campus
+                      </Head>
+                      <Subhead>
+                          Lekshmi Vilasom High School
+                      </Subhead>
+                  </SchoolDetail>
+              </Study>
+              <LogOut>
+                  <Log>
+                      <img src='' alt='LogOut' />
+                  </Log>
+                  <Out>
+                      Log Out
+                  </Out>
+              </LogOut>
           </UserBar>
       </HeaderNav>
   )
@@ -271,4 +333,45 @@ const Name = styled.p`
 const DownArrow = styled.div`
     transform: rotate(90deg);
     width: 6%;
+`
+const UserBar = styled.div`
+    padding: 22px;
+    background: #fff;
+    box-shadow: rgb(0 0 0 / 14%) -2px 11px 15px;
+    border-radius: 8px;
+    width: 375px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    transition: all 0.6s ease 0s;
+`
+const Profile = styled.div`
+`
+const LeftArrow = styled.div`
+`
+const ProfileDes = styled.p`
+`
+const Details = styled.div`
+`
+const FullName = styled.p`
+`
+const Mobile = styled.p`
+`
+const Study = styled.div`
+`
+const School = styled.div`
+`
+const SchoolDetail = styled.div`
+`
+const Head = styled.p`
+`
+const Subhead = styled.p`
+`
+const LogOut = styled.div`
+`
+const Log = styled.div`
+`
+const Out = styled.p`
 `
