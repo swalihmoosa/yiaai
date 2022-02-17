@@ -12,48 +12,21 @@ export default function ChooseProfile() {
                     <B>Hi,Swalih Moosa</B>Choose your profile from the number
                 </Choose>
                 <Details>
-                    <H3>
-                        Choose Your Profile
-                    </H3>
+                    <Profile>
+                        <H3>
+                            Choose Your Profile
+                        </H3>
+                        <Number>
+                            +91 8129133008
+                        </Number>
+                    </Profile>
                     <Hr />
-                    <Form >
-                        <Label>
-                            Campus Name / Code *
-                        </Label>
-                        <Campus type="text" placeholder="JNE002" />
-                        <Label>
-                            Select Class *
-                        </Label>
-                        <Classes>
-                            <Class>
-                                10
-                            </Class>
-                            <Class>
-                                9
-                            </Class>
-                            <Class>
-                                8
-                            </Class>
-                        </Classes>
-                        <Label>
-                            Select Division *
-                        </Label>
-                        <Divisions>
-                            <Div>
-                                A
-                            </Div>
-                            <Div>
-                                B
-                            </Div>
-                            <Div>
-                                C
-                            </Div>
-                        </Divisions>
+                    <Bottom>
                         <Buttons>
                             <Back>Back</Back>
                             <Submit>Submit</Submit>
                         </Buttons>
-                    </Form>
+                    </Bottom>
                 </Details>
             </Wrapper>
         </FillDetailsSection>
@@ -73,14 +46,22 @@ const Wrapper = styled.section`
     background-position: left top;
     position: relative;
 `
+const Choose = styled.h3`
+`
+const B = styled.b`
+`
 const Details = styled.div`
     width: 50%;
     margin: 0 auto;
     border: 1px dotted #bfbfbf;
     border-radius: 25px;
 `
-const H3 = styled.h3`
+const Profile = styled.div`
     padding: 5%;
+`
+const Number = styled.p`
+`
+const H3 = styled.h3`
     font-size: 20px;
     font-weight: 700;
 `
@@ -89,57 +70,8 @@ const Hr = styled.hr`
     margin-bottom: 30px;
     width: 100%;
 `
-const Form = styled.form`
-    padding: 5% 5% 12%;
-`
-const Label = styled.label`
-    font-size: 16px;
-    font-weight: 700;
-    color: #bfbfbf;
-`
-const Campus = styled.input`
-    width: 100%;
-    border: 2px solid #e3e3e3;
-    padding: 4%;
-    margin: 3% 0;
-    border-radius: 15px;
-    &:focus{
-        border: 2px solid #22c1c3;
-    }
-`
-const Classes = styled.select`
-    width: 100%;
-    border: 2px solid #e3e3e3;
-    padding: 4%;
-    margin: 3% 0;
-    border-radius: 15px;
-    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right transparent;
-    -webkit-appearance: none;
-    background-position-x: 95%;
-    &:focus{
-        border: 2px solid #22c1c3;
-    }
-`
-const Class = styled.option`
-    font-size: 15px;
-    font-weight: 700;
-`
-const Divisions = styled.select`
-    width: 100%;
-    border: 2px solid #e3e3e3;
-    padding: 4%;
-    margin: 3% 0;
-    border-radius: 15px;
-    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right transparent;
-    -webkit-appearance: none;
-    background-position-x: 95%;
-    &:focus{
-        border: 2px solid #22c1c3;
-    }
-`
-const Div = styled.option`
-    font-size: 15px;
-    font-weight: 700;
+const Bottom = styled.div`
+    padding: 5%;
 `
 const Buttons = styled.div`
     display: flex;
