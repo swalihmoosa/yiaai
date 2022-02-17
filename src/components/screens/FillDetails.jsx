@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import bg from '../assets/images/top.svg'
+
 export default function FillDetails() {
     return (
         <FillDetailsSection>
@@ -62,6 +64,9 @@ const Wrapper = styled.section`
     background-color: #e4fdf7;
     padding: 4%;
     border-radius: 50px;
+    background-image: url(${bg});
+    background-repeat: no-repeat;
+    background-position: left top;
 `
 const Details = styled.div`
     width: 50%;
