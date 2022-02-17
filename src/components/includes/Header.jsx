@@ -100,6 +100,9 @@ export default function Header() {
                       Profile
                   </ProfileDes>
                   <Details>
+                      <Letter>
+                          S
+                      </Letter>
                       <FullName>
                           Swalih Moosa
                       </FullName>
@@ -380,8 +383,23 @@ const ProfileDes = styled.p`
 `
 const Details = styled.div`
     position: absolute;
-    bottom: -50%;
+    bottom: -75%;
     right: 25%;
+`
+const Letter = styled.p`
+    margin: 0 auto 10%;
+    text-align: center;
+    background: #5aa970;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 const FullName = styled.p`
     font-size: 20px;
@@ -432,6 +450,9 @@ const LogOut = styled.div`
     width: 40%;
     padding: 0 15px;
     margin-top: 100%;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const Log = styled.div`
     width: 25%;
