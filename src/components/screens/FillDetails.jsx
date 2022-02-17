@@ -39,6 +39,9 @@ export default function FillDetails() {
                             <Div>
                                 B
                             </Div>
+                            <Div>
+                                C
+                            </Div>
                         </Divisions>
                         <Buttons>
                             <Back>Back</Back>
