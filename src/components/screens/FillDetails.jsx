@@ -89,8 +89,20 @@ const Campus = styled.input`
     padding: 4%;
     margin: 3% 0;
     border-radius: 15px;
+    &:focus{
+        border: 2px solid #22c1c3;
+    }
 `
-const Classes = styled.select``
+const Classes = styled.select`
+    width: 100%;
+    border: 2px solid #e3e3e3;
+    padding: 4%;
+    margin: 3% 0;
+    border-radius: 15px;
+    &:focus{
+        border: 2px solid #22c1c3;
+    }
+`
 const Class = styled.option``
 const Divisions = styled.select``
 const Div = styled.option``
