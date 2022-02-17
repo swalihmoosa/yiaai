@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import bg from '../assets/images/top.svg'
+import bg from '../assets/images/details/top.svg'
+import leftImage from '../assets/images/details/activated.svg'
+
 
 export default function FillDetails() {
     return (
@@ -51,6 +53,22 @@ export default function FillDetails() {
                         </Buttons>
                     </Form>
                 </Details>
+                <Welcome>
+                    <Left>
+                        <img src={leftImage} alt='Character' />
+                    </Left>
+                    <Right>
+                        <WelcomeHead>
+                            Welcome
+                        </WelcomeHead>
+                        <Activated>
+                            You're Successfully activated Your Tefun Program
+                        </Activated>
+                        <Goto>
+                            Go to Dashboard
+                        </Goto>
+                    </Right>
+                </Welcome>
             </Wrapper>
         </FillDetailsSection>
     )
@@ -183,3 +201,16 @@ const Submit = styled.button`
         cursor: pointer;
     }
 `
+const Welcome= styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    background: #e4fcf7;
+`
+const Left = styled.div``
+const Right = styled.div``
+const WelcomeHead = styled.h3``
+const Activated = styled.p``
+const Goto = styled.button``

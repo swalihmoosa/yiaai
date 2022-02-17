@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import logoImage from '../assets/images/logo.svg'
-import hamburgerImage from '../assets/images/hamburg.7b560c07.svg'
+import hamburgerImage from '../assets/images/header/hamburg.7b560c07.svg'
 import flagImage from '../assets/images/menu/india-flag.jpeg'
 import arrowImage from '../assets/images/menu/arrow.svg'
 import closeImage from '../assets/images/menu/close.svg'
 import decorator from '../assets/images/menu/decorator.svg'
 import callImage from '../assets/images/menu/phone.svg'
-import leftArrowImage from '../assets/images/back.svg'
-import campusImage from '../assets/images/school.svg'
-import classImage from '../assets/images/book.svg'
-import divImage from '../assets/images/cap.svg'
-import logOutImage from '../assets/images/logout.svg'
+import leftArrowImage from '../assets/images/header/back.svg'
+import campusImage from '../assets/images/header/school.svg'
+import classImage from '../assets/images/header/book.svg'
+import divImage from '../assets/images/header/cap.svg'
+import logOutImage from '../assets/images/header/logout.svg'
 
 
 export default function Header() {
