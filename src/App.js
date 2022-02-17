@@ -1,7 +1,8 @@
 import './App.css';
 
 import Header from './components/includes/Header';
-import FillDetails from './components/screens/FillDetails';
+import ChooseProfile from './components/screens/ChooseProfile';
+// import FillDetails from './components/screens/FillDetails';
 // import VideoPage from './components/screens/VideoPage';
 // import LandingPage from './components/screens/LandingPage';
 
@@ -12,7 +13,8 @@ function App() {
             <Header />
             {/* <LandingPage /> */}
             {/* <VideoPage /> */}
-            <FillDetails />
+            {/* <FillDetails /> */}
+            <ChooseProfile />
         </>
     );
 }
