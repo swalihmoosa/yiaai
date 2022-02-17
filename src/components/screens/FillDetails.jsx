@@ -80,7 +80,7 @@ const Hr = styled.hr`
     width: 100%;
 `
 const Form = styled.form`
-    padding: 5%;
+    padding: 5% 5% 12%;
 `
 const Label = styled.label`
     font-size: 16px;
@@ -135,6 +135,18 @@ const Buttons = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 7%;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        width: 111%;
+        height: 50%;
+        border-left: 2px dotted #5aa870;
+        bottom: -94px;
+        left: -39px;
+        background-image: linear-gradient(to right,#68ba50,#469aad);
+        border-radius: 0 0 25px 25px;
+    }
 `
 const Back = styled.button`
     width: 25%;
