@@ -1,10 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import bg from '../assets/images/profile/top.svg'
+import tickImage from '../assets/images/profile/check-solid.svg'
 
 
 export default function ChooseProfile() {
+    const[selectedUser,setSelectedUser] = useState("")
+    const[usersLists] = useState([
+        {
+            id : 1,
+            name : "Swalih Moosa",
+            college : "LVHS Pothencode"
+        },
+        {
+            id : 2,
+            name : "Adarsh Abu",
+            college : "Jamia Edavanna"
+        },
+    ])
+
+    const renderUsers = () => (
+        usersLists.map((usersList) => (
+            <Account onClick={ ()=> { setSelectedUser(usersList.id) } } >
+                <Single>
+                    {usersList.name.charAt(0)}
+                </Single>
+                <Middle>
+                    <FullName>
+                        {usersList.name}
+                    </FullName>
+                    <School>
+                        {usersList.college}
+                    </School>
+                </Middle>
+                <Tick>
+                    {
+                        usersList.id === selectedUser
+                    }
+                    <img src={tickImage} alt='Tick' />
+                </Tick>
+            </Account>
+        ))
+    )
+
     return (
         <FillDetailsSection>
             <Wrapper>
@@ -22,6 +61,23 @@ export default function ChooseProfile() {
                     </Profile>
                     <Hr />
                     <Bottom>
+                        {renderUsers()}
+                        {/* <Account>
+                            <Single>
+                                S
+                            </Single>
+                            <Middle>
+                                <FullName>
+                                    Swalih Moosa, (10A)
+                                </FullName>
+                                <School>
+                                    LVHS Pothencode
+                                </School>
+                            </Middle>
+                            <Tick>
+                                <img src={tickImage} alt='Tick' />
+                            </Tick>
+                        </Account>
                         <Account>
                             <Single>
                                 S
@@ -35,12 +91,28 @@ export default function ChooseProfile() {
                                 </School>
                             </Middle>
                             <Tick>
-                                <img src='' alt='Tick' />
+                                <img src={tickImage} alt='Tick' />
                             </Tick>
                         </Account>
+                        <Account>
+                            <Single>
+                                S
+                            </Single>
+                            <Middle>
+                                <FullName>
+                                    Swalih Moosa, (10A)
+                                </FullName>
+                                <School>
+                                    LVHS Pothencode
+                                </School>
+                            </Middle>
+                            <Tick>
+                                <img src={tickImage} alt='Tick' />
+                            </Tick>
+                        </Account> */}
                         <Buttons>
-                            <Back>Back</Back>
-                            <Submit>Submit</Submit>
+                            <Back>Not Me</Back>
+                            <Submit>Enroll</Submit>
                         </Buttons>
                     </Bottom>
                 </Details>
@@ -104,7 +176,7 @@ const Hr = styled.hr`
     width: 100%;
 `
 const Bottom = styled.div`
-    padding: 5%;
+    padding: 5% 5% 12%;
 `
 const Buttons = styled.div`
     display: flex;
@@ -128,8 +200,8 @@ const Back = styled.button`
     font-size: 18px;
     font-weight: 900;
     display: block;
-    color: #4f585e;
-    border: 2px solid #dfdfdf;
+    color: #df7d7c;
+    border: 2px solid #df7d7c;
     padding: 20px 30px;
     border-radius: 10px;
     margin-left: auto;
@@ -157,6 +229,11 @@ const Account = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5% 0;
+    border-bottom: 1px solid #e6e6e6;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const Single = styled.p`
     text-align: center;
@@ -183,7 +260,15 @@ const FullName = styled.h5`
 const School = styled.p`
     font-size: 16px;
     font-weight: 700;
-    background: #5aa970;
+    color: #5aa970;
 `
 const Tick = styled.div`
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    background-image: linear-gradient(to bottom,#68ba50,#469aad);
+    & img{
+        filter: invert(1);
+    }
 `
