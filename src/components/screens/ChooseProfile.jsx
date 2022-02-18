@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import bg from '../assets/images/details/top.svg'
+import bg from '../assets/images/profile/top.svg'
 
 
 export default function ChooseProfile() {
@@ -9,7 +9,7 @@ export default function ChooseProfile() {
         <FillDetailsSection>
             <Wrapper>
                 <Choose>
-                    <B>Hi,Swalih Moosa</B>Choose your profile from the number
+                    <B>Hi,Swalih Moosa </B>Choose your profile from the number
                 </Choose>
                 <Details>
                     <Profile>
@@ -17,11 +17,27 @@ export default function ChooseProfile() {
                             Choose Your Profile
                         </H3>
                         <Number>
-                            +91 8129133008
+                            ( +91 8129133008 )
                         </Number>
                     </Profile>
                     <Hr />
                     <Bottom>
+                        <Account>
+                            <Single>
+                                S
+                            </Single>
+                            <Middle>
+                                <FullName>
+                                    Swalih Moosa, (10A)
+                                </FullName>
+                                <School>
+                                    LVHS Pothencode
+                                </School>
+                            </Middle>
+                            <Tick>
+                                <img src='' alt='Tick' />
+                            </Tick>
+                        </Account>
                         <Buttons>
                             <Back>Back</Back>
                             <Submit>Submit</Submit>
@@ -47,8 +63,16 @@ const Wrapper = styled.section`
     position: relative;
 `
 const Choose = styled.h3`
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    width: 35%;
+    margin: 0 auto 3%;
 `
 const B = styled.b`
+    font-size: 32px;
+    font-weight: 700;
+    color: #61b262;
 `
 const Details = styled.div`
     width: 50%;
@@ -58,12 +82,21 @@ const Details = styled.div`
 `
 const Profile = styled.div`
     padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `
 const Number = styled.p`
+    font-size: 17px;
+    font-weight: 700;
+    width: 50%;
+    color: #61b262;
+    text-align: right;
 `
 const H3 = styled.h3`
     font-size: 20px;
     font-weight: 700;
+    width: 50%;
 `
 const Hr = styled.hr`
     border-top: 1px dotted #bfbfbf;
@@ -119,4 +152,38 @@ const Submit = styled.button`
         background-image: linear-gradient(to right,#469aad,#68ba50);
         cursor: pointer;
     }
+`
+const Account = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+const Single = styled.p`
+    text-align: center;
+    background: #5aa970;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const Middle = styled.div`
+    width: 75%;
+    text-align: left;
+`
+const FullName = styled.h5`
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1%;
+`
+const School = styled.p`
+    font-size: 16px;
+    font-weight: 700;
+    background: #5aa970;
+`
+const Tick = styled.div`
 `
