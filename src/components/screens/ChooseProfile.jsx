@@ -18,6 +18,11 @@ export default function ChooseProfile() {
             name : "Adarsh Abu",
             college : "Jamia Edavanna"
         },
+        {
+            id : 3,
+            name : "Hamsa Habbeb",
+            college : "Jamia Edavanna"
+        },
     ])
 
     const renderUsers = () => (
@@ -36,9 +41,8 @@ export default function ChooseProfile() {
                 </Middle>
                 <Tick>
                     {
-                        usersList.id === selectedUser
+                    usersList.id === selectedUser &&  <img src={tickImage} alt='Tick' />
                     }
-                    <img src={tickImage} alt='Tick' />
                 </Tick>
             </Account>
         ))
