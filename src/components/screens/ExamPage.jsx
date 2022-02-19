@@ -6,7 +6,8 @@ import leftImage from '../assets/images/tefun-certificate.svg'
 
 export default function ExamPage() {
     const [ selectedAnswer, setSelectedAnswer ] = useState("");
-    const [ hour, setHour ] = useState(3);
+    const [ examCompleted, setExamCompleted ] = useState(false);
+    const [ hour, setHour ] = useState(0);
     const [ minutes, setMinutes ] = useState(0);
     const [seconds, setSeconds ] =  useState(10);
     const [exams] = useState([
@@ -115,7 +116,7 @@ export default function ExamPage() {
                             Time Remaining
                         </TimeHead>
                         { hour === 0 && minutes === 0 && seconds === 0
-                            ? null
+                            ? setExamCompleted(true)
                             : <Running> {hour}:{minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</Running> 
                         }
                     </Time>
@@ -127,7 +128,7 @@ export default function ExamPage() {
                     </Next>
                 </ExamPaperContainer>
 
-                <WelcomeBg >
+                <WelcomeBg className={ examCompleted ? 'active' : "" } >
                     <Welcome>
                         <Left>
                             <img src={leftImage} alt='Character' />
@@ -330,7 +331,7 @@ const WelcomeBg = styled.section`
     align-items: center;
     backdrop-filter: blur(10px);
     border-radius: 50px;
-    transform: scale(1) translateY(-50%);
+    transform: scale(0) translateY(-60%);
     transition: all 0.6s ease 0s;
     &.active{
         transform: scale(1) translateY(-50%);
