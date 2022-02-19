@@ -78,6 +78,22 @@ export default function ExamPage() {
                         </AnswerList>
                     ))
                 }
+                <Start>
+                    <StartIn>
+                        <Dot>
+
+                        </Dot>
+                        <StartHead>
+                            Start
+                        </StartHead>
+                        <CurrentNum>
+                            01
+                        </CurrentNum>
+                        <NextNum>
+                            02
+                        </NextNum>
+                    </StartIn>
+                </Start>
             </ExamPaper>
         ))
     )
@@ -104,20 +120,6 @@ export default function ExamPage() {
                 </Description>
                 <ExamPaperContainer>
                     {renderExams()}
-                    <Start>
-                        <Dot>
-
-                        </Dot>
-                        <StartHead>
-                            Start
-                        </StartHead>
-                        <CurrentNum>
-                            01
-                        </CurrentNum>
-                        <NextNum>
-
-                        </NextNum>
-                    </Start>
                     <Next>
                         Next
                     </Next>
@@ -156,7 +158,6 @@ const Char = styled.div`
 `
 const Time = styled.div`
     margin-left: auto;
-    position: relative;
 
     &::before{
         position: absolute;
@@ -184,10 +185,10 @@ const ExamPaperContainer = styled.div`
     padding: 3% 2%;
     border-radius: 15px;
     border: 1px solid #bfbfbf;
-    position: relative;
 `
 const ExamPaper = styled.div`
     width: 100%;
+    position: relative;
 `
 const Question = styled.p`
     font-size: 21px;
@@ -247,13 +248,48 @@ const Next = styled.button`
 `
 const Start = styled.div`
     position: absolute;
-    border-left: 2px dotted;
+    border-left: 2px dotted #66b858;
     height: 45%;
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
 `
-const Dot = styled.div``
-const StartHead = styled.p``
-const CurrentNum = styled.p``
-const NextNum = styled.p``
+const StartIn = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+`
+const Dot = styled.div`
+    width: 20px;
+    height: 20px;
+    background: #bfbfbf;
+    border-radius: 50%;
+    position: absolute;
+    left: -12px;
+    top: 6px;
+`
+const StartHead = styled.p`
+    font-size: 20px;
+    color: #bfbfbf;
+    font-weight: 700;
+`
+const CurrentNum = styled.p`
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 35px;
+    color: #66b858;
+    font-weight: 700;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+`
+const NextNum = styled.p`
+    position: absolute;
+    font-size: 20px;
+    color: #bfbfbf;
+    font-weight: 700;
+    left: -13px;
+    top: 100%;
+`
