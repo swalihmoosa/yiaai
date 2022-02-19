@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 
 export default function ExamPage() {
+    const [ selectedAnswer, setSelectedAnswer ] = useState("");
     const [ hour, setHour ] = useState(3);
     const [ minutes, setMinutes ] = useState(0);
     const [seconds, setSeconds ] =  useState(10);
@@ -66,7 +67,8 @@ export default function ExamPage() {
                 </Question>
                 {
                     exam.answers.map((answer)=>(
-                        <AnswerList key={answer} >
+                        <AnswerList key={answer} onClick={ ()=> { setSelectedAnswer(answer.id) } } 
+                        className={ selectedAnswer === answer.id && 'active' } >
                             <IdContainer>
                                 {answer.id}
                             </IdContainer>
@@ -100,7 +102,27 @@ export default function ExamPage() {
                         }
                     </Time>
                 </Description>
-                {renderExams()}
+                <ExamPaperContainer>
+                    {renderExams()}
+                    <Start>
+                        <Dot>
+
+                        </Dot>
+                        <StartHead>
+                            Start
+                        </StartHead>
+                        <CurrentNum>
+                            01
+                        </CurrentNum>
+                        <NextNum>
+
+                        </NextNum>
+                    </Start>
+                    <Next>
+                        Next
+                    </Next>
+                </ExamPaperContainer>
+
             </Wrapper>
         </ExamPageSection>
     )
@@ -156,12 +178,16 @@ const Running = styled.p`
     color: #bfbfbf;
     text-align: center;
 `
-const ExamPaper = styled.div`
+const ExamPaperContainer = styled.div`
     width: 90%;
     margin: 0 auto;
     padding: 3% 2%;
     border-radius: 15px;
     border: 1px solid #bfbfbf;
+    position: relative;
+`
+const ExamPaper = styled.div`
+    width: 100%;
 `
 const Question = styled.p`
     font-size: 21px;
@@ -169,7 +195,7 @@ const Question = styled.p`
     margin: 0 auto 5%;
     color: #8b8b8b;
 `
-const AnswerList = styled.p`
+const AnswerList = styled.div`
     background: #dcf2ff;
     border: 1px solid #d1c3c3;
     width: 75%;
@@ -181,6 +207,9 @@ const AnswerList = styled.p`
     align-items: center;
     &:hover{
         cursor: pointer;
+    }
+    &.active{
+        border: 2px solid #629a9b;
     }
 `
 const IdContainer = styled.p`
@@ -199,3 +228,32 @@ const OptionContainer = styled.p`
     width: 95%;
     text-align: left;
 `
+const Next = styled.button`
+    width: 15%;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #68ba50,#469aad);
+    margin-left: auto;
+    &:hover{
+        transition: all 0.5s ease 0s;
+        background-image: linear-gradient(to right, #469aad,#68ba50);
+        cursor: pointer;
+
+    }
+`
+const Start = styled.div`
+    position: absolute;
+    border-left: 2px dotted;
+    height: 45%;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+`
+const Dot = styled.div``
+const StartHead = styled.p``
+const CurrentNum = styled.p``
+const NextNum = styled.p``
