@@ -37,29 +37,32 @@ export default function ExamPage() {
 
     useEffect(()=>{
         let myInterval = setInterval(() => {
-                if (seconds > 0) {
-                    setSeconds(seconds - 1);
-                }
-                if (seconds === 0) {
-                    if (minutes === 0) {
-                        clearInterval(myInterval)
-                    } else {
-                        setMinutes(minutes - 1);
-                        setSeconds(59);
-                    }
-                }
+            if(seconds===0 && minutes===0 && seconds===0){
+                setExamCompleted(true)
+            }
+            if (seconds > 0) {
+                setSeconds(seconds - 1);
+            }
+            if (seconds === 0) {
                 if (minutes === 0) {
-                    if (hour === 0) {
-                        clearInterval(myInterval)
-                    } else {
-                        setHour(hour - 1);
-                        setMinutes(59);
-                    }
-                } 
-            }, 1000)
-            return ()=> {
-                clearInterval(myInterval);
-            };
+                    clearInterval(myInterval)
+                } else {
+                    setMinutes(minutes - 1);
+                    setSeconds(59);
+                }
+            }
+            if (minutes === 0) {
+                if (hour === 0) {
+                    clearInterval(myInterval)
+                } else {
+                    setHour(hour - 1);
+                    setMinutes(59);
+                }
+            } 
+        }, 1000)
+        return ()=> {
+            clearInterval(myInterval);
+        };
     });
 
     const renderExams = () => (
@@ -115,9 +118,8 @@ export default function ExamPage() {
                         <TimeHead>
                             Time Remaining
                         </TimeHead>
-                        { hour === 0 && minutes === 0 && seconds === 0
-                            ? setExamCompleted(true)
-                            : <Running> {hour}:{minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</Running> 
+                        { 
+                            <Running> {hour}:{minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</Running> 
                         }
                     </Time>
                 </Description>
