@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import arrowImage from '../assets/images/arrow-right-solid.svg'
+
 
 export default function ExamPage() {
 
@@ -88,7 +90,10 @@ export default function ExamPage() {
                 </ExamPaper>
 
                     <Next>
-                        Next
+                        Start Exam Now
+                        <Arrow>
+                            <img src={arrowImage} alt='Arrow' />
+                        </Arrow>
                     </Next>
                 </ExamPaperContainer>
             </Wrapper>
@@ -159,11 +164,17 @@ const ExamPaper = styled.div`
     width: 100%;
     position: relative;
 `
-const Question = styled.p`
-    font-size: 21px;
-    width: 75%;
+const Question = styled.h3`
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700; 
     margin: 0 auto 5%;
-    color: #8b8b8b;
+    color: #000;
+    & b{
+        font-size: 35px;
+        font-weight: 700;
+        color : #66b858;
+    }
 `
 const AnswerList = styled.div`
     width: 50%;
@@ -191,6 +202,7 @@ const BgDot = styled.div`
 const OptionContainer = styled.p`
     width: 95%;
     text-align: left;
+    font-size: 22px;
 `
 const Next = styled.button`
     width: 15%;
@@ -201,12 +213,21 @@ const Next = styled.button`
     padding: 20px 30px;
     border-radius: 10px;
     background-image: linear-gradient(to right, #68ba50,#469aad);
-    margin-left: auto;
+    margin: 4% auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     &:hover{
         transition: all 0.5s ease 0s;
         background-image: linear-gradient(to right, #469aad,#68ba50);
         cursor: pointer;
 
+    }
+`
+const Arrow = styled.div`
+    width: 10%;
+    & img{
+        filter: invert(1);
     }
 `
 const Start = styled.div`
@@ -226,11 +247,11 @@ const StartIn = styled.div`
 const Dot = styled.div`
     width: 20px;
     height: 20px;
-    background: #bfbfbf;
+    background: #66b858;
     border-radius: 50%;
     position: absolute;
     left: -12px;
-    top: 6px;
+    top: 0px;
 `
 const StartHead = styled.p`
     font-weight: 700;
