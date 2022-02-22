@@ -7,6 +7,21 @@ import leftImage from '../assets/images/details/activated.svg'
 
 export default function FillDetails() {
     const[isSubmitted,setIsSubmitted] = useState(false)
+    const[schoolValue,setSchoolValue] = useState('')
+    const[predictions,setPredictions] = useState([])
+    const[schools] = useState([
+        'JNE002 :- Jamia Nadviyya',
+        'JNE003 :- Jamath College edakkara',
+        'JNE004 :- Mila Manjeri',
+        'DNBSC :- Donbosco Mannuthy',
+    ])
+
+    const getPredictions = ()=>(
+        setPredictions(schools.filter(school => school.toLowerCase().indexOf(schoolValue.toLowerCase()) !== -1))
+    )
+
+
+
     return (
         <FillDetailsSection>
             <Wrapper>
@@ -22,7 +37,21 @@ export default function FillDetails() {
                         <Label>
                             Campus Name / Code *
                         </Label>
-                        <Campus type="text" placeholder="JNE002" />
+                        <Campus type="text" placeholder="JNE002" 
+                        onChange={(e)=> {
+                            setSchoolValue(e.target.value)
+                            getPredictions()
+                            // console.log(predictions)
+                        }
+                        } />
+                        <PredictionContainer>
+                            {
+                                predictions.map(prediction=>(
+                                        <Predictions>{prediction}</Predictions>
+                                ))
+                            }
+                        </PredictionContainer>
+                         
                         <Label>
                             Select Class *
                         </Label>
@@ -111,6 +140,7 @@ const Hr = styled.hr`
     width: 100%;
 `
 const Form = styled.form`
+    position: relative;
     padding: 5% 5% 12%;
 `
 const Label = styled.label`
@@ -271,4 +301,21 @@ const Goto = styled.button`
     &:hover{
         cursor: pointer;
     }
+`
+const Predictions = styled.p`
+    border-bottom: 1px solid #e6e6e6;
+    padding: 3%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    color: #68ba50;
+    font-size: 15px;
+    font-weight: 700;
+`
+const PredictionContainer = styled.div`
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 3%) 0px 16px 24px;
+    position: absolute;
+    width: 90%;
+    top: 20%;
 `

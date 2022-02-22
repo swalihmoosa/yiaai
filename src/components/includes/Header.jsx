@@ -34,9 +34,7 @@ export default function Header() {
                     Join Now
                 </JoinButton>
             }
-            <HamBurger onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
-                <img src={hamburgerImage} alt="Hamburger" />
-            </HamBurger>
+
             {
                 isLOggin ? 
                 <User onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
@@ -49,6 +47,10 @@ export default function Header() {
                 </User>
                 : ''
             }
+
+            <HamBurger onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
+                <img src={hamburgerImage} alt="Hamburger" />
+            </HamBurger>
           </Wrapper>
 
           <MenuBar className={hamBurgerClick ? 'active' : ''} >
@@ -329,7 +331,7 @@ const Close = styled.div`
 const User = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-left: 2%;
+    margin-right: 2%;
     width: 9%;
     align-items: center;
     cursor: pointer;
