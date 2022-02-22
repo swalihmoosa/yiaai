@@ -27,14 +27,46 @@ export default function ExamPage() {
 
                 <ExamPaper>
                     <Question >
-                        "kjahsjkdhsjd"
+                        <b>Examination</b> Instructions
                     </Question>
                         <AnswerList>
                             <IdContainer>
-                                "khbsdg"
+                                <BgDot></BgDot>
                             </IdContainer>
                             <OptionContainer>
-                                "jhsgdh"
+                            60 മിനിറ്റ് ആയിരിക്കും എക്സാം ഉണ്ടാകുക
+                            </OptionContainer>
+                        </AnswerList>
+                        <AnswerList>
+                            <IdContainer>
+                                <BgDot></BgDot>
+                            </IdContainer>
+                            <OptionContainer>
+                            എല്ലാ ചോദ്യത്തിനും തെയ്യം എഴുതണം
+                            </OptionContainer>
+                        </AnswerList>
+                        <AnswerList>
+                            <IdContainer>
+                                <BgDot></BgDot>
+                            </IdContainer>
+                            <OptionContainer>
+                            ഓരോ ശരിയുത്തരത്തിനും ഓരോ വിക്കറ്റ് വീതം ലഭിക്കും
+                            </OptionContainer>
+                        </AnswerList>
+                        <AnswerList>
+                            <IdContainer>
+                                <BgDot></BgDot>
+                            </IdContainer>
+                            <OptionContainer>
+                            കോഴ്സ് സർട്ടിഫിക്കറ്റ് നിങ്ങളുടെ സ്കൂളിലേക്ക് എത്തിക്കുന്നത്
+                            </OptionContainer>
+                        </AnswerList>
+                        <AnswerList>
+                            <IdContainer>
+                                <BgDot></BgDot>
+                            </IdContainer>
+                            <OptionContainer>
+                            ഓരോ ശരിയുത്തരത്തിനും ഓരോ വിക്കറ്റ് വീതം ലഭിക്കും
                             </OptionContainer>
                         </AnswerList>
                     <Start>
@@ -134,33 +166,27 @@ const Question = styled.p`
     color: #8b8b8b;
 `
 const AnswerList = styled.div`
-    background: #dcf2ff;
-    border: 1px solid #d1c3c3;
-    width: 75%;
-    margin: 0 auto 2%;
-    padding: 1% 2%;
-    border-radius: 15px;
+    width: 50%;
+    margin: 0 auto 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &:hover{
-        cursor: pointer;
-    }
-    &.active{
-        border: 2px solid #629a9b;
-    }
 `
-const IdContainer = styled.p`
-    width: 30px;
+const IdContainer = styled.div`
+    width: 20px;
     background: #fff;
+    border: 1px solid #66b858;
+    height: 20px;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    border: 2px solid #bfbfbf;
-    height: 30px;
-    border-radius: 5px;
-    font-weight: 700;
+    justify-content: center;
+`
+const BgDot = styled.div`
+    width: 75%;
+    background: #66b858;
+    height: 75%;
+    border-radius: 50%;
 `
 const OptionContainer = styled.p`
     width: 95%;
@@ -207,18 +233,19 @@ const Dot = styled.div`
     top: 6px;
 `
 const StartHead = styled.p`
-    font-size: 20px;
-    color: #bfbfbf;
     font-weight: 700;
+    font-size: 35px;
+    color: #66b858;
+    position: absolute;
+    top: -15px;
 `
 const CurrentNum = styled.p`
     position: absolute;
     background: #fff;
     border-radius: 50%;
-    font-size: 35px;
-    color: #66b858;
-    font-weight: 700;
-    left: -25px;
+    font-size: 20px;
+    color: #bfbfbf;
+    left: -10px;
     top: 50%;
     transform: translateY(-50%);
 `
