@@ -223,6 +223,11 @@ const Next = styled.button`
         cursor: pointer;
 
     }
+    &:hover div{
+        transform: scale(1.5);
+        margin-left: 5px;
+        transition: all 0.5s ease 0s;
+    }
 `
 const Arrow = styled.div`
     width: 10%;
