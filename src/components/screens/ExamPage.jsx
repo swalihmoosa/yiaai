@@ -7,9 +7,9 @@ import leftImage from '../assets/images/tefun-certificate.svg'
 export default function ExamPage() {
     const [ selectedAnswer, setSelectedAnswer ] = useState("");
     const [ examCompleted, setExamCompleted ] = useState(false);
-    const [ hour, setHour ] = useState(0);
-    const [ minutes, setMinutes ] = useState(0);
-    const [seconds, setSeconds ] =  useState(10);
+    const [ hour, setHour ] = useState(1);
+    const [ minutes, setMinutes ] = useState(2);
+    const [seconds, setSeconds ] =  useState(0);
     const [exams] = useState([
         {
             id : 1,
@@ -17,15 +17,15 @@ export default function ExamPage() {
             answers : [
                 {
                     id : "A",
-                    option : "adadsd"
+                    option : "sdjhgd"
                 },
                 {
                     id : "B",
-                    option : "adadsd"
+                    option : "skjh"
                 },
                 {
                     id : "C",
-                    option : "adadsd"
+                    option : "adajhsgdhdsd"
                 },
                 {
                     id : "D",
@@ -35,31 +35,30 @@ export default function ExamPage() {
         }
     ])
 
+
     useEffect(()=>{
         let myInterval = setInterval(() => {
-            if(seconds===0 && minutes===0 && seconds===0){
-                setExamCompleted(true)
-            }
             if (seconds > 0) {
                 setSeconds(seconds - 1);
             }
             if (seconds === 0) {
-                if (minutes === 0) {
-                    clearInterval(myInterval)
-                } else {
-                    setMinutes(minutes - 1);
+                if (minutes > 0) {
+                    setMinutes(minutes-1)
                     setSeconds(59);
+                } if (minutes === 0)  {
+                    if(hour > 0){
+                        setHour(hour - 1)
+                        setMinutes(59);
+                        setSeconds(59);
+                    }
+                    if(hour === 0){
+                        setExamCompleted(true)
+                        clearInterval(myInterval);
+                    }
                 }
             }
-            if (minutes === 0) {
-                if (hour === 0) {
-                    clearInterval(myInterval)
-                } else {
-                    setHour(hour - 1);
-                    setMinutes(59);
-                }
-            } 
         }, 1000)
+
         return ()=> {
             clearInterval(myInterval);
         };
@@ -67,15 +66,15 @@ export default function ExamPage() {
 
     const renderExams = () => (
         exams.map((exam)=>(
-            <ExamPaper>
-                <Question key={exam.id} >
+            <ExamPaper key={exam.id} >
+                <Question >
                     {exam.question}
                 </Question>
                 {
                     exam.answers.map((answer)=>(
-                        <AnswerList key={answer} onClick={ ()=> { setSelectedAnswer(answer.id) } } 
+                        <AnswerList key={answer.id} onClick={ ()=> { setSelectedAnswer(answer.id) } } 
                         className={ selectedAnswer === answer.id && 'active' } >
-                            <IdContainer>
+                            <IdContainer key={answer}>
                                 {answer.id}
                             </IdContainer>
                             <OptionContainer>

@@ -29,6 +29,7 @@ export default function FillDetails() {
     }
 
 
+
     return (
         <FillDetailsSection>
             <Wrapper>
@@ -326,7 +327,8 @@ const Predictions = styled.p`
         cursor: pointer;
     }
     &:last-child{
-        margin-bottom: 0
+        margin-bottom: 0;
+        border: 0;
     }
 `
 const PredictionContainer = styled.div`
