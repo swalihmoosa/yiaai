@@ -44,12 +44,12 @@ const Wrapper = styled.section`
 `
 const Steyp = styled.div`
     width: 50%;
-    margin: 0 auto 5%;
+    margin: 0 auto 3%;
 `
 const Presents = styled.p`
     text-align: center;
     width: 25%;
-    margin: 0 auto 5%;
+    margin: 0 auto 3%;
     color: #fff;
     font-size: 20px;
     font-weight: 700;
@@ -73,8 +73,45 @@ const Presents = styled.p`
         background: #fff;
     }
 `
-const Tefun = styled.div``
-const Description = styled.p``
-const Tech = styled.p``
-const Start = styled.button``
-const Arrow = styled.div``
+const Tefun = styled.div`
+    width: 22%;
+    margin: 0 auto 3%;
+`
+const Description = styled.p`
+    font-size: 45px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+`
+const Tech = styled.p`
+    font-size: 45px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+`
+const Start = styled.button`
+    width: 20%;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 900;
+    display: block;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right,#68ba50,#469aad);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover{
+        background-image: linear-gradient(to right,#469aad,#68ba50);
+        cursor: pointer;
+    }
+`
+const Arrow = styled.div`
+    width: 13%;
+`
