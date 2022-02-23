@@ -9,6 +9,9 @@ export default function FillDetails() {
     const[isSubmitted,setIsSubmitted] = useState(false)
     const[schoolValue,setSchoolValue] = useState('')
     const[predictions,setPredictions] = useState([])
+    const[selectedSchool,setSelectedSchool] = useState('')
+    let textInput = React.createRef(); 
+
     const[schools] = useState([
         'JNE002 :- Jamia Nadviyya',
         'JNE003 :- Jamath College edakkara',
@@ -20,6 +23,10 @@ export default function FillDetails() {
         setPredictions(schools.filter(school => school.toLowerCase().indexOf(schoolValue.toLowerCase()) !== -1))
     )
 
+    const inputOnchange = (e) =>{
+        setSchoolValue(e.target.value)
+        getPredictions()
+    }
 
 
     return (
@@ -38,16 +45,18 @@ export default function FillDetails() {
                             Campus Name / Code *
                         </Label>
                         <Campus type="text" placeholder="JNE002" 
-                        onChange={(e)=> {
-                            setSchoolValue(e.target.value)
-                            getPredictions()
-                            // console.log(predictions)
+                        onChange={e => {
+                            inputOnchange(e)
+                            setSelectedSchool(e.target.value)
+                            }
                         }
-                        } />
+                        ref={textInput}
+                        value = {selectedSchool}
+                        />
                         <PredictionContainer>
                             {
                                 predictions.map(prediction=>(
-                                        <Predictions>{prediction}</Predictions>
+                                        <Predictions onClick={()=>setSelectedSchool(prediction)}>{prediction}</Predictions>
                                 ))
                             }
                         </PredictionContainer>
@@ -303,13 +312,16 @@ const Goto = styled.button`
     }
 `
 const Predictions = styled.p`
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
     padding: 3%;
     border-radius: 20px;
     margin-bottom: 15px;
     color: #68ba50;
     font-size: 15px;
     font-weight: 700;
+    &:hover{
+        cursor: pointer;
+    }
 `
 const PredictionContainer = styled.div`
     background: #fff;
