@@ -56,7 +56,11 @@ export default function FillDetails() {
                         <PredictionContainer>
                             {
                                 predictions.map(prediction=>(
-                                        <Predictions onClick={()=>setSelectedSchool(prediction)}>{prediction}</Predictions>
+                                        <Predictions onClick={()=> {
+                                            setSelectedSchool(prediction)
+                                            setPredictions([])
+                                        }
+                                    } key={prediction} >{prediction}</Predictions>
                                 ))
                             }
                         </PredictionContainer>
@@ -314,13 +318,15 @@ const Goto = styled.button`
 const Predictions = styled.p`
     border-bottom: 2px solid #e6e6e6;
     padding: 3%;
-    border-radius: 20px;
     margin-bottom: 15px;
     color: #68ba50;
     font-size: 15px;
     font-weight: 700;
     &:hover{
         cursor: pointer;
+    }
+    &:last-child{
+        margin-bottom: 0
     }
 `
 const PredictionContainer = styled.div`
