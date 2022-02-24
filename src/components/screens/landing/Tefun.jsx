@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import playImage from '../../assets/images/play-solid.svg'
+import playImage from '../../assets/images/landing/play-solid.svg'
 import person from '../../assets/images/landing/person.jpg'
 
 

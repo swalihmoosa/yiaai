@@ -9,7 +9,7 @@ import playImage from '../../assets/images/landing/grey-and-play.svg'
 import appImage from '../../assets/images/landing/grey-and-play.svg'
 import tefunImage from '../../assets/images/landing/Tefun-logo.svg'
 import background from '../../assets/images/landing/elipse.svg'
-import playButtonImage from '../../assets/images/play-solid.svg'
+import playButtonImage from '../../assets/images/landing/play-solid.svg'
 
 
 export default function Spotlight() {

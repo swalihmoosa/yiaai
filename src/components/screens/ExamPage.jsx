@@ -7,9 +7,9 @@ import leftImage from '../assets/images/tefun-certificate.svg'
 export default function ExamPage() {
     const [ selectedAnswer, setSelectedAnswer ] = useState("");
     const [ examCompleted, setExamCompleted ] = useState(false);
-    const [ hour, setHour ] = useState(1);
-    const [ minutes, setMinutes ] = useState(2);
-    const [seconds, setSeconds ] =  useState(0);
+    const [ hour, setHour ] = useState(0);
+    const [ minutes, setMinutes ] = useState(0);
+    const [seconds, setSeconds ] =  useState(1);
     const [exams] = useState([
         {
             id : 1,

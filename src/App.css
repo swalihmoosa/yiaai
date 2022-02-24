@@ -18,7 +18,7 @@ del {
 	text-decoration: line-through;
 }
 body {
-	font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
+	font-family: "gordita_regular";
 	font-size: 17px;
 	color: #000;
 	overflow-x: hidden;
@@ -26,7 +26,6 @@ body {
 	font-weight: 500;
 }
 input,textarea,select{
-	font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
 	font-weight: 500;
 }
 
@@ -36,7 +35,6 @@ a{
 p{
 	line-height:1.6em;
 	font-size: 16px;
-	font-family: "GT-Eesti", Arial;
 	font-weight: 500;
 	color: #000;
 }
