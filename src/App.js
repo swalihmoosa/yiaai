@@ -1,13 +1,14 @@
 import './App.css';
+import "../src/components/assets/css/video-react.css";
 
 import Header from './components/includes/Header';
-import ExamComplete from './components/screens/ExamComplete';
+// import ExamComplete from './components/screens/ExamComplete';
 // import ExamStart from './components/screens/ExamStart';
 // import ChooseProfile from './components/screens/ChooseProfile';
 // import ExamPage from './components/screens/ExamPage';
 // import LandingSingle from './components/screens/LandingSingle';
 // import FillDetails from './components/screens/FillDetails';
-// import VideoPage from './components/screens/VideoPage';
+import VideoPage from './components/screens/VideoPage';
 // import LandingPage from './components/screens/LandingPage';
 
 
@@ -16,13 +17,13 @@ function App() {
         <> 
             <Header />
             {/* <LandingPage /> */}
-            {/* <VideoPage /> */}
+            <VideoPage />
             {/* <FillDetails /> */}
             {/* <ChooseProfile /> */}
             {/* <ExamStart /> */}
             {/* <ExamPage /> */}
             {/* <LandingSingle /> */}
-            <ExamComplete />
+            {/* <ExamComplete /> */}
         </>
     );
 }

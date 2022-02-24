@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import thumbnailImage from '../assets/images/videoPage/video.png'
+// import thumbnailImage from '../assets/images/videoPage/video.png'
 import steypImage from '../assets/images/videoPage/small.svg'
 import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
 import playImage from '../assets/images/videoPage/play-black.svg'
 import tickImage from '../assets/images/videoPage/green-tick.svg'
 import warningImage from '../assets/images/videoPage/triangle-exclamation-solid.svg'
+
+import { Player } from 'video-react';
 
 
 export default function VideoPage() {
@@ -138,7 +140,12 @@ export default function VideoPage() {
             <Wrapper>
                 <Video>
                     <Thumbnail>
-                        <img src={thumbnailImage} alt='Thumbnail' />
+                        {/* <img src={thumbnailImage} alt='Thumbnail' /> */}
+                        <Player
+                            playsInline
+                            poster="/assets/poster.png"
+                            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                            />
                     </Thumbnail>
                     <Tech>
                         <Fundamentals>
