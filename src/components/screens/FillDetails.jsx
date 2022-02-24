@@ -7,6 +7,7 @@ import leftImage from '../assets/images/details/activated.svg'
 
 export default function FillDetails() {
     const[isSubmitted,setIsSubmitted] = useState(false)
+
     const[schoolValue,setSchoolValue] = useState('')
     const[predictions,setPredictions] = useState([])
     const[selectedSchool,setSelectedSchool] = useState('')

@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import cirtificateImage from '../assets/images/ExamComplete/tefun-certificate.svg'
-import tefunImage from '../assets/images/ExamComplete/tefun-image.svg'
+import tefunImage from '../assets/images/ExamComplete/Tefun-logo.svg'
+import bgRibbonImage from '../assets/images/ExamComplete/bg-ribbon.svg'
+import bgDotImage from '../assets/images/ExamComplete/bg-2.svg'
 
 export default function ExamComplete() {
     return (
@@ -34,9 +36,13 @@ const Wrapper = styled.section`
     width: 95%;
     margin: 0 auto;
     background-color: #e7f6ef;
+    background-image: url(${bgRibbonImage}), url(${bgDotImage});
     padding: 7% 0;
     border-radius: 15px;
     border-bottom: 2px solid #c8d0df;
+    background-repeat: no-repeat,no-repeat;
+    background-position: top left,top right;
+    background-size:100%;
 `
 const Tefun = styled.div`
     width: 10%;
