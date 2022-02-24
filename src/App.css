@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'gorditasbold';
+    src: url('../src//components/assets/fonts/gorditas-bold-webfont.woff2') format('woff2'),
+         url('../src//components/assets/fonts/gorditas-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gorditasregular';
+    src: url('../src//components/assets/fonts/gorditas-regular-webfont.woff2') format('woff2'),
+         url('../src//components/assets/fonts/gorditas-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -18,7 +37,7 @@ del {
 	text-decoration: line-through;
 }
 body {
-	font-family: "gordita_regular";
+    font-family: 'gorditasregular';
 	font-size: 17px;
 	color: #000;
 	overflow-x: hidden;
