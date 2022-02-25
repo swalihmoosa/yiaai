@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import jamia from '../../assets/images/landing/download.png'
 
 
 export default function Campuses() {
+	const[colleges]= useState([
+		{
+			id : 1,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 1,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 1,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 1,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+	])
+
 	return (
 		<CampusSection>
 			<Wrapper>
@@ -16,138 +43,21 @@ export default function Campuses() {
 					dolores ullam ipsum laudantium quos maxime aliquam magni nisi.
 				</P>
 				<Ul>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
-					<Li>
-						<College>
-							<img src={jamia} alt="Jamia" />
-						</College>
-						<Name>
-							Jamia Nadwiyya arts & sports college
-						</Name>
-						<Place>
-							Malappuram
-						</Place>
-					</Li>
+					{
+						colleges.map(college=>(
+							<Li>
+								<College>
+									<img src={college.logo} alt={college.name} />
+								</College>
+								<Name>
+									{college.name}
+								</Name>
+								<Place>
+									{college.place}
+								</Place>
+							</Li>
+						))
+					}
 				</Ul>
 				<More>
 					And <Bold>300</Bold> More Campus All Over Kerala
