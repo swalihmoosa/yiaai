@@ -146,13 +146,14 @@ const Round = styled.p`
     border: 3px solid #519b6f;
     width: 50px;
     height: 50px;
-    text-align: center;
-    align-items: center;
-    padding: 1%;
     background: #fff;
     font-weight: 900;
-    left: -5%;
-    top: 40%;
+    left: -6%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 const Right = styled.div`
     width: 50%;
