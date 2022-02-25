@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import storeImage from '../../assets/images/landing/green-and-play.svg'
+import appImage from '../../assets/images/landing/grey-app-play.svg'
 import yiaImage from '../../assets/images/landing/mobile-app.png'
 import lines from '../../assets/images/landing/lines-bg.svg'
 
@@ -17,11 +18,11 @@ export default function Platform() {
                 <Brand>Tefun</Brand>-ലൂടെ ടെക്ക്‌നോളജിയുടെ വിസ്മയലോകം ഇനിയിതാ നിങ്ങളിലേക്ക്. ടെക്ക്-പഠനം ഇനി കൂടുതൽ എളുപ്പമാക്കാൻ <Brand>yia.ai</Brand> മൊബൈൽ ആപ്പ് ഡൗൺലോഡ് ചെയ്യൂ.
                 </P>
                 <Store>
-                    <Play>
+                    <Play href="https://play.google.com/store/apps/details?id=com.yiaai" target="blank" >
                         <img src={storeImage} alt='Play Store' />
                     </Play>
-                    <Play>
-                        <img src={storeImage} alt='Play Store' />
+                    <Play href="https://apps.apple.com/in/app/yiaai-ott-community-platform/id1609634713" target="blank" >
+                        <img src={appImage} alt='Play Store' />
                     </Play>
                 </Store>
                 <Yia>
@@ -65,8 +66,9 @@ const Store = styled.div`
     justify-content: space-between;
     width: 30%;
 `
-const Play = styled.button`
+const Play = styled.a`
     width: 45%;
+    display: block;
 `
 const Yia = styled.div`
     width: 55%;

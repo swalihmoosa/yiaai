@@ -45,8 +45,9 @@ export default function Faq() {
                     setSelectedId(faqlist.id)
                 }
             }}
-            className={faqlist.id === selectedId && 'active'} >
-                <Question key={faqlist.id} >
+            className={faqlist.id === selectedId && 'active'} 
+            key={faqlist.id} >
+                <Question  >
                     <P>
                         {faqlist.question}
                     </P>

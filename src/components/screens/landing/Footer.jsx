@@ -22,43 +22,43 @@ export default function Footer() {
                     <img src={logoImage} alt='Yiaai' className='logoImage' />
                 </Logo>
                 <Social>
-                    <Media>
+                    <Media href='https://www.instagram.com/talropworld/' target="blank" >
                         <SocialMedia className='socialMedia' src={insta} alt='Social-Media' />
                         <SocialMediaColor className='socialMediaColor' src={instaColor} alt='Social-Media' />
                     </Media>
-                    <Media>
+                    <Media href='https://www.facebook.com/talropworld/' target="blank" >
                         <SocialMedia className='socialMedia' src={facebook} alt='Social-Media' />
                         <SocialMediaColor className='socialMediaColor' src={facebookColor} alt='Social-Media' />
                     </Media>
-                    <Media>
+                    <Media href='https://twitter.com/talropworld/' target="blank" >
                         <SocialMedia className='socialMedia' src={twitter} alt='Social-Media' />
                         <SocialMediaColor className='socialMediaColor' src={twitterColor} alt='Social-Media' />
                     </Media>
-                    <Media>
+                    <Media href='https://www.linkedin.com/company/talrop/' target="blank" >
                         <SocialMedia className='socialMedia' src={linkedIn} alt='Social-Media' />
                         <SocialMediaColor className='socialMediaColor' src={linkedInColor} alt='Social-Media' />
                     </Media>
-                    <Media>
+                    <Media href='https://www.youtube.com/c/talrop' target="blank" >
                         <SocialMedia className='socialMedia' src={youTube} alt='Social-Media' />
                         <SocialMediaColor className='socialMediaColor' src={youTubeColor} alt='Social-Media' />
                     </Media>
                 </Social>
                 <Contact>
-                    <Mob>
+                    <Mob href="https://wa.me/+918589998744" target="blank" >
                     +91 858 999 8744
                     </Mob>
-                    <Mail>
+                    <Mail href='mailto:yiaai@talrop.com' target="blank" >
                     yiaai@talrop.com
                     </Mail>
                 </Contact>
                 <FooterDiv>
-                    <Copy>
+                    <Copy href="https://talrop.com/" target="_blank">
                     &copy; 2022, Talrop Private Limited
                     </Copy>
-                    <Terms>
+                    <Terms href="https://yia.ai/tos/" target="blank" >
                         Terms of service
                     </Terms>
-                    <Privacy>
+                    <Privacy href="https://yia.ai/privacy-policy/" target="blank" >
                     Privacy Policy
                     </Privacy>
                 </FooterDiv>
@@ -79,16 +79,17 @@ const Logo = styled.div`
     margin: 0 auto 3%;
     cursor: pointer;
 `
-const Social = styled.ul`
+const Social = styled.div`
     display: flex;
     justify-content: space-between;
     width: 16%;
     margin: 0 auto 3%;
 `
-const Media = styled.li`
+const Media = styled.a`
     width: 18%;
     height: 20px;
     cursor: pointer;
+    display: block;
     &:hover .socialMedia{
         display: none;
     }
@@ -109,19 +110,21 @@ const Contact = styled.div`
     align-items: center;
     margin: 0 auto 3%;
 `
-const Mob = styled.p`
+const Mob = styled.a`
     font-size: 16px;
     color: #949494;
     font-weight: 700;
+    display: block;
     &:hover{
         cursor: pointer;
         color: #5aa870
     }
 `
-const Mail = styled.p`
+const Mail = styled.a`
     font-size: 16px;
     color: #949494;
     font-weight: 700;
+    display: block;
     &:hover{
         cursor: pointer;
         color: #5aa870;
@@ -133,28 +136,31 @@ const FooterDiv = styled.div`
     width: 40%;
     margin: 0 auto;
 `
-const Copy = styled.p`
+const Copy = styled.a`
     font-size: 16px;
     color: #949494;
     font-weight: 700;
+    display: block;
     &:hover{
         cursor: pointer;
         color: #5aa870;
     }
 `
-const Terms = styled.p`
+const Terms = styled.a`
     font-size: 16px;
     color: #949494;
     font-weight: 700;
+    display: block;
     &:hover{
         cursor: pointer;
         color: #5aa870;
     }
 `
-const Privacy = styled.p`
+const Privacy = styled.a`
     font-size: 16px;
     color: #949494;
     font-weight: 700;
+    display: block;
     &:hover{
         cursor: pointer;
         color: #5aa870;
