@@ -12,19 +12,19 @@ export default function Campuses() {
 			place : "Malappuram",
 		},
 		{
-			id : 1,
+			id : 2,
 			logo : jamia,
 			name : "Jamia Nadwiyya arts & sports college",
 			place : "Malappuram",
 		},
 		{
-			id : 1,
+			id : 3,
 			logo : jamia,
 			name : "Jamia Nadwiyya arts & sports college",
 			place : "Malappuram",
 		},
 		{
-			id : 1,
+			id : 4,
 			logo : jamia,
 			name : "Jamia Nadwiyya arts & sports college",
 			place : "Malappuram",
@@ -45,7 +45,7 @@ export default function Campuses() {
 				<Ul>
 					{
 						colleges.map(college=>(
-							<Li>
+							<Li key={college.id} >
 								<College>
 									<img src={college.logo} alt={college.name} />
 								</College>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import silubusImage from '../../assets/images/landing/ai.jpg'
@@ -6,6 +6,49 @@ import topicImage from '../../assets/images/landing/card.svg'
 
 
 export default function Tech() {
+    const[silubuses] = useState([
+        {
+            id : 1,
+            name : "Artificial Intelligence",
+            image : silubusImage,
+        },
+        {
+            id : 2,
+            name : "Robotics",
+            image : silubusImage,
+        },
+        {
+            id : 3,
+            name : "Web 3.0",
+            image : silubusImage,
+        },
+        {
+            id : 4,
+            name : "Artificial Intelligence",
+            image : silubusImage,
+        },
+        {
+            id : 5,
+            name : "Robotics",
+            image : silubusImage,
+        },
+        {
+            id : 6,
+            name : "Web 3.0",
+            image : silubusImage,
+        },
+        {
+            id : 7,
+            name : "Artificial Intelligence",
+            image : silubusImage,
+        },
+        {
+            id : 8,
+            name : "Robotics",
+            image : silubusImage,
+        },
+    ])
+
     return (
         <TechSection>
             <Wrapper>
@@ -16,70 +59,18 @@ export default function Tech() {
                 ടെക് പഠനം വേറിട്ടതും, ക്രിയാത്മകവുമാക്കാൻ ടാൽറോപ് മുന്നോട്ട് വയ്ക്കുന്ന <br />സിലബസുകൾ പരിചയപ്പെടാം 
                 </P>
                 <Ul>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
-                    <Li>
-                        <Silubus>
-                            <img src={silubusImage} alt='Silubus' />
-                        </Silubus>
-                        <Name>
-                            Artifical Intelligence
-                        </Name>
-                    </Li>
+                    {
+                        silubuses.map(silubus=>(
+                            <Li key={silubus.id} >
+                                <Silubus>
+                                    <img src={silubus.image} alt={silubus.name} />
+                                </Silubus>
+                                <Name>
+                                    {silubus.name}
+                                </Name>
+                            </Li>
+                        ))
+                    }
                 </Ul>
                 <Topic>
                     <img src={topicImage} alt='Topics' />
