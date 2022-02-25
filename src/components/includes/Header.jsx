@@ -24,8 +24,6 @@ export default function Header() {
     const hamBurgerClick = useContext(JoinContext);
     const {updatehamBurgerClick} = useContext(JoinContext)
 
-    console.log(hamBurgerClick);
-
 
     return (
         <HeaderNav>
