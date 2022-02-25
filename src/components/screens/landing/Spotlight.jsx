@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import lines from '../../assets/images/landing/lines-bg.svg'
@@ -11,8 +11,14 @@ import tefunImage from '../../assets/images/landing/Tefun-logo.svg'
 import background from '../../assets/images/landing/elipse.svg'
 import playButtonImage from '../../assets/images/landing/play-solid.svg'
 
+import { JoinContext } from '../../../App'
+
 
 export default function Spotlight() {
+    // const hamBurgerClick = useContext(JoinContext);
+    const {updatehamBurgerClick} = useContext(JoinContext)
+
+
     return (
         <Wrapper>
             <SpotlightSection>
@@ -34,7 +40,7 @@ export default function Spotlight() {
                         <img src={talropImage} alt="Talrop" />
                     </Talrop>
                     <ButtonDiv>
-                        <Join>
+                        <Join onClick={()=> updatehamBurgerClick() } >
                             Join Now
                         </Join>
                         <Register>

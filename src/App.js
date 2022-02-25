@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import "../src/components/assets/css/video-react.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -12,21 +13,33 @@ import FillDetails from './components/screens/FillDetails';
 import VideoPage from './components/screens/VideoPage';
 import LandingPage from './components/screens/LandingPage';
 
+export const JoinContext = React.createContext();
+
 
 function App() {
+    const[hamBurgerClick,setHarmBurgerClick] = useState(false)
+
+    const updatehamBurgerClick = () =>{
+        setHarmBurgerClick(hamBurgerClick=> !hamBurgerClick);
+    }
+
+
     return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/" element={<LandingPage />}/>
-                <Route path="/fill-details/" element={<FillDetails />}/>
-                <Route path="/choose-profile/" element={<ChooseProfile />}/>
-                <Route path="/exam-start/" element={<ExamStart />}/>
-                <Route path="/exam-page/" element={<ExamPage />}/>
-                <Route path="/exam-complete/" element={<ExamComplete />}/>
-                <Route path="/video-page/" element={<VideoPage />}/>
-            </Routes>
-        </Router>
+        <JoinContext.Provider value={{hamBurgerClick, updatehamBurgerClick}} >
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<LandingPage />} hamBurgerClick={hamBurgerClick} />
+                    <Route path="/fill-details/" element={<FillDetails />}/>
+                    <Route path="/choose-profile/" element={<ChooseProfile />}/>
+                    <Route path="/exam-start/" element={<ExamStart />}/>
+                    <Route path="/exam-page/" element={<ExamPage />}/>
+                    <Route path="/exam-complete/" element={<ExamComplete />}/>
+                    <Route path="/video-page/" element={<VideoPage />}/>
+                </Routes>
+            </Router>
+        </JoinContext.Provider>
+
     );
 }
 export default App;

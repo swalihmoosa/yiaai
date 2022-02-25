@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
 import logoImage from '../assets/images/logo.svg'
@@ -14,26 +14,25 @@ import classImage from '../assets/images/header/book.svg'
 import divImage from '../assets/images/header/cap.svg'
 import logOutImage from '../assets/images/header/logout.svg'
 
+import { JoinContext } from '../../App'
+
 
 export default function Header() {
-    const[hamBurgerClick,setHarmBurgerClick] = useState(false)
     const[useBarClick,setUseBarClick] = useState(false)
-    const[isLOggin] = useState(true)
-    
+    const[isLOggin] = useState(false)
 
-  return (
-      <HeaderNav>
-          <Wrapper>
+    const hamBurgerClick = useContext(JoinContext);
+    const {updatehamBurgerClick} = useContext(JoinContext)
+
+    console.log(hamBurgerClick);
+
+
+    return (
+        <HeaderNav>
+            <Wrapper>
             <LogoContainer>
                 <img src={logoImage} alt="Logo" />
             </LogoContainer>
-            {
-                isLOggin ? '' 
-                :
-                <JoinButton onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
-                    Join Now
-                </JoinButton>
-            }
 
             {
                 isLOggin ? 
@@ -45,16 +44,19 @@ export default function Header() {
                         <img src={arrowImage} alt='Arrow' />
                     </DownArrow>
                 </User>
-                : ''
+                : 
+                <JoinButton onClick={()=> updatehamBurgerClick() } >
+                    Join Now
+                </JoinButton>
             }
 
-            <HamBurger onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
+            <HamBurger onClick={()=> updatehamBurgerClick() }  >
                 <img src={hamburgerImage} alt="Hamburger" />
             </HamBurger>
-          </Wrapper>
+            </Wrapper>
 
-          <MenuBar className={hamBurgerClick ? 'active' : ''} >
-              <White>
+            <MenuBar className={hamBurgerClick.hamBurgerClick ? 'active' : ''} >
+                <White>
                 <H4>
                 Login to your account
                 </H4>
@@ -88,81 +90,81 @@ export default function Header() {
                 Terms of service
                 </Terms>
             </White>
-            <Close onClick={ ()=> { setHarmBurgerClick( hamBurgerClick => !hamBurgerClick ) } } >
+            <Close onClick={()=> updatehamBurgerClick() } >
                 <img src={closeImage} alt="Close" />
             </Close>
-          </MenuBar>
+            </MenuBar>
 
-          <UserBar className={useBarClick ? 'active' : ''}  >
-              <Profile>
-                  <LeftArrow onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
-                      <img src={leftArrowImage} alt='Arrow' />
-                  </LeftArrow>
-                  <ProfileDes>
-                      Profile
-                  </ProfileDes>
-                  <Details>
-                      <Letter>
-                          S
-                      </Letter>
-                      <FullName>
-                          Swalih Moosa
-                      </FullName>
-                      <Mobile>
-                          +91 8129133008
-                      </Mobile>
-                  </Details>
-              </Profile>
-              <Study>
-                  <School>
-                      <img src={campusImage} alt='Campus' />
-                  </School>
-                  <SchoolDetail>
-                      <Head>
-                          Campus
-                      </Head>
-                      <Subhead>
-                          Lekshmi Vilasom High School
-                      </Subhead>
-                  </SchoolDetail>
-              </Study>
-              <Study>
-                  <School>
-                      <img src={classImage} alt='Campus' />
-                  </School>
-                  <SchoolDetail>
-                      <Head>
-                          Class
-                      </Head>
-                      <Subhead>
-                          10
-                      </Subhead>
-                  </SchoolDetail>
-              </Study>
-              <Study>
-                  <School>
-                      <img src={divImage} alt='Campus' />
-                  </School>
-                  <SchoolDetail>
-                      <Head>
-                          Division
-                      </Head>
-                      <Subhead>
-                          A
-                      </Subhead>
-                  </SchoolDetail>
-              </Study>
-              <LogOut>
-                  <Log>
-                      <img src={logOutImage} alt='LogOut' />
-                  </Log>
-                  <Out>
-                      Log Out
-                  </Out>
-              </LogOut>
-          </UserBar>
-      </HeaderNav>
-  )
+            <UserBar className={useBarClick ? 'active' : ''}  >
+                <Profile>
+                    <LeftArrow onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
+                        <img src={leftArrowImage} alt='Arrow' />
+                    </LeftArrow>
+                    <ProfileDes>
+                        Profile
+                    </ProfileDes>
+                    <Details>
+                        <Letter>
+                            S
+                        </Letter>
+                        <FullName>
+                            Swalih Moosa
+                        </FullName>
+                        <Mobile>
+                            +91 8129133008
+                        </Mobile>
+                    </Details>
+                </Profile>
+                <Study>
+                    <School>
+                        <img src={campusImage} alt='Campus' />
+                    </School>
+                    <SchoolDetail>
+                        <Head>
+                            Campus
+                        </Head>
+                        <Subhead>
+                            Lekshmi Vilasom High School
+                        </Subhead>
+                    </SchoolDetail>
+                </Study>
+                <Study>
+                    <School>
+                        <img src={classImage} alt='Campus' />
+                    </School>
+                    <SchoolDetail>
+                        <Head>
+                            Class
+                        </Head>
+                        <Subhead>
+                            10
+                        </Subhead>
+                    </SchoolDetail>
+                </Study>
+                <Study>
+                    <School>
+                        <img src={divImage} alt='Campus' />
+                    </School>
+                    <SchoolDetail>
+                        <Head>
+                            Division
+                        </Head>
+                        <Subhead>
+                            A
+                        </Subhead>
+                    </SchoolDetail>
+                </Study>
+                <LogOut>
+                    <Log>
+                        <img src={logOutImage} alt='LogOut' />
+                    </Log>
+                    <Out>
+                        Log Out
+                    </Out>
+                </LogOut>
+            </UserBar>
+        </HeaderNav>
+    )
 }
 const HeaderNav = styled.header`
     background-color: rgba(255, 255, 255, 0.3);

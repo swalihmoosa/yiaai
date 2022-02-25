@@ -13,6 +13,7 @@ import Tefun from './landing/Tefun';
 
 
 export default function LandingPage() {
+
 	return (
 		<>
 			<Spotlight />
