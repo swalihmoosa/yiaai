@@ -6,7 +6,7 @@ import talropImage from '../../assets/images/landing/640.svg'
 import arrowImage from '../../assets/images/landing/arrow.svg'
 import childImage from '../../assets/images/landing/spot-min.jpeg'
 import playImage from '../../assets/images/landing/grey-and-play.svg'
-import appImage from '../../assets/images/landing/grey-and-play.svg'
+import appImage from '../../assets/images/landing/grey-app-play.svg'
 import tefunImage from '../../assets/images/landing/Tefun-logo.svg'
 import background from '../../assets/images/landing/elipse.svg'
 import playButtonImage from '../../assets/images/landing/play-solid.svg'
@@ -30,7 +30,7 @@ export default function Spotlight() {
                     ഇത് <B>Industry 4.0</B> കാലഘട്ടം, ടെക്ക്‌നോളജിയുടെ പുത്തൻ സാധ്യതകൾ ഇനി നമ്മുടെ കുട്ടികൾ അറിയണം. സ്കൂൾ വിദ്യാർത്ഥികൾക്ക് ടെക്ക്നോളജിയെ തൊട്ടറിയുവാനും, 
                     ടെക്ക്-സാക്ഷരത ഉറപ്പുവരുത്തുന്നതിനുമുള്ള സൗജന്യാവസരം ഒരുക്കുകയാണ് <B>Talrop.</B>
                     </Subhead>
-                    <Talrop>
+                    <Talrop href="https://talrop.com/" target="blank" >
                         <img src={talropImage} alt="Talrop" />
                     </Talrop>
                     <ButtonDiv>
@@ -54,10 +54,10 @@ export default function Spotlight() {
                         <img src={childImage} alt='Child' />
                     </Child>
                     <Store>
-                        <Play>
+                        <Play href="https://play.google.com/store/apps/details?id=com.yiaai" target="blank">
                             <img src={playImage} alt='Playstore' />
                         </Play>
-                        <App>
+                        <App href="https://apps.apple.com/in/app/yiaai-ott-community-platform/id1609634713" target="blank">
                             <img src={appImage} alt='Playstore' />
                         </App>
                     </Store>
@@ -131,8 +131,9 @@ const B = styled.b`
     color: #636560;
     font-weight: 900;
 `
-const Talrop = styled.div`
+const Talrop = styled.a`
     width: 75%;
+    display: block;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 3%;
@@ -204,12 +205,14 @@ const Store = styled.div`
     width:100%;
     display: flex;
 `
-const Play = styled.button`
+const Play = styled.a`
+    display: block;
     margin-left: auto;
     margin-right: 20px;
     width: 25%;
 `
-const App = styled.button`
+const App = styled.a`
+    display: block;
     margin-right: 0; 
     margin-left: 0;
     width: 25%;

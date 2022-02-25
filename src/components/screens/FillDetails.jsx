@@ -55,6 +55,11 @@ export default function FillDetails() {
                         ref={textInput}
                         value = {selectedSchool}
                         />
+                        {/* {
+                            selectedSchool !== schools.map && <p>not in program</p>
+                            ['joe', 'jane', 'mary'].includes('jane') 
+                            ? <p>not in program</p>
+                        } */}
                         <PredictionContainer>
                             {
                                 predictions.map(prediction=>(
