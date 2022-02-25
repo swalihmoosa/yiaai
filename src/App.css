@@ -1,21 +1,11 @@
-@font-face {
-    font-family: 'gorditasbold';
-    src: url('../src//components/assets/fonts/gorditas-bold-webfont.woff2') format('woff2'),
-         url('../src//components/assets/fonts/gorditas-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @font-face {
-    font-family: 'gorditasregular';
-    src: url('../src//components/assets/fonts/gorditas-regular-webfont.woff2') format('woff2'),
-         url('../src//components/assets/fonts/gorditas-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+    font-family: 'GT-Eesti';
+    src: url("./components/assets/fonts//GT-Eesti-Pro-Text-Regular.woff2") format("woff2");
+    src: url("./components/assets/fonts/GT-Eesti-Pro-Text-Regular.woff") format("woff");
+    font-weight: 500;
+    font-style: normal
 }
-
 
 * {
 	margin: 0;
@@ -37,7 +27,7 @@ del {
 	text-decoration: line-through;
 }
 body {
-    font-family: 'gorditasregular';
+    font-family: 'GT-Eesti';
 	font-size: 17px;
 	color: #000;
 	overflow-x: hidden;
@@ -46,16 +36,19 @@ body {
 }
 input,textarea,select{
 	font-weight: 500;
+    font-family: 'GT-Eesti';
 }
 
 a{
 	color: #000;
+    font-family: 'GT-Eesti';
 }
 p{
 	line-height:1.6em;
 	font-size: 16px;
 	font-weight: 500;
 	color: #000;
+    font-family: 'GT-Eesti';
 }
 .wrapper {
 	width: 90%;
@@ -71,4 +64,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+button{
+    font-family: 'GT-Eesti';
 }

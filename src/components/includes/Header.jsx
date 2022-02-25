@@ -72,7 +72,7 @@ export default function Header() {
                         <Call>
                             <img src={callImage} alt='Call' />
                         </Call>
-                        <Input type="number" placeholder="Enter MObile NUmber" />
+                        <Input type="number" placeholder="Enter Mobile Number" />
                     </Form>
                 </Mob>
                 <Next>
@@ -250,7 +250,8 @@ const Mob = styled.div`
     margin-bottom: 11%;
 `
 const Flag = styled.div`
-    width: 12%;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
 `
