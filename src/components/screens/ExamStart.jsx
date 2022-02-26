@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import arrowImage from '../assets/images/arrow-right-solid.svg'
@@ -89,7 +90,7 @@ export default function ExamPage() {
                     </Start>
                 </ExamPaper>
 
-                    <Next>
+                    <Next to="/exam-page/" >
                         Start Exam Now
                         <Arrow>
                             <img src={arrowImage} alt='Arrow' />
@@ -111,7 +112,7 @@ const Description = styled.div`
     background : #fdf3eb;
     display: flex;
     margin: 0 auto;
-    padding: 3% 2%;
+    padding: 1.5% 2%;
     align-items: center;
     border-radius: 15px;
     margin-bottom: 1%;
@@ -186,17 +187,15 @@ const AnswerList = styled.div`
 const IdContainer = styled.div`
     width: 20px;
     background: #fff;
-    border: 1px solid #66b858;
+    border: 2px solid #66b858;
     height: 20px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2px;
 `
 const BgDot = styled.div`
-    width: 75%;
+    width: 100%;
     background: #66b858;
-    height: 75%;
+    height: 100%;
     border-radius: 50%;
 `
 const OptionContainer = styled.p`
@@ -204,7 +203,7 @@ const OptionContainer = styled.p`
     text-align: left;
     font-size: 22px;
 `
-const Next = styled.button`
+const Next = styled(Link)`
     width: 15%;
     font-size: 18px;
     font-weight: 900;
