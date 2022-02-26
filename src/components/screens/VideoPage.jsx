@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import thumbnailImage from '../assets/images/videoPage/video.png'
+import posterImage from '../assets/images/videoPage/video.png'
+import posterImageOne from '../assets/images/videoPage/video-one.png'
+import posterImageTwo from '../assets/images/videoPage/video-two.png'
 import steypImage from '../assets/images/videoPage/small.svg'
 import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
@@ -14,9 +16,9 @@ import { Player } from 'video-react';
 
 export default function VideoPage() {
     const [selectedId,setSelectedId] = useState("")
-    const [subheadSelectedId,setSubheadSelectedId] = useState("")    
-    const [selectedSubhead,setSelectedSubhead] = useState("")    
+    const [subheadSelectedId,setSubheadSelectedId] = useState("")
     const [videoClip,setVideoClip] = useState("")
+    const [videoPoster,setVideoPoster] = useState(posterImage)
     const [topicLists]= useState([
         {
             id:1,
@@ -26,24 +28,28 @@ export default function VideoPage() {
                     id : 1,
                     title : "What is technology?",
                     video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+                    poster : posterImageOne,
                     durattion : "2:34",
                 },
                 {
                     id : 2,
                     title : "What is information technology?",
                     video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+                    poster : posterImageTwo,
                     durattion : "8:30",
                 },
                 {
                     id : 3,
                     title : "Why should we learn technology?",
                     video : "http://mirrorblender.top-ix.org/movies/sintel-1024-surround.mp4",
+                    poster : posterImage,
                     durattion : "20:14",
                 },
                 {
                     id : 4,
                     title : "In which age who can learn technology?",
                     video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+                    poster : posterImageOne,
                     durattion : "00:34",
                 },
             ],
@@ -56,18 +62,19 @@ export default function VideoPage() {
                     id : 1,
                     title : "What is technology?",
                     video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+                    poster : posterImageTwo,
                     durattion : ":14",
                 },
                 {
                     id : 2,
                     title : "What is information technology?",
                     video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+                    poster : posterImage,
                     durattion : "8:34",
                 },
             ],
         },
     ])
-
 
     const renderTopics = () => {
         return topicLists.map((topicList) => (
@@ -75,8 +82,10 @@ export default function VideoPage() {
                 <Head  onClick = { ()=> {
                     if(selectedId === topicList.id){
                         setSelectedId("")
+                        setSubheadSelectedId("")
                     }else{
                         setSelectedId(topicList.id)
+                        setSubheadSelectedId("")
                     }
                 }} 
                 >
@@ -94,8 +103,8 @@ export default function VideoPage() {
                         className={ subhead.id === subheadSelectedId && 'subheadActive' } 
                         onClick={ ()=> { 
                             setSubheadSelectedId(subhead.id)
-                            setSelectedSubhead(topicList.subheads.find(item => item.id === subheadSelectedId))
-                            setVideoClip(selectedSubhead.video)
+                            setVideoClip(subhead.video)
+                            setVideoPoster(subhead.poster)
                             } }  >
                             <Play>
                                 <img src={playImage} alt='Play' />
@@ -156,7 +165,7 @@ export default function VideoPage() {
                     <Thumbnail>
                         <Player
                             playsInline
-                            poster= {thumbnailImage}
+                            poster= {videoPoster}
                             src= {videoClip}
                             />
                     </Thumbnail>
