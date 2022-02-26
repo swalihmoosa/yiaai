@@ -12,6 +12,7 @@ import tickImage from '../assets/images/videoPage/green-tick.svg'
 import warningImage from '../assets/images/videoPage/triangle-exclamation-solid.svg'
 
 import { Player } from 'video-react';
+import { Link } from 'react-router-dom'
 
 
 export default function VideoPage() {
@@ -155,7 +156,7 @@ export default function VideoPage() {
                         Odit, deleniti laborum quidem omnis possimus neque placeat recusandae inventore accusantium magnam tempore.
                     </Paragraph>
                 </Description>
-                <Start>
+                <Start to="/exam-start" >
                     Start Now
                 </Start>
             </Exam>
@@ -356,8 +357,9 @@ const Exam = styled.div`
     margin-bottom: 4%;
 `
 const Notify = styled.div`
+    display: none;
     background : #fdf3eb;
-    display: flex;
+    /* display: flex; */
     width: 90%;
     margin: 0 auto;
     padding: 3% 2%;
@@ -386,8 +388,9 @@ const Paragraph = styled.p`
     font-size: 18px;
     font-weight: 700;
 `
-const Start = styled.button`
-    cursor: pointer;
+const Start = styled(Link)`
+    display: block;
+    text-align: center;
     width: 10%;
     font-size: 18px;
     font-weight: 900;
