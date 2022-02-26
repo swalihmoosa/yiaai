@@ -59,7 +59,7 @@ export default function ExamPage() {
 
     const [ currentQuestionNumber, setCurrentQuestionNumber ] = useState(1);
     const [ currentQuestion, setCurrentQuestion ] = useState(exams.find(item => item.id === currentQuestionNumber));
-    console.log(currentQuestionNumber);
+    // console.log(currentQuestionNumber);
 
 
     useEffect(()=>{
@@ -134,9 +134,8 @@ export default function ExamPage() {
                     <Dot>
 
                     </Dot>
-                    <StartHead>
-                        Start
-                    </StartHead>
+                    {
+                    }
                     <CurrentNum>
                         {currentQuestion.id}
                     </CurrentNum>
