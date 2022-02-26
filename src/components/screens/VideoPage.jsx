@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-// import thumbnailImage from '../assets/images/videoPage/video.png'
+import thumbnailImage from '../assets/images/videoPage/video.png'
 import steypImage from '../assets/images/videoPage/small.svg'
 import tefunImage from '../assets/images/videoPage/1080.svg'
 import arrowImage from '../assets/images/videoPage/down-arrow.svg'
@@ -14,7 +14,8 @@ import { Player } from 'video-react';
 
 export default function VideoPage() {
     const [selectedId,setSelectedId] = useState("")
-    const [subheadSelectedId,setSubheadSelectedId] = useState(1)
+    const [videoClip,setVideoClip] = useState("")
+    const [subheadSelectedId,setSubheadSelectedId] = useState("")
     const [topicLists]= useState([
         {
             id:1,
@@ -23,22 +24,26 @@ export default function VideoPage() {
                 {
                     id : 1,
                     title : "What is technology?",
+                    video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
                     durattion : "2:34",
                 },
                 {
                     id : 2,
                     title : "What is information technology?",
-                    durattion : "2:34",
+                    video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+                    durattion : "8:30",
                 },
                 {
                     id : 3,
                     title : "Why should we learn technology?",
-                    durattion : "2:34",
+                    video : "http://mirrorblender.top-ix.org/movies/sintel-1024-surround.mp4",
+                    durattion : "20:14",
                 },
                 {
                     id : 4,
                     title : "In which age who can learn technology?",
-                    durattion : "2:34",
+                    video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+                    durattion : "00:34",
                 },
             ],
         },
@@ -49,12 +54,14 @@ export default function VideoPage() {
                 {
                     id : 1,
                     title : "What is technology?",
-                    durattion : "2:34",
+                    video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+                    durattion : ":14",
                 },
                 {
                     id : 2,
                     title : "What is information technology?",
-                    durattion : "2:34",
+                    video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+                    durattion : "8:34",
                 },
             ],
         },
@@ -82,7 +89,10 @@ export default function VideoPage() {
                 {
                     topicList.subheads.map((subhead) => (
                         <SubHead key={subhead.id} className={ subhead.id === subheadSelectedId && 'subheadActive' } 
-                        onClick={ ()=> { setSubheadSelectedId(subhead.id) } }  >
+                        onClick={ ()=> { 
+                            setSubheadSelectedId(subhead.id)
+                            setVideoClip(subhead.video)
+                            } }  >
                             <Play>
                                 <img src={playImage} alt='Play' />
                             </Play>
@@ -140,11 +150,10 @@ export default function VideoPage() {
             <Wrapper>
                 <Video>
                     <Thumbnail>
-                        {/* <img src={thumbnailImage} alt='Thumbnail' /> */}
                         <Player
                             playsInline
-                            poster="/assets/poster.png"
-                            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                            poster= {thumbnailImage}
+                            src= {videoClip}
                             />
                     </Thumbnail>
                     <Tech>
