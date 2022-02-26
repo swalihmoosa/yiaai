@@ -32,10 +32,10 @@ function App() {
                     <Route path="/" element={<LandingPage />} hamBurgerClick={hamBurgerClick} />
                     <Route path="/fill-details/" element={<FillDetails />}/>
                     <Route path="/choose-profile/" element={<ChooseProfile />}/>
+                    <Route path="/video-page/" element={<VideoPage />}/>
                     <Route path="/exam-start/" element={<ExamStart />}/>
                     <Route path="/exam-page/" element={<ExamPage />}/>
                     <Route path="/exam-complete/" element={<ExamComplete />}/>
-                    <Route path="/video-page/" element={<VideoPage />}/>
                 </Routes>
             </Router>
         </JoinContext.Provider>

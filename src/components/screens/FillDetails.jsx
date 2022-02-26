@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import bg from '../assets/images/details/top.svg'
 import leftImage from '../assets/images/details/activated.svg'
@@ -8,10 +9,8 @@ import leftImage from '../assets/images/details/activated.svg'
 export default function FillDetails() {
     const[isSubmitted,setIsSubmitted] = useState(false)
 
-    const[schoolValue,setSchoolValue] = useState('')
     const[predictions,setPredictions] = useState([])
     const[selectedSchool,setSelectedSchool] = useState('')
-    let textInput = React.createRef(); 
 
     const[schools] = useState([
         'JNE002 :- Jamia Nadviyya',
@@ -21,14 +20,18 @@ export default function FillDetails() {
     ])
 
     const getPredictions = ()=>(
-        setPredictions(schools.filter(school => school.toLowerCase().indexOf(schoolValue.toLowerCase()) !== -1))
+        setPredictions(schools.filter(school => school.toLowerCase().indexOf(selectedSchool.toLowerCase()) !== -1))
     )
 
-    const inputOnchange = (e) =>{
-        setSchoolValue(e.target.value)
-        getPredictions()
+    const notAssociated = () =>{
+        if(selectedSchool !== ""){
+            if(schools.includes(selectedSchool) === true ){
+                return ""
+            }else{
+                return <Not>Your Campus is not Associated with Tefun programme</Not>
+            }
+        }
     }
-
 
 
     return (
@@ -41,25 +44,21 @@ export default function FillDetails() {
                     <Hr />
                     <Form onSubmit={ (e)=> {
                         e.preventDefault();
-                        setIsSubmitted(true);
                     } } >
                         <Label>
                             Campus Name / Code *
                         </Label>
                         <Campus type="text" placeholder="JNE002" 
                         onChange={e => {
-                            inputOnchange(e)
                             setSelectedSchool(e.target.value)
-                            }
+                            getPredictions()
                         }
-                        ref={textInput}
+                        }
                         value = {selectedSchool}
                         />
-                        {/* {
-                            selectedSchool !== schools.map && <p>not in program</p>
-                            ['joe', 'jane', 'mary'].includes('jane') 
-                            ? <p>not in program</p>
-                        } */}
+                        {
+                            notAssociated()
+                        }
                         <PredictionContainer>
                             {
                                 predictions.map(prediction=>(
@@ -101,8 +100,8 @@ export default function FillDetails() {
                             </Div>
                         </Divisions>
                         <Buttons>
-                            <Back>Back</Back>
-                            <Submit>Submit</Submit>
+                            <Back to="/" >Back</Back>
+                            <Submit onClick={()=> setIsSubmitted(true) }>Submit</Submit>
                         </Buttons>
                     </Form>
                 </Details>
@@ -119,7 +118,7 @@ export default function FillDetails() {
                             <Activated>
                                 You're Successfully activated Your Tefun Program
                             </Activated>
-                            <Goto>
+                            <Goto to="/video-page/" >
                                 Go to Dashboard
                             </Goto>
                         </Right>
@@ -229,8 +228,9 @@ const Buttons = styled.div`
         border-radius: 0 0 25px 25px;
     }
 `
-const Back = styled.button`
+const Back = styled(Link)`
     width: 25%;
+    text-align: center;
     font-size: 18px;
     font-weight: 900;
     display: block;
@@ -308,8 +308,9 @@ const Activated = styled.p`
     color: #bfbfbf;
     margin-bottom: 5%;
 `
-const Goto = styled.button`
+const Goto = styled(Link)`
     width: 65%;
+    text-align: center;
     margin: 0 auto;
     font-size: 18px;
     font-weight: 900;
@@ -344,4 +345,12 @@ const PredictionContainer = styled.div`
     position: absolute;
     width: 90%;
     top: 20%;
+`
+const Not =  styled.p`
+    color: #ff0000;
+    text-align: left;
+    width: 95%;
+    margin: 0 auto 2%;
+    font-size: 14px;
+    font-weight: 700;
 `
