@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from "react-router-dom";
 import styled from 'styled-components'
 
 import lines from '../../assets/images/landing/lines-bg.svg'
@@ -43,8 +44,8 @@ export default function Spotlight() {
                         <Join onClick={()=> updatehamBurgerClick() } >
                             Join Now
                         </Join>
-                        <Register>
-                            <RegDiv>
+                        <Register to="fill-details" >
+                            <RegDiv >
                                 <Campus>
                                     Are you a campus?
                                 </Campus>
@@ -165,7 +166,7 @@ const Join = styled.button`
 
     }
 `
-const Register = styled.button`
+const Register = styled(Link)`
     cursor: pointer;
     width: 47%;
     font-size: 18px;
@@ -191,10 +192,12 @@ const RegDiv = styled.div`
 const Campus = styled.p`
     color: rgb(32, 156, 165);
     font-size: 14px;
+    text-align: center;
 `
 const Reg = styled.p`
     color: rgb(32, 156, 165);
     font-size: 19px;
+    text-align: center;
 `
 const Video = styled.div`
     width: 48%;

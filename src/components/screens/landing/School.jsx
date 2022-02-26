@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import mobile from '../../assets/images/landing/phone-g-call.svg'
 import scissor from '../../assets/images/landing/scissors.svg'
@@ -23,7 +24,8 @@ export default function School() {
                         <ColorDiv className='colour'>
                         </ColorDiv>
                         <P>
-                        Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാൻ ആഗ്രഹിക്കുന്ന സ്കൂളുകൾക്ക് <Mob>Talrop</Mob>-ന്റെ ടീമുമായി <Mob>858 999 8744</Mob> എന്ന നമ്പറിൽ കോൺടാക്ട് ചെയ്യാവുന്നതാണ്.
+                        Tefun പ്രോഗ്രാമിന്റെ ഭാഗമാകാൻ ആഗ്രഹിക്കുന്ന സ്കൂളുകൾക്ക് <Mob href="https://talrop.com/" target="blank" >Talrop</Mob> -ന്റെ ടീമുമായി 
+                         <Mob href="https://wa.me/+918589998744" target="blank" > 858 999 8744</Mob>  എന്ന നമ്പറിൽ കോൺടാക്ട് ചെയ്യാവുന്നതാണ്.
                         </P>
                         <Round className='round'>
                             <img src={mobile} alt='Mobile' />
@@ -49,7 +51,7 @@ export default function School() {
                         <ColorDiv className='colour'>
                         </ColorDiv>
                         <P>
-                        സ്കൂൾ നിശ്ചയിക്കുന്ന ഉദ്ഘാടന ദിനത്തിൽ ആവശ്യമായ Inauguration Video ഡിജിറ്റലായി <Mob>Talrop</Mob> നൽകുന്നതാണ്. 
+                        സ്കൂൾ നിശ്ചയിക്കുന്ന ഉദ്ഘാടന ദിനത്തിൽ ആവശ്യമായ Inauguration Video ഡിജിറ്റലായി <Mob href="https://talrop.com/" target="blank" >Talrop</Mob> നൽകുന്നതാണ്. 
                         </P>
                         <Round className='round'>
                             <img src={certificate} alt='Mobile' />
@@ -62,7 +64,8 @@ export default function School() {
                         <ColorDiv className='colour'>
                         </ColorDiv>
                         <P>
-                        Mobile, Tab, Laptop, Desktop Computer എന്നിവയിൽ ഏതെങ്കിലും ഡിവൈസുകൾ ഉപയോഗിച്ച് <Mob>Talrop</Mob> ലഭ്യമാക്കുന്ന Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ കുട്ടികൾക്ക് പഠിക്കുവാൻ സാധിക്കും.                       
+                        Mobile, Tab, Laptop, Desktop Computer എന്നിവയിൽ ഏതെങ്കിലും ഡിവൈസുകൾ ഉപയോഗിച്ച് <Mob href="https://talrop.com/" target="blank" > Talrop </Mob> 
+                        ലഭ്യമാക്കുന്ന Web, Android, iOS പ്ലാറ്റ്ഫോമുകളിലൂടെ കുട്ടികൾക്ക് പഠിക്കുവാൻ സാധിക്കും.                       
                         </P>
                         <Round className='round'>
                             <img src={device} alt='Mobile' />
@@ -85,7 +88,7 @@ export default function School() {
                         </Num>
                     </Li>
                 </Ul>
-                <Register>
+                <Register to="fill-details" >
                     Register Now
                 </Register>
             </Wrapper>
@@ -169,7 +172,7 @@ const P = styled.p`
     font-size: 20px;
     text-align: center;
 `
-const Mob = styled.b`
+const Mob = styled.a`
     color: #5aa870;
     font-size: 20px;
     font-weight: 700;
@@ -193,8 +196,9 @@ const Num = styled.p`
     font-weight: 900;
     font-size: 80px;
 `
-const Register = styled.button`
+const Register = styled(Link)`
     cursor: pointer;
+    text-align: center;
     width: 17%;
     font-size: 18px;
     font-weight: 900;
