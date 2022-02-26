@@ -7,7 +7,7 @@ import leftImage from '../assets/images/tefun-certificate.svg'
 export default function ExamPage() {
     const [ selectedAnswer, setSelectedAnswer ] = useState("");
     const [ examCompleted, setExamCompleted ] = useState(false);
-    const [ hour, setHour ] = useState(0);
+    const [ hour, setHour ] = useState(3);
     const [ minutes, setMinutes ] = useState(0);
     const [seconds, setSeconds ] =  useState(1);
     const [exams] = useState([
@@ -118,7 +118,7 @@ export default function ExamPage() {
                             Time Remaining
                         </TimeHead>
                         { 
-                            <Running> {hour}:{minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</Running> 
+                            <Running> {hour} : {minutes} : {seconds}</Running> 
                         }
                     </Time>
                 </Description>
@@ -287,18 +287,21 @@ const StartIn = styled.div`
     padding-left: 20px;
 `
 const Dot = styled.div`
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background: #bfbfbf;
     border-radius: 50%;
     position: absolute;
-    left: -12px;
-    top: 6px;
+    left: -14px;
+    top: 0px;
 `
 const StartHead = styled.p`
-    font-size: 20px;
+    font-size: 24px;
     color: #bfbfbf;
     font-weight: 700;
+    position: absolute;
+    left: 19px;
+    top: -5px;
 `
 const CurrentNum = styled.p`
     position: absolute;
@@ -307,7 +310,7 @@ const CurrentNum = styled.p`
     font-size: 35px;
     color: #66b858;
     font-weight: 700;
-    left: -25px;
+    left: -20px;
     top: 50%;
     transform: translateY(-50%);
 `
@@ -316,7 +319,7 @@ const NextNum = styled.p`
     font-size: 20px;
     color: #bfbfbf;
     font-weight: 700;
-    left: -13px;
+    left: -12px;
     top: 100%;
 `
 
