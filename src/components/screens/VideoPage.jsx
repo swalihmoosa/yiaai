@@ -14,8 +14,9 @@ import { Player } from 'video-react';
 
 export default function VideoPage() {
     const [selectedId,setSelectedId] = useState("")
+    const [subheadSelectedId,setSubheadSelectedId] = useState("")    
+    const [selectedSubhead,setSelectedSubhead] = useState("")    
     const [videoClip,setVideoClip] = useState("")
-    const [subheadSelectedId,setSubheadSelectedId] = useState("")
     const [topicLists]= useState([
         {
             id:1,
@@ -67,6 +68,7 @@ export default function VideoPage() {
         },
     ])
 
+
     const renderTopics = () => {
         return topicLists.map((topicList) => (
             <Li key={topicList.id} className={ topicList.id === selectedId && 'active' } >
@@ -88,10 +90,12 @@ export default function VideoPage() {
 
                 {
                     topicList.subheads.map((subhead) => (
-                        <SubHead key={subhead.id} className={ subhead.id === subheadSelectedId && 'subheadActive' } 
+                        <SubHead key={subhead.id} 
+                        className={ subhead.id === subheadSelectedId && 'subheadActive' } 
                         onClick={ ()=> { 
                             setSubheadSelectedId(subhead.id)
-                            setVideoClip(subhead.video)
+                            setSelectedSubhead(topicList.subheads.find(item => item.id === subheadSelectedId))
+                            setVideoClip(selectedSubhead.video)
                             } }  >
                             <Play>
                                 <img src={playImage} alt='Play' />
@@ -169,15 +173,15 @@ export default function VideoPage() {
                             <Tick>
                                 <img src={tickImage} alt='Tick' />
                             </Tick>
-                            <Complete>
+                            <Complete >
                                 Mark as Completed
                             </Complete>
                         </Mark>
                     </Tech>
-                    <Steyp>
+                    <Steyp href="https://www.steyp.com/" target="blank" >
                         <img src={steypImage} alt='Steyp' />
                     </Steyp>
-                    <Tefun>
+                    <Tefun href="https://www.talrop.com/" target="blank"  >
                         <img src={tefunImage} alt='Tefun' />
                     </Tefun>
                 </Video>
@@ -224,19 +228,15 @@ const H4 = styled.h4`
     color: #000;
     font-weight: 900;
 `
-const Steyp = styled.div`
+const Steyp = styled.a`
     width: 100%;
+    display: block;
     margin-bottom: 3%;
-    &:hover{
-        cursor: pointer;
-    }
 `
-const Tefun = styled.div`
+const Tefun = styled.a`
     width: 100%;
     margin-bottom: 3%;
-    &:hover{
-        cursor: pointer;
-    }
+    display: block;
 `
 const Ul = styled.ul`
     width: 26%;
