@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 import leftImage from '../assets/images/tefun-certificate.svg'
@@ -39,19 +40,19 @@ export default function ExamPage() {
             answers : [
                 {
                     id : "A",
-                    option : "sdjhgd"
+                    option : "htry"
                 },
                 {
                     id : "B",
-                    option : "skjh"
+                    option : "heart"
                 },
                 {
                     id : "C",
-                    option : "adajhsgdhdsd"
+                    option : "hagsft"
                 },
                 {
                     id : "D",
-                    option : "adadsd"
+                    option : "ader"
                 }
             ]
         },
@@ -59,8 +60,6 @@ export default function ExamPage() {
 
     const [index, setIndex] = useState(0);
     const currentExam = exams[index];
-    // console.log(currentExams);
-
 
     useEffect(()=>{
         let myInterval = setInterval(() => {
@@ -150,7 +149,12 @@ export default function ExamPage() {
                     {renderExams()}
                     <Next 
                         onClick={() => {
-                            setIndex(index + 1);
+                            if(index < exams.length - 1){
+                                setIndex(index + 1)
+                            }
+                            else{
+                                setExamCompleted(true)
+                            }
                         }}
                     >
                         Next
@@ -169,8 +173,8 @@ export default function ExamPage() {
                             <Activated>
                                 You're Successfully Completed Your Examination, We will provide your certificate soon.
                             </Activated>
-                            <Goto>
-                                Go to Dashboard
+                            <Goto to="/exam-complete/" >
+                                Next Page
                             </Goto>
                         </Right>
                     </Welcome>
@@ -403,8 +407,10 @@ const Activated = styled.p`
     color: #bfbfbf;
     margin-bottom: 5%;
 `
-const Goto = styled.button`
+const Goto = styled(Link)`
     width: 65%;
+    display: block;
+    text-align: center;
     margin: 0 auto;
     font-size: 18px;
     font-weight: 900;
