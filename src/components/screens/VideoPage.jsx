@@ -77,6 +77,9 @@ export default function VideoPage() {
         },
     ])
 
+    const [index, setIndex] = useState(0);
+    const [current, setCurrent] = useState();
+
     const renderTopics = () => {
         return topicLists.map((topicList) => (
             <Li key={topicList.id} className={ topicList.id === selectedId && 'active' } >

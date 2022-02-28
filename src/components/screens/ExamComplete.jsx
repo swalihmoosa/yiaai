@@ -5,6 +5,7 @@ import cirtificateImage from '../assets/images/ExamComplete/tefun-certificate.sv
 import tefunImage from '../assets/images/ExamComplete/Tefun-logo.svg'
 import bgRibbonImage from '../assets/images/ExamComplete/bg-ribbon.svg'
 import bgDotImage from '../assets/images/ExamComplete/bg-2.svg'
+import { Link } from 'react-router-dom'
 
 export default function ExamComplete() {
     return (
@@ -22,8 +23,8 @@ export default function ExamComplete() {
                 <Description>
                     You have completed your examinations.We will provide your cirtificate soon
                 </Description>
-                <Button>
-                    Got to Dashboard
+                <Button to="/video-page/" >
+                    Go to Dashboard
                 </Button>
             </Wrapper>
         </ExamCompleteSection>
@@ -66,8 +67,9 @@ const Description = styled.p`
     font-size: 25px;
     color: #839392;
 `
-const Button = styled.button`
+const Button = styled(Link)`
     width: 15%;
+    text-align: center;
     margin: 0 auto;
     font-size: 18px;
     font-weight: 900;
