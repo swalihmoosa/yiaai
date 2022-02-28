@@ -57,9 +57,9 @@ export default function ExamPage() {
         },
     ])
 
-    const [ currentQuestionNumber, setCurrentQuestionNumber ] = useState(1);
-    const [ currentQuestion, setCurrentQuestion ] = useState(exams.find(item => item.id === currentQuestionNumber));
-    // console.log(currentQuestionNumber);
+    const [index, setIndex] = useState(0);
+    const currentExam = exams[index];
+    // console.log(currentExams);
 
 
     useEffect(()=>{
@@ -91,60 +91,40 @@ export default function ExamPage() {
     });
 
     const renderExams = () => (
-        // exams.map((exam)=>(
-        //     <ExamPaper key={exam.id} >
-        //         <Question >
-        //             {exam.question}
-        //         </Question>
-        //         {
-        //             exam.answers.map((answer)=>(
-        //                 <AnswerList key={answer.id} onClick={ ()=> { setSelectedAnswer(answer.id) } } 
-        //                 className={ selectedAnswer === answer.id && 'active' } >
-        //                     <IdContainer key={answer}>
-        //                         {answer.id}
-        //                     </IdContainer>
-        //                     <OptionContainer>
-        //                         {answer.option}
-        //                     </OptionContainer>
-        //                 </AnswerList>
-        //             ))
-        //         }
-        //     </ExamPaper>
-        // ))
+        <ExamPaper key={currentExam.id} >
+        <Question >
+            {currentExam.question}
+        </Question>
+        {
+            currentExam.answers.map((answer)=>(
+                <AnswerList key={answer.id} onClick={ ()=> { setSelectedAnswer(answer.id) } } 
+                className={ selectedAnswer === answer.id && 'active' } >
+                    <IdContainer key={answer}>
+                        {answer.id}
+                    </IdContainer>
+                    <OptionContainer>
+                        {answer.option}
+                    </OptionContainer>
+                </AnswerList>
+            ))
+        }
+        <Start>
+            <StartIn>
+                <Dot>
 
-        <ExamPaper key={currentQuestion.id} >
-            <Question >
-                {currentQuestion.question}
-            </Question>
-            {
-                currentQuestion.answers.map((answer)=>(
-                    <AnswerList key={answer.id} onClick={ ()=> { setSelectedAnswer(answer.id) } } 
-                    className={ selectedAnswer === answer.id && 'active' } >
-                        <IdContainer key={answer}>
-                            {answer.id}
-                        </IdContainer>
-                        <OptionContainer>
-                            {answer.option}
-                        </OptionContainer>
-                    </AnswerList>
-                ))
-            }
-            <Start>
-                <StartIn>
-                    <Dot>
-
-                    </Dot>
-                    {
-                    }
-                    <CurrentNum>
-                        {currentQuestion.id}
-                    </CurrentNum>
-                    <NextNum>
-                        {currentQuestion.id + 1}
-                    </NextNum>
-                </StartIn>
-            </Start>
-        </ExamPaper>
+                </Dot>
+                {
+                    currentExam.id - 1 === 0 ? <StartHead>start</StartHead> : <StartHead>{currentExam.id-1}</StartHead>
+                }
+                <CurrentNum>
+                    {currentExam.id}
+                </CurrentNum>
+                <NextNum>
+                    {currentExam.id + 1}
+                </NextNum>
+            </StartIn>
+        </Start>
+    </ExamPaper>
     )
 
     return (
@@ -168,10 +148,11 @@ export default function ExamPage() {
                 </Description>
                 <ExamPaperContainer>
                     {renderExams()}
-                    <Next onClick={ ()=> {
-                        setCurrentQuestionNumber(currentQuestionNumber +1)
-                        setCurrentQuestion(exams.find(item => item.id === currentQuestionNumber))
-                    } } >
+                    <Next 
+                        onClick={() => {
+                            setIndex(index + 1);
+                        }}
+                    >
                         Next
                     </Next>
                 </ExamPaperContainer>
@@ -199,6 +180,7 @@ export default function ExamPage() {
         </ExamPageSection>
     )
 }
+
 const ExamPageSection = styled.section`
     padding: 10% 0 2%;
 `

@@ -12,6 +12,7 @@ import ExamPage from './components/screens/ExamPage';
 import FillDetails from './components/screens/FillDetails';
 import VideoPage from './components/screens/VideoPage';
 import LandingPage from './components/screens/LandingPage';
+import Example from './components/screens/Example';
 
 export const JoinContext = React.createContext();
 
@@ -36,6 +37,7 @@ function App() {
                     <Route path="/exam-start/" element={<ExamStart />}/>
                     <Route path="/exam-page/" element={<ExamPage />}/>
                     <Route path="/exam-complete/" element={<ExamComplete />}/>
+                    <Route path="/test/" element={<Example />}/>
                 </Routes>
             </Router>
         </JoinContext.Provider>
