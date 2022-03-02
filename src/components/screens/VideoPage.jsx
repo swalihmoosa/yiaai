@@ -18,6 +18,8 @@ import { Link } from 'react-router-dom'
 export default function VideoPage() {
     const [selectedId,setSelectedId] = useState(1)
     const [subheadSelectedId,setSubheadSelectedId] = useState(1)
+    const [examNotify,setExamNotify] = useState(false)
+    const [examStart,setExamStart] = useState(false)
     const [topicLists]= useState([
         {
             id:1,
@@ -73,10 +75,31 @@ export default function VideoPage() {
                 },
             ],
         },
+        {
+            id:3,
+            heading : "Introduction to Technology",
+            subheads : [
+                {
+                    id : 1,
+                    title : "What is technology?",
+                    video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+                    poster : posterImageOne,
+                    durattion : ":14",
+                },
+                {
+                    id : 2,
+                    title : "What is information technology?",
+                    video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+                    poster : posterImageTwo,
+                    durattion : "8:34",
+                },
+            ],
+        },
     ])
 
     const videoClip = topicLists[selectedId - 1].subheads[subheadSelectedId - 1].video
     const videoPoster = topicLists[selectedId - 1].subheads[subheadSelectedId - 1].poster
+    const headListNumber = topicLists.length
     const subheadListNumber = topicLists[selectedId - 1].subheads.length
 
 
@@ -88,8 +111,8 @@ export default function VideoPage() {
 
                     }else{
                         setSubheadSelectedId(1)
+                        setSelectedId(topicList.id)
                     }
-                    setSelectedId(topicList.id)
                 }} 
                 >
                     <Intro>
@@ -128,22 +151,28 @@ export default function VideoPage() {
     return (
         <VideoPageSection>
             
-            <Notify>
-                <Warning>
-                    <img src={warningImage} alt='Warning' />
-                </Warning>
-                <Date>
-                    <H3>
-                        We will notify Your Examination date Soon
-                    </H3>
-                    <Paragraph>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit consequuntur officiis temporibus explicabo iure eaque minus in. 
-                        Odit, deleniti laborum quidem omnis possimus neque placeat recusandae inventore accusantium magnam tempore.
-                    </Paragraph>
-                </Date>
-            </Notify>
+        {
+            examNotify ?            
+                <Notify>
+                    <Warning>
+                        <img src={warningImage} alt='Warning' />
+                    </Warning>
+                    <Date>
+                        <H3>
+                            We will notify Your Examination date Soon
+                        </H3>
+                        <Paragraph>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit consequuntur officiis temporibus explicabo iure eaque minus in. 
+                            Odit, deleniti laborum quidem omnis possimus neque placeat recusandae inventore accusantium magnam tempore.
+                        </Paragraph>
+                    </Date>
+                </Notify>
+            : ""
+        }
 
-            <Exam>
+        {
+            examStart ? 
+                <Exam>
                 <Warning>
                     <img src={warningImage} alt='Warning' />
                 </Warning>
@@ -160,6 +189,8 @@ export default function VideoPage() {
                     Start Now
                 </Start>
             </Exam>
+            : ""
+        }
 
             <Wrapper>
                 <Video>
@@ -181,13 +212,21 @@ export default function VideoPage() {
                         </Fundamentals>
                         <Mark 
                             onClick={ ()=>{
-                                if(subheadListNumber === subheadSelectedId){
-                                    setSubheadSelectedId(1)
-                                    setSelectedId(selectedId + 1)
-                                    console.log("if",subheadSelectedId);
+                                if(headListNumber === selectedId){
+                                    setExamNotify(true)
+                                    if(subheadListNumber === subheadSelectedId){
+                                        setExamStart(true)
+                                        setExamNotify(false)
+                                    }else{
+                                        setSubheadSelectedId(subheadSelectedId + 1 )
+                                    }
                                 }else{
-                                    setSubheadSelectedId(subheadSelectedId + 1 )
-                                    console.log("else",subheadSelectedId);
+                                    if(subheadListNumber === subheadSelectedId){
+                                        setSelectedId(selectedId + 1)
+                                        setSubheadSelectedId(1)
+                                    }else{
+                                        setSubheadSelectedId(subheadSelectedId + 1 )
+                                    }
                                 }
                             } }
                         >
@@ -368,9 +407,9 @@ const Exam = styled.div`
     margin-bottom: 4%;
 `
 const Notify = styled.div`
-    display: none;
+    /* display: none; */
     background : #fdf3eb;
-    /* display: flex; */
+    display: flex;
     width: 90%;
     margin: 0 auto;
     padding: 3% 2%;
