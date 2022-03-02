@@ -77,7 +77,7 @@ export default function VideoPage() {
 
     const videoClip = topicLists[selectedId - 1].subheads[subheadSelectedId - 1].video
     const videoPoster = topicLists[selectedId - 1].subheads[subheadSelectedId - 1].poster
-    console.log("videoclip",videoClip);
+    const subheadListNumber = topicLists[selectedId - 1].subheads.length
 
 
     const renderTopics = () => {
@@ -179,15 +179,22 @@ export default function VideoPage() {
                                 What is technology?
                             </H4>
                         </Fundamentals>
-                        <Mark>
+                        <Mark 
+                            onClick={ ()=>{
+                                if(subheadListNumber === subheadSelectedId){
+                                    setSubheadSelectedId(1)
+                                    setSelectedId(selectedId + 1)
+                                    console.log("if",subheadSelectedId);
+                                }else{
+                                    setSubheadSelectedId(subheadSelectedId + 1 )
+                                    console.log("else",subheadSelectedId);
+                                }
+                            } }
+                        >
                             <Tick>
                                 <img src={tickImage} alt='Tick' />
                             </Tick>
-                            <Complete 
-                                onClick={ ()=>{
-                                    setSubheadSelectedId(subheadSelectedId + 1 )
-                                } }
-                            >
+                            <Complete>
                                 Mark as Completed
                             </Complete>
                         </Mark>
