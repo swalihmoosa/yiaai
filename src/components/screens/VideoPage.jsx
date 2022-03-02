@@ -16,10 +16,8 @@ import { Link } from 'react-router-dom'
 
 
 export default function VideoPage() {
-    const [selectedId,setSelectedId] = useState("")
-    const [subheadSelectedId,setSubheadSelectedId] = useState("")
-    const [videoClip,setVideoClip] = useState("")
-    const [videoPoster,setVideoPoster] = useState(posterImage)
+    const [selectedId,setSelectedId] = useState(1)
+    const [subheadSelectedId,setSubheadSelectedId] = useState(1)
     const [topicLists]= useState([
         {
             id:1,
@@ -29,28 +27,28 @@ export default function VideoPage() {
                     id : 1,
                     title : "What is technology?",
                     video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-                    poster : posterImageOne,
+                    poster : posterImage,
                     durattion : "2:34",
                 },
                 {
                     id : 2,
                     title : "What is information technology?",
                     video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
-                    poster : posterImageTwo,
+                    poster : posterImageOne,
                     durattion : "8:30",
                 },
                 {
                     id : 3,
                     title : "Why should we learn technology?",
                     video : "http://mirrorblender.top-ix.org/movies/sintel-1024-surround.mp4",
-                    poster : posterImage,
+                    poster : posterImageTwo,
                     durattion : "20:14",
                 },
                 {
                     id : 4,
                     title : "In which age who can learn technology?",
                     video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-                    poster : posterImageOne,
+                    poster : posterImage,
                     durattion : "00:34",
                 },
             ],
@@ -63,34 +61,35 @@ export default function VideoPage() {
                     id : 1,
                     title : "What is technology?",
                     video : "http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
-                    poster : posterImageTwo,
+                    poster : posterImageOne,
                     durattion : ":14",
                 },
                 {
                     id : 2,
                     title : "What is information technology?",
                     video : "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-                    poster : posterImage,
+                    poster : posterImageTwo,
                     durattion : "8:34",
                 },
             ],
         },
     ])
 
-    const [index, setIndex] = useState(0);
-    const [current, setCurrent] = useState();
+    const videoClip = topicLists[selectedId - 1].subheads[subheadSelectedId - 1].video
+    const videoPoster = topicLists[selectedId - 1].subheads[subheadSelectedId - 1].poster
+    console.log("videoclip",videoClip);
+
 
     const renderTopics = () => {
         return topicLists.map((topicList) => (
             <Li key={topicList.id} className={ topicList.id === selectedId && 'active' } >
                 <Head  onClick = { ()=> {
                     if(selectedId === topicList.id){
-                        setSelectedId("")
-                        setSubheadSelectedId("")
+
                     }else{
-                        setSelectedId(topicList.id)
-                        setSubheadSelectedId("")
+                        setSubheadSelectedId(1)
                     }
+                    setSelectedId(topicList.id)
                 }} 
                 >
                     <Intro>
@@ -107,8 +106,6 @@ export default function VideoPage() {
                         className={ subhead.id === subheadSelectedId && 'subheadActive' } 
                         onClick={ ()=> { 
                             setSubheadSelectedId(subhead.id)
-                            setVideoClip(subhead.video)
-                            setVideoPoster(subhead.poster)
                             } }  >
                             <Play>
                                 <img src={playImage} alt='Play' />
@@ -186,7 +183,11 @@ export default function VideoPage() {
                             <Tick>
                                 <img src={tickImage} alt='Tick' />
                             </Tick>
-                            <Complete >
+                            <Complete 
+                                onClick={ ()=>{
+                                    setSubheadSelectedId(subheadSelectedId + 1 )
+                                } }
+                            >
                                 Mark as Completed
                             </Complete>
                         </Mark>
