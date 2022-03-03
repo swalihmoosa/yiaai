@@ -16,7 +16,6 @@ import { JoinContext } from '../../../App'
 
 
 export default function Spotlight() {
-    // const hamBurgerClick = useContext(JoinContext);
     const {updatehamBurgerClick} = useContext(JoinContext)
 
 
@@ -41,7 +40,7 @@ export default function Spotlight() {
                         <img src={talropImage} alt="Talrop" />
                     </Talrop>
                     <ButtonDiv>
-                        <Join onClick={()=> updatehamBurgerClick() } >
+                        <Join onClick={()=> { updatehamBurgerClick() } } >
                             Join Now
                         </Join>
                         <Register to="fill-details" >

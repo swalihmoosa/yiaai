@@ -18,14 +18,20 @@ export const JoinContext = React.createContext();
 
 function App() {
     const[hamBurgerClick,setHarmBurgerClick] = useState(false)
+    const[useBarClick,setUseBarClick] = useState(false)
+    const[isLoggin] = useState(false)
 
     const updatehamBurgerClick = () =>{
         setHarmBurgerClick(hamBurgerClick=> !hamBurgerClick);
     }
 
+    const updateUseBarClick = () =>{
+        setUseBarClick(useBarClick=> !useBarClick);
+    }
+
 
     return (
-        <JoinContext.Provider value={{hamBurgerClick, updatehamBurgerClick}} >
+        <JoinContext.Provider value={{hamBurgerClick, useBarClick, isLoggin, updatehamBurgerClick, updateUseBarClick}} >
             <Router>
                 <Header />
                 <Routes>

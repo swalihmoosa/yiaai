@@ -36,6 +36,28 @@ export default function ExamPage() {
         },
         {
             id : 2,
+            question : "consectetur adipisicing elit. Aperiam ea saepe sint repudiandae consectetur, esse quia magnam velit, ",
+            answers : [
+                {
+                    id : "A",
+                    option : "ret"
+                },
+                {
+                    id : "B",
+                    option : "vfr"
+                },
+                {
+                    id : "C",
+                    option : "sdjfghsgfgygdyfkkhjh"
+                },
+                {
+                    id : "D",
+                    option : "sgsdtjsdghghhgdhfghsgfhgfhdgfhgdhfghdgf"
+                }
+            ]
+        },
+        {
+            id : 3,
             question : "Lorem ",
             answers : [
                 {

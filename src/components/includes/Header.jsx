@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import logoImage from '../assets/images/logo.svg'
@@ -18,11 +18,12 @@ import { JoinContext } from '../../App'
 
 
 export default function Header() {
-    const[useBarClick,setUseBarClick] = useState(false)
-    const[isLOggin] = useState(false)
 
-    const hamBurgerClick = useContext(JoinContext);
+    const isLoggin = useContext(JoinContext).isLoggin;
+    const hamBurgerClick = useContext(JoinContext).hamBurgerClick;
     const {updatehamBurgerClick} = useContext(JoinContext)
+    const useBarClick = useContext(JoinContext).useBarClick;
+    const {updateUseBarClick} = useContext(JoinContext)
 
 
     return (
@@ -33,8 +34,8 @@ export default function Header() {
             </LogoContainer>
 
             {
-                isLOggin ? 
-                <User onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
+                isLoggin ? 
+                <User onClick={()=> updateUseBarClick() } >
                     <Name>
                         Swalih Moosa
                     </Name>
@@ -53,7 +54,7 @@ export default function Header() {
             </HamBurger>
             </Wrapper>
 
-            <MenuBar className={hamBurgerClick.hamBurgerClick ? 'active' : ''} >
+            <MenuBar className={ hamBurgerClick ? 'active' : ''} >
                 <White>
                 <H4>
                 Login to your account
@@ -95,7 +96,7 @@ export default function Header() {
 
             <UserBar className={useBarClick ? 'active' : ''}  >
                 <Profile>
-                    <LeftArrow onClick={ ()=> { setUseBarClick( useBarClick => !useBarClick ) } } >
+                    <LeftArrow onClick={()=> updateUseBarClick() } >
                         <img src={leftArrowImage} alt='Arrow' />
                     </LeftArrow>
                     <ProfileDes>
