@@ -68,3 +68,14 @@ input::-webkit-inner-spin-button {
 button{
     font-family: 'GT-Eesti';
 }
+
+.slick-prev, .slick-next {
+    display: block !important ;
+    background: linear-gradient(to right,#68ba50,#469aad) !important ;
+    width: 40px !important ;
+    height: 40px !important ;
+    border-radius: 10px !important;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 25px;
+}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Slider from "react-slick";
+
 import jamia from '../../assets/images/landing/download.png'
 
 
@@ -29,7 +31,90 @@ export default function Campuses() {
 			name : "Jamia Nadwiyya arts & sports college",
 			place : "Malappuram",
 		},
+		{
+			id : 5,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 6,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 7,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 8,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 9,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 10,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 11,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 12,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 13,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 14,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 15,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
+		{
+			id : 16,
+			logo : jamia,
+			name : "Jamia Nadwiyya arts & sports college",
+			place : "Malappuram",
+		},
 	])
+
+    const settings = {
+		className: "center",
+		centerMode: true,
+		infinite: true,
+		centerPadding: "60px",
+		slidesToShow: 3,
+		speed: 500,
+		rows: 2,
+		slidesPerRow: 2
+	  };
 
 	return (
 		<CampusSection>
@@ -42,7 +127,7 @@ export default function Campuses() {
 					Eum aspernatur voluptate eius ullam sed porro veniam nemo incidunt culpa! Nulla perspiciatis 
 					dolores ullam ipsum laudantium quos maxime aliquam magni nisi.
 				</P>
-				<Ul>
+				<Slider {...settings}>
 					{
 						colleges.map(college=>(
 							<Li key={college.id} >
@@ -58,7 +143,7 @@ export default function Campuses() {
 							</Li>
 						))
 					}
-				</Ul>
+				</Slider>
 				<More>
 					And <Bold>300</Bold> More Campus All Over Kerala
 				</More>
@@ -94,17 +179,10 @@ const P = styled.p`
     font-size: 18px;
     margin-bottom: 3%;
 `
-const Ul = styled.ul`
-	display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-	width: 90%;
-    margin: 0 auto;
-	margin-bottom: 4%;
-`
-const Li = styled.li`
-	width: 15%;
-    margin-bottom: 3%;
+const Li = styled.div`
+	width: 45% !important ;
+    margin-bottom: 15% !important;
+    margin-right: 3% !important;
 	&:nth-last-child(-n+6){
 		margin-bottom: 0%;
 	}
@@ -130,6 +208,7 @@ const More = styled.p`
 	text-align: center;
     font-size: 23px;
     font-weight: 700;
+	margin-top: 6%;
 `
 const Bold = styled.b`
 	color: #59a670;

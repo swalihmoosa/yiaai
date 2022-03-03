@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import "../src/components/assets/css/video-react.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 import Header from './components/includes/Header';
 // import LandingSingle from './components/screens/LandingSingle';
