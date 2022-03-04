@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import "../src/components/assets/css/video-react.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 import Header from './components/includes/Header';
-// import LandingSingle from './components/screens/LandingSingle';
-import ExamComplete from './components/screens/ExamComplete';
-import ExamStart from './components/screens/ExamStart';
-import ChooseProfile from './components/screens/ChooseProfile';
-import ExamPage from './components/screens/ExamPage';
-import FillDetails from './components/screens/FillDetails';
-import VideoPage from './components/screens/VideoPage';
-import LandingPage from './components/screens/LandingPage';
+import AppRouter from './components/includes/routers/AppRouter';
 
 export const JoinContext = React.createContext();
 
@@ -36,18 +29,9 @@ function App() {
         <JoinContext.Provider value={{hamBurgerClick, useBarClick, isLoggin, updatehamBurgerClick, updateUseBarClick}} >
             <Router>
                 <Header />
-                <Routes>
-                    <Route path="/" element={<LandingPage />} hamBurgerClick={hamBurgerClick} />
-                    <Route path="/fill-details/" element={<FillDetails />}/>
-                    <Route path="/choose-profile/" element={<ChooseProfile />}/>
-                    <Route path="/video-page/" element={<VideoPage />}/>
-                    <Route path="/exam-start/" element={<ExamStart />}/>
-                    <Route path="/exam-page/" element={<ExamPage />}/>
-                    <Route path="/exam-complete/" element={<ExamComplete />}/>
-                </Routes>
+                <AppRouter />
             </Router>
         </JoinContext.Provider>
-
     );
 }
 export default App;
