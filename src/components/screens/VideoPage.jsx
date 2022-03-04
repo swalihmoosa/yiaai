@@ -10,6 +10,7 @@ import arrowImage from '../assets/images/videoPage/down-arrow.svg'
 import playImage from '../assets/images/videoPage/play-black.svg'
 import tickImage from '../assets/images/videoPage/green-tick.svg'
 import warningImage from '../assets/images/videoPage/triangle-exclamation-solid.svg'
+import lockImage from '../assets/images/videoPage/play-lock.svg'
 
 import { Player } from 'video-react';
 import { Link } from 'react-router-dom'
@@ -102,6 +103,17 @@ export default function VideoPage() {
     const headListNumber = topicLists.length
     const subheadListNumber = topicLists[selectedId - 1].subheads.length
 
+    const renderImages = (subhead, subheadSelectedId) =>{
+        if (subhead.id === subheadSelectedId ){
+            return <img src={playImage} alt="Play" />
+        }
+        if (subhead.id <= subheadSelectedId ){
+            return <img src={tickImage} alt="Play" />
+        }
+        if (subhead.id >= subheadSelectedId ){
+            return <img src={lockImage} alt="Play" />
+        }
+    }
 
     const renderTopics = () => {
         return topicLists.map((topicList) => (
@@ -131,7 +143,9 @@ export default function VideoPage() {
                             setSubheadSelectedId(subhead.id)
                             } }  >
                             <Play>
-                                <img src={playImage} alt='Play' />
+                                {
+                                    renderImages(subhead,subheadSelectedId)
+                                }
                             </Play>
                             <Question>
                                 {subhead.title}
