@@ -119,13 +119,14 @@ export default function VideoPage() {
         return topicLists.map((topicList) => (
             <Li key={topicList.id} className={ topicList.id === selectedId && 'active' } >
                 <Head  onClick = { ()=> {
-                    if(selectedId === topicList.id){
-
-                    }else{
-                        setSubheadSelectedId(1)
+                    if(selectedId >= topicList.id){
                         setSelectedId(topicList.id)
+                    }else{
+                        // setSubheadSelectedId(1)
+                        // setSelectedId(topicList.id)
                     }
-                }} 
+                }}
+                style={{cursor : selectedId < topicList.id ? 'not-allowed' : 'pointer' }} 
                 >
                     <Intro>
                         {topicList.heading}
@@ -139,7 +140,8 @@ export default function VideoPage() {
                     topicList.subheads.map((subhead) => (
                         <SubHead key={subhead.id} 
                         className={ subhead.id === subheadSelectedId && 'subheadActive' } 
-                        onClick={ ()=> subhead.id <= subheadSelectedId ? setSubheadSelectedId(subhead.id) : "" }>
+                        onClick={ ()=> subhead.id <= subheadSelectedId ? setSubheadSelectedId(subhead.id) : "" }
+                        style={{cursor : subhead.id > subheadSelectedId ? 'not-allowed' : 'pointer' }} >
                             <Play>
                                 {
                                     renderImages(subhead,subheadSelectedId)
@@ -229,6 +231,7 @@ export default function VideoPage() {
                                     if(subheadListNumber === subheadSelectedId){
                                         setExamStart(true)
                                         setExamNotify(false)
+                                        window.scrollTo(0,0)
                                     }else{
                                         setSubheadSelectedId(subheadSelectedId + 1 )
                                     }
@@ -315,7 +318,6 @@ const Ul = styled.ul`
 `
 const Li = styled.li`
     width: 100%;
-    cursor: pointer;
     &.active div {
         display: flex;
     }
@@ -351,7 +353,6 @@ const SubHead = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 12px 31px;
-    cursor: pointer;
     border-radius: 9px;
     &.subheadActive{
         background-image: linear-gradient(to right,#68ba50,#469aad);
