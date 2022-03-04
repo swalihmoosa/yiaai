@@ -139,9 +139,7 @@ export default function VideoPage() {
                     topicList.subheads.map((subhead) => (
                         <SubHead key={subhead.id} 
                         className={ subhead.id === subheadSelectedId && 'subheadActive' } 
-                        onClick={ ()=> { 
-                            setSubheadSelectedId(subhead.id)
-                            } }  >
+                        onClick={ ()=> subhead.id <= subheadSelectedId ? setSubheadSelectedId(subhead.id) : "" }>
                             <Play>
                                 {
                                     renderImages(subhead,subheadSelectedId)
