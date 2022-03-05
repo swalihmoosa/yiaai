@@ -5,6 +5,7 @@ import warningImage from '../../assets/images/videoPage/triangle-exclamation-sol
 
 import { Link } from 'react-router-dom'
 
+
 export default function ExamStartModal({examNotify, examStart}) {
     return (
         <Exam>

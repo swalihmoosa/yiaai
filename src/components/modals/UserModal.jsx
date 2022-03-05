@@ -9,6 +9,7 @@ import logOutImage from '../../assets/images/header/logout.svg'
 
 import { JoinContext } from '../../App'
 
+
 export default function UserModal() {
     const useBarClick = useContext(JoinContext).useBarClick;
     const {updateUseBarClick} = useContext(JoinContext);

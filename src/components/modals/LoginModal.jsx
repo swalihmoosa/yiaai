@@ -15,6 +15,7 @@ import bahrain from '../../assets/images/menu/BAHRAIN.jpeg'
 
 import { JoinContext } from '../../App'
 
+
 export default function LoginModal() {
     const hamBurgerClick = useContext(JoinContext).hamBurgerClick;
     const {updatehamBurgerClick} = useContext(JoinContext)

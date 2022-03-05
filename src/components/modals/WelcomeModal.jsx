@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import leftImage from '../../assets/images/details/activated.svg'
 
+
 export default function WelcomeModal({isSubmitted}) {
     return (
         <WelcomeBg className={ isSubmitted ? 'active' : "" } >
