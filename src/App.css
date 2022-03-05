@@ -79,3 +79,6 @@ button{
 .slick-prev:before, .slick-next:before {
     font-size: 25px;
 }
+::-webkit-scrollbar {
+    display: none;
+}
