@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import arrowImage from '../assets/images/arrow-right-solid.svg'
+import arrowImage from '../../assets/images/arrow-right-solid.svg'
 
 
 export default function ExamPage() {

@@ -1,8 +1,8 @@
 
 @font-face {
     font-family: 'GT-Eesti';
-    src: url("./components/assets/fonts//GT-Eesti-Pro-Text-Regular.woff2") format("woff2");
-    src: url("./components/assets/fonts/GT-Eesti-Pro-Text-Regular.woff") format("woff");
+    src: url("./assets/fonts//GT-Eesti-Pro-Text-Regular.woff2") format("woff2");
+    src: url("./assets/fonts/GT-Eesti-Pro-Text-Regular.woff") format("woff");
     font-weight: 500;
     font-style: normal
 }

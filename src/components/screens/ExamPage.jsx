@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
-import leftImage from '../assets/images/tefun-certificate.svg'
+import leftImage from '../../assets/images/tefun-certificate.svg'
 
 
 export default function ExamPage() {

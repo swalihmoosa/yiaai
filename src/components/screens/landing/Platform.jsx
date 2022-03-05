@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import storeImage from '../../assets/images/landing/green-and-play.svg'
-import appImage from '../../assets/images/landing/grey-app-play.svg'
-import yiaImage from '../../assets/images/landing/mobile-app.png'
-import lines from '../../assets/images/landing/lines-bg.svg'
+import storeImage from '../../../assets/images/landing/green-and-play.svg'
+import appImage from '../../../assets/images/landing/grey-app-play.svg'
+import yiaImage from '../../../assets/images/landing/mobile-app.png'
+import lines from '../../../assets/images/landing/lines-bg.svg'
 
 
 export default function Platform() {

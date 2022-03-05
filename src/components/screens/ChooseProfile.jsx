@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import bg from '../assets/images/profile/top.svg'
-import tickImage from '../assets/images/profile/check-solid.svg'
+import bg from '../../assets/images/profile/top.svg'
+import tickImage from '../../assets/images/profile/check-solid.svg'
 
 
 export default function ChooseProfile() {

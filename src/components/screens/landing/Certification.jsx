@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import medalImage from '../../assets/images/landing/medal+.svg'
-import certificateImage from '../../assets/images/landing/certificate.png'
-import arrowImage from '../../assets/images/landing/arrow.svg'
+import medalImage from '../../../assets/images/landing/medal+.svg'
+import certificateImage from '../../../assets/images/landing/certificate.png'
+import arrowImage from '../../../assets/images/landing/arrow.svg'
 
 
 export default function Certification() {

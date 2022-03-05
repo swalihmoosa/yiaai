@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import logoImage from '../../assets/images/landing/logo-grey.svg'
-import insta from '../../assets/images/landing/instagram.svg'
-import instaColor from '../../assets/images/landing/instagram-color.svg'
-import facebook from '../../assets/images/landing/facebook.svg'
-import facebookColor from '../../assets/images/landing/facebook-color.svg'
-import twitter from '../../assets/images/landing/twitter.svg'
-import twitterColor from '../../assets/images/landing/twitter-color.svg'
-import linkedIn from '../../assets/images/landing/linkedin.svg'
-import linkedInColor from '../../assets/images/landing/linkedin-color.svg'
-import youTube from '../../assets/images/landing/youtube.svg'
-import youTubeColor from '../../assets/images/landing/youtube-color.svg'
+import logoImage from '../../../assets/images/landing/logo-grey.svg'
+import insta from '../../../assets/images/landing/instagram.svg'
+import instaColor from '../../../assets/images/landing/instagram-color.svg'
+import facebook from '../../../assets/images/landing/facebook.svg'
+import facebookColor from '../../../assets/images/landing/facebook-color.svg'
+import twitter from '../../../assets/images/landing/twitter.svg'
+import twitterColor from '../../../assets/images/landing/twitter-color.svg'
+import linkedIn from '../../../assets/images/landing/linkedin.svg'
+import linkedInColor from '../../../assets/images/landing/linkedin-color.svg'
+import youTube from '../../../assets/images/landing/youtube.svg'
+import youTubeColor from '../../../assets/images/landing/youtube-color.svg'
 
 
 export default function Footer() {

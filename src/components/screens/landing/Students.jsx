@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import rightImage from '../../assets/images/landing/join-img.png'
+import rightImage from '../../../assets/images/landing/join-img.png'
 
 
 export default function Students() {

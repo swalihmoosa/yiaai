@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import bg from '../assets/images/details/top.svg'
-import leftImage from '../assets/images/details/activated.svg'
+import bg from '../../assets/images/details/top.svg'
+import leftImage from '../../assets/images/details/activated.svg'
 
 
 export default function FillDetails() {

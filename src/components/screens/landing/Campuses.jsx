@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Slider from "react-slick";
 
-import jamia from '../../assets/images/landing/download.png'
+import jamia from '../../../assets/images/landing/download.png'
 
 
 export default function Campuses() {

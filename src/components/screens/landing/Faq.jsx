@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import dropImage from '../../assets/images/landing/down-arrow.svg'
+import dropImage from '../../../assets/images/landing/down-arrow.svg'
 
 
 export default function Faq() {

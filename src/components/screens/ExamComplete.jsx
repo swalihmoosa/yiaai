@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import cirtificateImage from '../assets/images/ExamComplete/tefun-certificate.svg'
-import tefunImage from '../assets/images/ExamComplete/Tefun-logo.svg'
-import bgRibbonImage from '../assets/images/ExamComplete/bg-ribbon.svg'
-import bgDotImage from '../assets/images/ExamComplete/bg-2.svg'
+import cirtificateImage from '../../assets/images/ExamComplete/tefun-certificate.svg'
+import tefunImage from '../../assets/images/ExamComplete/Tefun-logo.svg'
+import bgRibbonImage from '../../assets/images/ExamComplete/bg-ribbon.svg'
+import bgDotImage from '../../assets/images/ExamComplete/bg-2.svg'
 import { Link } from 'react-router-dom'
 
 export default function ExamComplete() {

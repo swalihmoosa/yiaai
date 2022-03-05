@@ -1,17 +1,10 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 
-import logoImage from '../../assets/images/logo.svg'
-import hamburgerImage from '../../assets/images/header/hamburg.7b560c07.svg'
 import arrowImage from '../../assets/images/menu/arrow.svg'
 import closeImage from '../../assets/images/menu/close.svg'
 import decorator from '../../assets/images/menu/decorator.svg'
 import callImage from '../../assets/images/menu/phone.svg'
-import leftArrowImage from '../../assets/images/header/back.svg'
-import campusImage from '../../assets/images/header/school.svg'
-import classImage from '../../assets/images/header/book.svg'
-import divImage from '../../assets/images/header/cap.svg'
-import logOutImage from '../../assets/images/header/logout.svg'
 import indiaImage from '../../assets/images/menu/india-flag.jpeg'
 import afganisthan from '../../assets/images/menu/Afghanistan.png'
 import angola from '../../assets/images/menu/Angola.png'
@@ -21,15 +14,10 @@ import armenia from '../../assets/images/menu/Armenia.png'
 import bahrain from '../../assets/images/menu/BAHRAIN.jpeg'
 
 import { JoinContext } from '../../App'
-import LoginModal from '../modals/LoginModal'
 
-export default function Header() {
-
-    const isLoggin = useContext(JoinContext).isLoggin;
+export default function LoginModal() {
     const hamBurgerClick = useContext(JoinContext).hamBurgerClick;
     const {updatehamBurgerClick} = useContext(JoinContext)
-    const useBarClick = useContext(JoinContext).useBarClick;
-    const {updateUseBarClick} = useContext(JoinContext);
     const[countriesShow,setCountriesShow] = useState(false)
     const[selectedCountryId,setselectedCountryId] = useState(1)
     const[countries] = useState([
@@ -81,104 +69,73 @@ export default function Header() {
 
 
     return (
-        <HeaderNav>
-            <Wrapper>
-            <LogoContainer>
-                <img src={logoImage} alt="Logo" />
-            </LogoContainer>
-
-            {
-                isLoggin ? 
-                <User onClick={()=> updateUseBarClick() } >
-                    <Name>
-                        Swalih Moosa
-                    </Name>
-                    <DownArrow>
-                        <img src={arrowImage} alt='Arrow' />
-                    </DownArrow>
-                </User>
-                : 
-                <JoinButton onClick={()=> updatehamBurgerClick() } >
-                    Join Now
-                </JoinButton>
-            }
-
-            <HamBurger onClick={()=> updatehamBurgerClick() }  >
-                <img src={hamburgerImage} alt="Hamburger" />
-            </HamBurger>
-            </Wrapper>
-            
-            <LoginModal />
-
-            <UserBar className={useBarClick ? 'active' : ''}  >
-                <Profile>
-                    <LeftArrow onClick={()=> updateUseBarClick() } >
-                        <img src={leftArrowImage} alt='Arrow' />
-                    </LeftArrow>
-                    <ProfileDes>
-                        Profile
-                    </ProfileDes>
-                    <Details>
-                        <Letter>
-                            S
-                        </Letter>
-                        <FullName>
-                            Swalih Moosa
-                        </FullName>
-                        <Mobile>
-                            +91 8129133008
-                        </Mobile>
-                    </Details>
-                </Profile>
-                <Study>
-                    <School>
-                        <img src={campusImage} alt='Campus' />
-                    </School>
-                    <SchoolDetail>
-                        <Head>
-                            Campus
-                        </Head>
-                        <Subhead>
-                            Lekshmi Vilasom High School
-                        </Subhead>
-                    </SchoolDetail>
-                </Study>
-                <Study>
-                    <School>
-                        <img src={classImage} alt='Campus' />
-                    </School>
-                    <SchoolDetail>
-                        <Head>
-                            Class
-                        </Head>
-                        <Subhead>
-                            10
-                        </Subhead>
-                    </SchoolDetail>
-                </Study>
-                <Study>
-                    <School>
-                        <img src={divImage} alt='Campus' />
-                    </School>
-                    <SchoolDetail>
-                        <Head>
-                            Division
-                        </Head>
-                        <Subhead>
-                            A
-                        </Subhead>
-                    </SchoolDetail>
-                </Study>
-                <LogOut>
-                    <Log>
-                        <img src={logOutImage} alt='LogOut' />
-                    </Log>
-                    <Out>
-                        Log Out
-                    </Out>
-                </LogOut>
-            </UserBar>
-        </HeaderNav>
+            <Overlay className={ hamBurgerClick ? 'active' : ''} >
+                <MenuBar className={ hamBurgerClick ? 'active' : ''} >
+                    <White>
+                    <H4>
+                    Login to your account
+                    </H4>
+                    <P>
+                    Enter your registered phone number
+                    </P>
+                    <Mob>
+                        <Flag onClick={()=>setCountriesShow(!countriesShow)} >
+                            <img src={selectedCountry.flag} alt='Flag' />
+                        </Flag>
+                        <Arrow onClick={()=>setCountriesShow(!countriesShow)} >
+                            <img src={arrowImage} alt='Arrow' />
+                        </Arrow>
+                        {
+                            countriesShow ? 
+                            <CountriesUl>
+                                {
+                                    countries.map(country=>(
+                                        <CountriesLi key={country.id}
+                                            onClick={()=> {
+                                                setselectedCountryId(country.id)
+                                                setCountriesShow(!countriesShow)
+                                            }}
+                                        >
+                                            <FlagList>
+                                                <img src={country.flag} alt='Flag' />
+                                            </FlagList>
+                                            <ListName>
+                                                {country.code} , {country.name}
+                                            </ListName>
+                                        </CountriesLi>
+                                    ))
+                                }
+                            </CountriesUl>
+                            : ""
+                        }
+                        <Form>
+                            <Call>
+                                <img src={callImage} alt='Call' />
+                            </Call>
+                            <Code>
+                                {selectedCountry.code}
+                            </Code>
+                            <Input type="number" placeholder="Enter Mobile Number" />
+                        </Form>
+                    </Mob>
+                    <Next>
+                        Next
+                    </Next>
+                    <New>
+                            New to Yiaai?
+                        <B> Create an account
+                        </B>
+                    </New>
+                    <Hr />
+                    <Terms>
+                    Terms of service
+                    </Terms>
+                </White>
+                <Close onClick={()=> updatehamBurgerClick() } >
+                    <img src={closeImage} alt="Close" />
+                </Close>
+                </MenuBar>
+            </Overlay>
     )
 }
 const HeaderNav = styled.header`

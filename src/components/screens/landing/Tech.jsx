@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import silubusImage from '../../assets/images/landing/ai.jpg'
-import topicImage from '../../assets/images/landing/card.svg'
+import silubusImage from '../../../assets/images/landing/ai.jpg'
+import topicImage from '../../../assets/images/landing/card.svg'
 
 
 export default function Tech() {

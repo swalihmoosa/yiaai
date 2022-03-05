@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import mobile from '../../assets/images/landing/phone-g-call.svg'
-import scissor from '../../assets/images/landing/scissors.svg'
-import certificate from '../../assets/images/landing/certificate-r.svg'
-import device from '../../assets/images/landing/devices.svg'
-import certidicateBlue from '../../assets/images/landing/certificate.svg'
+import mobile from '../../../assets/images/landing/phone-g-call.svg'
+import scissor from '../../../assets/images/landing/scissors.svg'
+import certificate from '../../../assets/images/landing/certificate-r.svg'
+import device from '../../../assets/images/landing/devices.svg'
+import certidicateBlue from '../../../assets/images/landing/certificate.svg'
 
 
 export default function School() {
