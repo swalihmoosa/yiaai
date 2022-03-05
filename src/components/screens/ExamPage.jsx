@@ -11,7 +11,7 @@ export default function ExamPage() {
     const [ examCompleted, setExamCompleted ] = useState(false);
     const [ hour, setHour ] = useState(3);
     const [ minutes, setMinutes ] = useState(0);
-    const [seconds, setSeconds ] =  useState(1);
+    const [seconds, setSeconds ] =  useState(0);
     const [exams] = useState([
         {
             id : 1,
@@ -152,7 +152,7 @@ export default function ExamPage() {
     return (
         <ExamPageSection>
             <Wrapper>
-                <CountDownModal />
+                <CountDownModal hour={hour} minutes={minutes} seconds={seconds}  />
 
                 <ExamPaperContainer>
                     {renderExams()}

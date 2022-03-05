@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import styled from 'styled-components'
 
 
-export default function CountDownModal() {
-    const [ hour, setHour ] = useState(3);
-    const [ minutes, setMinutes ] = useState(0);
-    const [seconds, setSeconds ] =  useState(1);
-
+export default function CountDownModal({hour, minutes, seconds}) {
     return (
         <Description>
             <Char>
@@ -21,7 +17,15 @@ export default function CountDownModal() {
                     Time Remaining
                 </TimeHead>
                 { 
-                    <Running> {hour} : {minutes} : {seconds}</Running> 
+                    <Running>
+                        {
+                            hour ? hour : "3"
+                        } : {
+                            minutes ? minutes : "00"
+                        } : {
+                            seconds ? seconds : "00"
+                        }
+                    </Running> 
                 }
             </Time>
         </Description>
