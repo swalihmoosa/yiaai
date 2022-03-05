@@ -14,7 +14,7 @@ export const JoinContext = React.createContext();
 function App() {
     const[hamBurgerClick,setHarmBurgerClick] = useState(false)
     const[useBarClick,setUseBarClick] = useState(false)
-    const[isLoggin] = useState(false)
+    const[isLoggin] = useState(true)
 
     const updatehamBurgerClick = () =>{
         setHarmBurgerClick(hamBurgerClick=> !hamBurgerClick);
