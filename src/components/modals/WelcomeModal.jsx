@@ -28,12 +28,12 @@ export default function WelcomeModal({isSubmitted}) {
     )
 }
 const WelcomeBg = styled.section`
-    position: absolute; 
+    position: fixed; 
     left: 0; 
     right: 0;
     top: 50%;
     margin : auto ;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,6 @@ const WelcomeBg = styled.section`
     transform: scale(0) translateY(-50%);
     transition: all 0.6s ease 0s;
     z-index:1 ;
-    background-color:rgba(0,0,0,.2) ;
     &.active{
         transform: scale(1) translateY(-50%);
     }
